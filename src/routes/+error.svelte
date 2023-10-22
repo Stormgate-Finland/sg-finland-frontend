@@ -1,14 +1,14 @@
 <script>
 	import { page } from '$app/stores';
 
-    const online = typeof navigator !== 'undefined' ? navigator.onLine : true;
+	const online = typeof navigator !== 'undefined' ? navigator.onLine : true;
 </script>
 
 <svelte:head>
 	<title>{$page.status}</title>
 </svelte:head>
 
-<h1>{$page.error?.message ?? "Error"}</h1>
+<h1>{$page.error?.message ?? 'Error'}</h1>
 
 <div class="container">
 	{#if online}
