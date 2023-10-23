@@ -703,6 +703,40 @@ export type PostRelationResponseCollection = {
   data: Array<PostEntity>;
 };
 
+export type SiteSettingInput = {
+  title?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['String']>;
+  logo?: InputMaybe<Scalars['ID']>;
+  icon?: InputMaybe<Scalars['ID']>;
+  metaImage?: InputMaybe<Scalars['ID']>;
+  twitter?: InputMaybe<Scalars['String']>;
+  googleG4aTagId?: InputMaybe<Scalars['String']>;
+};
+
+export type SiteSetting = {
+  __typename?: 'SiteSetting';
+  title: Scalars['String'];
+  description?: Maybe<Scalars['String']>;
+  logo?: Maybe<UploadFileEntityResponse>;
+  icon?: Maybe<UploadFileEntityResponse>;
+  metaImage?: Maybe<UploadFileEntityResponse>;
+  twitter?: Maybe<Scalars['String']>;
+  googleG4aTagId?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['DateTime']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+export type SiteSettingEntity = {
+  __typename?: 'SiteSettingEntity';
+  id?: Maybe<Scalars['ID']>;
+  attributes?: Maybe<SiteSetting>;
+};
+
+export type SiteSettingEntityResponse = {
+  __typename?: 'SiteSettingEntityResponse';
+  data?: Maybe<SiteSettingEntity>;
+};
+
 export type StreamFiltersInput = {
   id?: InputMaybe<IdFilterInput>;
   title?: InputMaybe<StringFilterInput>;
@@ -837,7 +871,7 @@ export type TagRelationResponseCollection = {
   data: Array<TagEntity>;
 };
 
-export type GenericMorph = UploadFile | UploadFolder | I18NLocale | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | Person | Post | Stream | Tag;
+export type GenericMorph = UploadFile | UploadFolder | I18NLocale | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | Person | Post | SiteSetting | Stream | Tag;
 
 export type FileInfoInput = {
   name?: InputMaybe<Scalars['String']>;
@@ -924,6 +958,7 @@ export type Query = {
   people?: Maybe<PersonEntityResponseCollection>;
   post?: Maybe<PostEntityResponse>;
   posts?: Maybe<PostEntityResponseCollection>;
+  siteSetting?: Maybe<SiteSettingEntityResponse>;
   stream?: Maybe<StreamEntityResponse>;
   streams?: Maybe<StreamEntityResponseCollection>;
   tag?: Maybe<TagEntityResponse>;
@@ -1057,6 +1092,8 @@ export type Mutation = {
   createPost?: Maybe<PostEntityResponse>;
   updatePost?: Maybe<PostEntityResponse>;
   deletePost?: Maybe<PostEntityResponse>;
+  updateSiteSetting?: Maybe<SiteSettingEntityResponse>;
+  deleteSiteSetting?: Maybe<SiteSettingEntityResponse>;
   createStream?: Maybe<StreamEntityResponse>;
   updateStream?: Maybe<StreamEntityResponse>;
   deleteStream?: Maybe<StreamEntityResponse>;
@@ -1154,6 +1191,11 @@ export type MutationUpdatePostArgs = {
 
 export type MutationDeletePostArgs = {
   id: Scalars['ID'];
+};
+
+
+export type MutationUpdateSiteSettingArgs = {
+  data: SiteSettingInput;
 };
 
 

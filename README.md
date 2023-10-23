@@ -1,25 +1,19 @@
-# create-svelte
+# Stormgate Finland Frontend
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a Sveltekit project bootstrapped by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte), that hosts the [stormgate.fi](https://stormgate.fi) website frontend codebase.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+The news content and users are hosted in a Strapi project [sg-finland-cms](https://gitlab.com/stormgate-finland/sg-finland-cms).
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. Installe dependencies with `pnpm install` (or `npm install` or `yarn`).
+
+2. Copy `.env.example` to `.env` and edit variables to your liking.
+
+3. Start a development server:
 
 ```bash
-npm run dev
+pnpm run dev
 
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
@@ -30,9 +24,9 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `pnpm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

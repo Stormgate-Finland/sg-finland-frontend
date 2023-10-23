@@ -1,7 +1,6 @@
-import type { PostEntityResponseCollection } from '$types/generated/strapi';
+import { getPosts } from '$lib/server/strapi/posts';
+import type { PageServerLoad } from './$types';
 
-export async function load() {
-	const res = await fetch('http://localhost:1337/api/posts?populate=*');
-	const data = await res.json();
-	return data as PostEntityResponseCollection;
-}
+export const load: PageServerLoad = async () => {
+	return await getPosts();
+};

@@ -3,6 +3,7 @@ import colors from 'tailwindcss/colors';
 
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
+	darkMode: 'class',
 	theme: {
 		screens: {
 			sm: '480px',
@@ -24,6 +25,19 @@ export default {
 			serif: ['Merriweather', 'serif'],
 		},
 		extend: {
+			colors: {
+				default: 'rgb(var(--color-default) / <alpha-value>)',
+				neutral: 'rgb(var(--color-neutral) / <alpha-value>)',
+				primary: 'rgb(var(--color-primary) / <alpha-value>)',
+				secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+				accent: 'rgb(var(--color-accent) / <alpha-value>)',
+				warning: 'rgb(var(--color-warning) / <alpha-value>)',
+				error: 'rgb(var(--color-error) / <alpha-value>)',
+				success: 'rgb(var(--color-success) / <alpha-value>)',
+				info: 'rgb(var(--color-info) / <alpha-value>)',
+				foreground: 'rgb(var(--color-foreground) / <alpha-value>)',
+				background: 'rgb(var(--color-background) / <alpha-value>)',
+			},
 			spacing: {
 				128: '32rem',
 				144: '36rem',
