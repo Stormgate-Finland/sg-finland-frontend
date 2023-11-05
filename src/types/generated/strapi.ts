@@ -611,7 +611,7 @@ export type Person = {
   name?: Maybe<Scalars['String']>;
   role: Enum_Person_Role;
   handle: Scalars['String'];
-  slug?: Maybe<Scalars['String']>;
+  slug: Scalars['String'];
   image?: Maybe<UploadFileEntityResponse>;
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
@@ -763,7 +763,7 @@ export type Stream = {
   __typename?: 'Stream';
   title: Scalars['String'];
   url: Scalars['String'];
-  slug?: Maybe<Scalars['String']>;
+  slug: Scalars['String'];
   tags?: Maybe<TagRelationResponseCollection>;
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;

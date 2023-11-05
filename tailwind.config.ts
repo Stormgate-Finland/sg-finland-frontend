@@ -1,48 +1,62 @@
 import { type Config } from 'tailwindcss';
-import colors from 'tailwindcss/colors';
 
 export default {
+	darkMode: ['class'],
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-	darkMode: 'class',
+	safelist: ['dark'],
 	theme: {
-		screens: {
-			sm: '480px',
-			md: '768px',
-			lg: '976px',
-			xl: '1440px',
-		},
-		colors: {
-			transparent: 'transparent',
-			current: 'currentColor',
-			black: colors.black,
-			white: colors.white,
-			gray: colors.gray,
-			sky: colors.sky,
-			fuchsia: colors.fuchsia,
-		},
-		fontFamily: {
-			sans: ['Graphik', 'sans-serif'],
-			serif: ['Merriweather', 'serif'],
+		container: {
+			center: true,
+			padding: '2rem',
+			screens: {
+				'2xl': '1400px',
+			},
 		},
 		extend: {
 			colors: {
-				default: 'rgb(var(--color-default) / <alpha-value>)',
-				neutral: 'rgb(var(--color-neutral) / <alpha-value>)',
-				primary: 'rgb(var(--color-primary) / <alpha-value>)',
-				secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
-				accent: 'rgb(var(--color-accent) / <alpha-value>)',
-				warning: 'rgb(var(--color-warning) / <alpha-value>)',
-				error: 'rgb(var(--color-error) / <alpha-value>)',
-				success: 'rgb(var(--color-success) / <alpha-value>)',
-				info: 'rgb(var(--color-info) / <alpha-value>)',
-				foreground: 'rgb(var(--color-foreground) / <alpha-value>)',
-				background: 'rgb(var(--color-background) / <alpha-value>)',
+				border: 'hsl(var(--border) / <alpha-value>)',
+				input: 'hsl(var(--input) / <alpha-value>)',
+				ring: 'hsl(var(--ring) / <alpha-value>)',
+				background: 'hsl(var(--background) / <alpha-value>)',
+				foreground: 'hsl(var(--foreground) / <alpha-value>)',
+				primary: {
+					DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
+					foreground: 'hsl(var(--primary-foreground) / <alpha-value>)',
+				},
+				secondary: {
+					DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
+					foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)',
+				},
+				destructive: {
+					DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
+					foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)',
+				},
+				muted: {
+					DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
+					foreground: 'hsl(var(--muted-foreground) / <alpha-value>)',
+				},
+				accent: {
+					DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
+					foreground: 'hsl(var(--accent-foreground) / <alpha-value>)',
+				},
+				popover: {
+					DEFAULT: 'hsl(var(--popover) / <alpha-value>)',
+					foreground: 'hsl(var(--popover-foreground) / <alpha-value>)',
+				},
+				card: {
+					DEFAULT: 'hsl(var(--card) / <alpha-value>)',
+					foreground: 'hsl(var(--card-foreground) / <alpha-value>)',
+				},
 			},
-			spacing: {
-				128: '32rem',
-				144: '36rem',
+			borderRadius: {
+				lg: 'var(--radius)',
+				md: 'calc(var(--radius) - 2px)',
+				sm: 'calc(var(--radius) - 4px)',
+			},
+			fontFamily: {
+				sans: ['Urbanist', 'sans-serif'],
+				title: ['Oxanium', 'sans-serif'],
 			},
 		},
 	},
-	plugins: [],
 } satisfies Config;
