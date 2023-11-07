@@ -1,4 +1,4 @@
-<aside class="flex h-full border-r-2 border-border p-8">
+<aside class="flex h-full border-r-2 border-primary p-8">
 	<nav>
 		<ul class="flex flex-col gap-4 text-xl">
 			<li>
