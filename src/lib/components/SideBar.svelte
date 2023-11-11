@@ -1,17 +1,30 @@
-<aside class="flex h-full border-r-2 border-primary p-8">
+<script lang="ts">
+	import { page } from '$app/stores';
+	let path: string;
+
+	$: path = $page.url.pathname;
+</script>
+
+<aside class="sticky top-4 flex h-full border-r-2 border-primary px-8 py-4">
 	<nav>
-		<ul class="flex flex-col gap-4 text-xl">
+		<ul class="flex flex-col gap-4 text-xl [&>li>a]:px-2">
 			<li>
-				<a href="/">Home</a>
+				<a href="/" data-active={path === '/'} class="data-[active=true]:bg-primary">Home</a>
 			</li>
 			<li>
-				<a href="/posts">News</a>
+				<a href="/posts" data-active={path === '/posts'} class="data-[active=true]:bg-primary"
+					>News</a
+				>
 			</li>
 			<li>
-				<a href="/streams">Streams</a>
+				<a href="/streams" data-active={path === '/streams'} class="data-[active=true]:bg-primary"
+					>Streams</a
+				>
 			</li>
 			<li>
-				<a href="/ladder">Ladder</a>
+				<a href="/ladder" data-active={path === '/ladder'} class="data-[active=true]:bg-primary"
+					>Ladder</a
+				>
 			</li>
 			<li class="text-sm">
 				<a target="_blank" href="https://playstormgate.com/">PlayStormgate.com</a>

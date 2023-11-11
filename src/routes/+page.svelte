@@ -1,24 +1,27 @@
 <script lang="ts">
+	import Image from '$components/Image.svelte';
 	import PageHead from '$components/PageHead.svelte';
+	import PostCard from '$components/PostCard.svelte';
+	import PostCardBig from '$components/PostCardBig.svelte';
+	import SvelteMarkdown from 'svelte-markdown';
 
-	// export let data;
+	export let data;
+
+	const [firstPost] = data.posts;
+	const otherPosts = data.posts.slice(1);
 </script>
 
 <PageHead description="Finnish community site for Stormgate, a game by Frost Giant Studios." />
 
-<h1 class="mb-8 text-3xl font-bold">Hello world!</h1>
+<div class="flex flex-wrap gap-8">
+	{#if firstPost}
+		<PostCardBig post={firstPost} />
+	{/if}
 
-<p>
-	Pellentesque placerat gravida metus. Suspendisse faucibus diam non ipsum euismod, eu consequat
-	velit congue. Vivamus vel enim diam. Vivamus scelerisque ligula et blandit semper. Lorem ipsum
-	dolor sit amet, consectetur adipiscing elit. Nam ultrices, ante sed eleifend hendrerit, ligula
-	orci sollicitudin eros, placerat rutrum enim orci eget quam. Nulla interdum nunc sed enim
-	malesuada elementum. Pellentesque posuere eros ut dolor suscipit scelerisque.
-</p>
-<p>
-	Pellentesque lacus est, malesuada nec ultricies at, placerat quis lectus. Etiam ac est vitae
-	tortor convallis fermentum fringilla sed tellus. In sagittis ornare sapien quis vestibulum. Etiam
-	pharetra velit quis purus aliquam, at pretium enim pulvinar. Mauris ac quam eu odio euismod
-	convallis. Vestibulum porta mi luctus porta accumsan. Phasellus facilisis aliquam turpis, eu
-	pharetra ex tincidunt lobortis.
-</p>
+	<hr />
+	<div class="grid grid-cols-2 gap-8">
+		{#each otherPosts as post}
+			<PostCard {post} />
+		{/each}
+	</div>
+</div>

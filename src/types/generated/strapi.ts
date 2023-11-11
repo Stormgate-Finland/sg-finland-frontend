@@ -642,6 +642,7 @@ export type PostFiltersInput = {
   slug?: InputMaybe<StringFilterInput>;
   tags?: InputMaybe<TagFiltersInput>;
   author?: InputMaybe<UsersPermissionsUserFiltersInput>;
+  ingress?: InputMaybe<StringFilterInput>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
   updatedAt?: InputMaybe<DateTimeFilterInput>;
   publishedAt?: InputMaybe<DateTimeFilterInput>;
@@ -657,6 +658,7 @@ export type PostInput = {
   slug?: InputMaybe<Scalars['String']>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   author?: InputMaybe<Scalars['ID']>;
+  ingress?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
 };
 
@@ -668,6 +670,7 @@ export type Post = {
   slug: Scalars['String'];
   tags?: Maybe<TagRelationResponseCollection>;
   author?: Maybe<UsersPermissionsUserEntityResponse>;
+  ingress: Scalars['String'];
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
   publishedAt?: Maybe<Scalars['DateTime']>;
