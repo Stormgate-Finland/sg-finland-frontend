@@ -8,5 +8,5 @@ export const load: PageServerLoad = async (event) => {
 		return item.data;
 	}
 
-	throw error(404, 'Not found');
+	error(404, 'Not found');
 };
