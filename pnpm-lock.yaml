@@ -46,6 +46,9 @@ devDependencies:
   clsx:
     specifier: ^2.1.0
     version: 2.1.0
+  dayjs:
+    specifier: ^1.11.10
+    version: 1.11.10
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -79,6 +82,9 @@ devDependencies:
   svelte-markdown:
     specifier: ^0.4.1
     version: 0.4.1(svelte@4.2.9)
+  svelte-time:
+    specifier: ^0.8.2
+    version: 0.8.2
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0
@@ -1181,6 +1187,10 @@ packages:
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
     dependencies:
       css-tree: 2.2.1
+    dev: true
+
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
     dev: true
 
   /debug@4.3.4:
@@ -2775,6 +2785,12 @@ packages:
       strip-indent: 3.0.0
       svelte: 4.2.9
       typescript: 5.3.3
+    dev: true
+
+  /svelte-time@0.8.2:
+    resolution: {integrity: sha512-sBLLrWMMInx5iidGlbtlCBAu8CzSixdqOkbhizdalULXBvYMPACp0GtzmyBLEa77hbaMVySZzApIaNG4B4OVmg==}
+    dependencies:
+      dayjs: 1.11.10
     dev: true
 
   /svelte@4.2.9:

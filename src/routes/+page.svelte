@@ -1,9 +1,7 @@
 <script lang="ts">
-	import Image from '$components/Image.svelte';
 	import PageHead from '$components/PageHead.svelte';
 	import PostCard from '$components/PostCard.svelte';
 	import PostCardBig from '$components/PostCardBig.svelte';
-	import SvelteMarkdown from 'svelte-markdown';
 
 	export let data;
 
@@ -19,7 +17,7 @@
 	{/if}
 
 	<hr />
-	<div class="grid grid-cols-2 gap-8">
+	<div class="flex flex-col gap-8">
 		{#each otherPosts as post}
 			<PostCard {post} />
 		{/each}
