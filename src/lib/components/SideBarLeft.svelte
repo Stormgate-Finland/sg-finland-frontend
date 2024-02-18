@@ -21,11 +21,6 @@
 					>Streams</a
 				>
 			</li>
-			<li>
-				<a href="/ladder" data-active={path === '/ladder'} class="data-[active=true]:bg-primary"
-					>Ladder</a
-				>
-			</li>
 			<li class="text-sm">
 				<a target="_blank" href="https://playstormgate.com/">PlayStormgate.com</a>
 			</li>

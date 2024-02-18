@@ -3,7 +3,6 @@
 	import Image from '$components/Image.svelte';
 	import PostMeta from './PostMeta.svelte';
 	import ReadMoreLink from './ReadMoreLink.svelte';
-	import SvelteMarkdown from 'svelte-markdown';
 
 	export let post: PostEntity;
 </script>

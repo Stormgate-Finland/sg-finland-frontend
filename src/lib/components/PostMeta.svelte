@@ -6,7 +6,7 @@
 	export let long: boolean = false;
 </script>
 
-<div class="font-bold text-fuchsia-600">
+<div class="font-bold text-fuchsia-700">
 	<Time timestamp={createdAt} format="D.M.YYYY" />
 	{#if author}
 		{#if long}

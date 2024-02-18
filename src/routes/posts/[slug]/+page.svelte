@@ -14,9 +14,11 @@
 	long
 />
 
-<div class="pt-2 font-bold">
-	{data.attributes?.ingress}
-</div>
+{#if data.attributes?.ingress}
+	<div class="pt-2 font-bold">
+		{data.attributes?.ingress}
+	</div>
+{/if}
 
 {#if data.attributes?.image?.data?.attributes?.url}
 	<Image

@@ -7,12 +7,8 @@ export function strapiQuery(query?: StrapiQuery) {
 	return `?${stringify(query, { encode: false })}`;
 }
 
-export async function strapiFetch<T>(
-	endpoint: string,
-	query?: StrapiQuery,
-	defaultQuery?: StrapiQuery,
-) {
-	const qs = strapiQuery(query ?? defaultQuery);
+export async function strapiFetch<T>(endpoint: string, query?: StrapiQuery) {
+	const qs = strapiQuery(query);
 	const headers = CMS_API_KEY ? { authorization: `Bearer ${CMS_API_KEY}` } : undefined;
 	const res = await fetch(`${PUBLIC_CMS_URL}${endpoint}${qs}`, { headers });
 	const data = await res.json();

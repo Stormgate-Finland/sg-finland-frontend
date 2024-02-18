@@ -6,10 +6,10 @@ const endpoint = '/api/posts';
 
 export async function getPosts(query?: StrapiQuery) {
 	const defaultQuery: StrapiQuery = { populate: '*' };
-	return strapiFetch<PostEntityResponseCollection>(endpoint, query, defaultQuery);
+	return strapiFetch<PostEntityResponseCollection>(endpoint, query ?? defaultQuery);
 }
 
 export async function getPost(id: string | number, query?: StrapiQuery) {
 	const defaultQuery: StrapiQuery = { populate: '*' };
-	return await strapiFetch<PostEntityResponse>(endpoint + `/${id}`, query, defaultQuery);
+	return await strapiFetch<PostEntityResponse>(endpoint + `/${id}`, query ?? defaultQuery);
 }

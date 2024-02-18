@@ -6,5 +6,5 @@ const endpoint = '/api/site-setting';
 
 export async function getSiteSettings(query?: StrapiQuery) {
 	const defaultQuery: StrapiQuery = { populate: '*' };
-	return strapiFetch<SiteSettingEntityResponse>(endpoint, query, defaultQuery);
+	return strapiFetch<SiteSettingEntityResponse>(endpoint, query ?? defaultQuery);
 }

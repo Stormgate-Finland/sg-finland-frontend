@@ -1,21 +1,20 @@
 <script lang="ts">
-	import Image from '$lib/components/Image.svelte';
-	import SvelteMarkdown from 'svelte-markdown';
+	import Pagination from '$components/Pagination.svelte';
+	import PostCard from '$components/PostCard.svelte';
 
 	export let data;
 </script>
 
-<h1>POSTS</h1>
+<div class="space-y-6">
+	<h1>News</h1>
 
-{#each data.data as post}
-	<h3>{post.attributes?.title}</h3>
-	<div class="markdown">
-		<SvelteMarkdown source={post.attributes?.body} />
-	</div>
-	<p>{post.attributes?.createdAt} by {post.attributes?.author?.data?.attributes?.username}</p>
-	<Image
-		class="w-full"
-		src={post.attributes?.image.data?.attributes?.url}
-		alt={post.attributes?.image.data?.attributes?.alternativeText}
-	/>
-{/each}
+	{#each data.data as post}
+		<PostCard {post} />
+	{/each}
+
+	{#if data.meta.pagination.total > 1}
+		<div class="flex justify-end">
+			<Pagination pagination={data.meta.pagination} />
+		</div>
+	{/if}
+</div>
