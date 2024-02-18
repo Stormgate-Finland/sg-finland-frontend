@@ -122,8 +122,14 @@
 	}
 
 	.markdown {
-		p + p {
-			@apply mt-8;
+		@apply space-y-4;
+
+		ul {
+			@apply list-disc pl-8;
+		}
+
+		ol {
+			@apply list-decimal pl-8;
 		}
 
 		img {

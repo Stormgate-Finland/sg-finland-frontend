@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { isDarkMode } from '$lib/utils';
 	import DarkModeIcon from '$assets/icons/dark-theme.svg?component';
-	import clsx from 'clsx';
+	import clsx, { type ClassValue } from 'clsx';
 
-	export let className: clsx.ClassValue = undefined;
+	export let className: ClassValue = undefined;
 
 	let themeDark = isDarkMode();
 

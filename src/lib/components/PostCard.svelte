@@ -13,6 +13,7 @@
 		<a href={`/posts/${post.attributes?.slug}`}>
 			<Image
 				src={post.attributes?.image.data?.attributes?.url}
+				alt={post.attributes?.image?.data?.attributes?.alternativeText}
 				class="aspect-video w-full object-cover object-center"
 			/>
 		</a>
@@ -25,8 +26,8 @@
 				createdAt={post.attributes?.createdAt}
 			/>
 		</div>
-		<div class="markdown line-clamp-1 text-ellipsis text-sm">
-			<SvelteMarkdown source={post.attributes?.body.slice(0, 200)} />
+		<div class="line-clamp-1 text-ellipsis text-sm">
+			{post.attributes?.ingress}
 		</div>
 		<div class="text-sm">
 			<ReadMoreLink href={`/posts/${post.attributes?.slug}`} />
