@@ -20,6 +20,7 @@
 		"@playwright/test": "^1.41.2",
 		"@poppanator/sveltekit-svg": "^4.2.1",
 		"@sveltejs/adapter-auto": "^3.1.1",
+		"@sveltejs/adapter-netlify": "^4.1.0",
 		"@sveltejs/kit": "^2.5.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.2",
 		"@twicpics/components": "^0.27.1",
