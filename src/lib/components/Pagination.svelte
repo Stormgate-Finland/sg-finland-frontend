@@ -6,12 +6,12 @@
 
 	const pageNumbers = getPageNumbers(pagination, 1);
 
-	function getPageNumbers({ page = 1, total = 10 }, pagesAround = 1) {
+	function getPageNumbers({ page = 1, pageCount = 1 }, pagesAround = 1) {
 		const pages = [];
 		// Add pages around current page
 		for (
 			let i = Math.max(page - pagesAround, pagesAround);
-			i <= Math.min(page + pagesAround, total - 1);
+			i <= Math.min(page + pagesAround, pageCount - 1);
 			i++
 		) {
 			pages.push(i);
@@ -19,8 +19,8 @@
 		if (pages[0] !== 1) {
 			pages.unshift(1);
 		}
-		if (pages[pages.length - 1] !== total) {
-			pages.push(total);
+		if (pages[pages.length - 1] !== pageCount) {
+			pages.push(pageCount);
 		}
 		return pages;
 	}
@@ -49,7 +49,7 @@
 			<span class="flex items-center font-mono text-muted-foreground/50">…</span>
 		{/if}
 	{/each}
-	{#if pagination.page < pagination.total}
+	{#if pagination.page < pagination.pageCount}
 		<a href={`/posts?page=${pagination.page + 1}`} class="px-2 py-1 font-mono text-lg text-primary"
 			>»</a
 		>
