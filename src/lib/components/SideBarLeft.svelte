@@ -5,7 +5,7 @@
 	$: path = $page.url.pathname;
 </script>
 
-<aside class="sticky top-4 flex h-full w-64 border-r-2 border-primary py-2 pl-2 pr-4">
+<aside class="sticky top-4 hidden h-full w-64 border-r-2 border-primary py-2 pr-4 lg:flex">
 	<nav>
 		<ul class="flex flex-col gap-4 text-xl [&>li>a]:px-2">
 			<li>
