@@ -5,7 +5,7 @@ export const load: PageServerLoad = async ({ url }) => {
 	const page = Number(url.searchParams.get('page')) || 1;
 	const pageSize = Number(url.searchParams.get('limit')) || 10;
 
-	return await getPosts({
+	const posts = await getPosts({
 		populate: {
 			author: { fields: ['username'] },
 			tag: { fields: ['name'] },
@@ -14,4 +14,5 @@ export const load: PageServerLoad = async ({ url }) => {
 		pagination: { page, pageSize },
 		sort: ['publishedAt:desc'],
 	});
+	return { posts };
 };

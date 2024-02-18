@@ -4,30 +4,31 @@
 	import SvelteMarkdown from 'svelte-markdown';
 
 	export let data;
+	$: ({ post } = data);
 </script>
 
-<h1>{data.attributes?.title}</h1>
+<h1>{post.attributes?.title}</h1>
 
 <PostMeta
-	author={data.attributes?.author?.data?.attributes?.username}
-	createdAt={data.attributes?.createdAt}
+	author={post.attributes?.author?.data?.attributes?.username}
+	createdAt={post.attributes?.createdAt}
 	long
 />
 
-{#if data.attributes?.ingress}
+{#if post.attributes?.ingress}
 	<div class="pt-2 font-bold">
-		{data.attributes?.ingress}
+		{post.attributes?.ingress}
 	</div>
 {/if}
 
-{#if data.attributes?.image?.data?.attributes?.url}
+{#if post.attributes?.image?.data?.attributes?.url}
 	<Image
-		src={data.attributes?.image.data?.attributes?.url}
-		alt={data.attributes?.image?.data?.attributes?.alternativeText}
+		src={post.attributes?.image.data?.attributes?.url}
+		alt={post.attributes?.image?.data?.attributes?.alternativeText}
 		class="aspect-video w-full object-cover object-center py-4"
 	/>
 {/if}
 
 <div class="markdown">
-	<SvelteMarkdown source={data.attributes?.body} />
+	<SvelteMarkdown source={post.attributes?.body} />
 </div>

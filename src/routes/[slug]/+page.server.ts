@@ -1,11 +1,11 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
-import { getPost } from '$lib/server/strapi/posts';
+import { getPage } from '$lib/server/strapi/pages';
 
 export const load: PageServerLoad = async (event) => {
-	const item = await getPost(event.params.slug);
+	const item = await getPage(event.params.slug);
 	if (item.data) {
-		return { post: item.data };
+		return { page: item.data };
 	}
 
 	error(404, 'Not found');

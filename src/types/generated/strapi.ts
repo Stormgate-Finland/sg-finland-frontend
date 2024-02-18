@@ -370,6 +370,121 @@ export type UploadFolderRelationResponseCollection = {
   data: Array<UploadFolderEntity>;
 };
 
+export type ContentReleasesReleaseFiltersInput = {
+  id?: InputMaybe<IdFilterInput>;
+  name?: InputMaybe<StringFilterInput>;
+  releasedAt?: InputMaybe<DateTimeFilterInput>;
+  scheduledAt?: InputMaybe<DateTimeFilterInput>;
+  timezone?: InputMaybe<StringFilterInput>;
+  actions?: InputMaybe<ContentReleasesReleaseActionFiltersInput>;
+  createdAt?: InputMaybe<DateTimeFilterInput>;
+  updatedAt?: InputMaybe<DateTimeFilterInput>;
+  and?: InputMaybe<Array<InputMaybe<ContentReleasesReleaseFiltersInput>>>;
+  or?: InputMaybe<Array<InputMaybe<ContentReleasesReleaseFiltersInput>>>;
+  not?: InputMaybe<ContentReleasesReleaseFiltersInput>;
+};
+
+export type ContentReleasesReleaseInput = {
+  name?: InputMaybe<Scalars['String']>;
+  releasedAt?: InputMaybe<Scalars['DateTime']>;
+  scheduledAt?: InputMaybe<Scalars['DateTime']>;
+  timezone?: InputMaybe<Scalars['String']>;
+  actions?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+};
+
+export type ContentReleasesRelease = {
+  __typename?: 'ContentReleasesRelease';
+  name: Scalars['String'];
+  releasedAt?: Maybe<Scalars['DateTime']>;
+  scheduledAt?: Maybe<Scalars['DateTime']>;
+  timezone?: Maybe<Scalars['String']>;
+  actions?: Maybe<ContentReleasesReleaseActionRelationResponseCollection>;
+  createdAt?: Maybe<Scalars['DateTime']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+
+export type ContentReleasesReleaseActionsArgs = {
+  filters?: InputMaybe<ContentReleasesReleaseActionFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ContentReleasesReleaseEntity = {
+  __typename?: 'ContentReleasesReleaseEntity';
+  id?: Maybe<Scalars['ID']>;
+  attributes?: Maybe<ContentReleasesRelease>;
+};
+
+export type ContentReleasesReleaseEntityResponse = {
+  __typename?: 'ContentReleasesReleaseEntityResponse';
+  data?: Maybe<ContentReleasesReleaseEntity>;
+};
+
+export type ContentReleasesReleaseEntityResponseCollection = {
+  __typename?: 'ContentReleasesReleaseEntityResponseCollection';
+  data: Array<ContentReleasesReleaseEntity>;
+  meta: ResponseCollectionMeta;
+};
+
+export enum Enum_Contentreleasesreleaseaction_Type {
+  Publish = 'publish',
+  Unpublish = 'unpublish'
+}
+
+export type ContentReleasesReleaseActionFiltersInput = {
+  id?: InputMaybe<IdFilterInput>;
+  type?: InputMaybe<StringFilterInput>;
+  contentType?: InputMaybe<StringFilterInput>;
+  locale?: InputMaybe<StringFilterInput>;
+  release?: InputMaybe<ContentReleasesReleaseFiltersInput>;
+  createdAt?: InputMaybe<DateTimeFilterInput>;
+  updatedAt?: InputMaybe<DateTimeFilterInput>;
+  and?: InputMaybe<Array<InputMaybe<ContentReleasesReleaseActionFiltersInput>>>;
+  or?: InputMaybe<Array<InputMaybe<ContentReleasesReleaseActionFiltersInput>>>;
+  not?: InputMaybe<ContentReleasesReleaseActionFiltersInput>;
+};
+
+export type ContentReleasesReleaseActionInput = {
+  type?: InputMaybe<Enum_Contentreleasesreleaseaction_Type>;
+  contentType?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+  release?: InputMaybe<Scalars['ID']>;
+};
+
+export type ContentReleasesReleaseAction = {
+  __typename?: 'ContentReleasesReleaseAction';
+  type: Enum_Contentreleasesreleaseaction_Type;
+  entry?: Maybe<GenericMorph>;
+  contentType: Scalars['String'];
+  locale?: Maybe<Scalars['String']>;
+  release?: Maybe<ContentReleasesReleaseEntityResponse>;
+  createdAt?: Maybe<Scalars['DateTime']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+export type ContentReleasesReleaseActionEntity = {
+  __typename?: 'ContentReleasesReleaseActionEntity';
+  id?: Maybe<Scalars['ID']>;
+  attributes?: Maybe<ContentReleasesReleaseAction>;
+};
+
+export type ContentReleasesReleaseActionEntityResponse = {
+  __typename?: 'ContentReleasesReleaseActionEntityResponse';
+  data?: Maybe<ContentReleasesReleaseActionEntity>;
+};
+
+export type ContentReleasesReleaseActionEntityResponseCollection = {
+  __typename?: 'ContentReleasesReleaseActionEntityResponseCollection';
+  data: Array<ContentReleasesReleaseActionEntity>;
+  meta: ResponseCollectionMeta;
+};
+
+export type ContentReleasesReleaseActionRelationResponseCollection = {
+  __typename?: 'ContentReleasesReleaseActionRelationResponseCollection';
+  data: Array<ContentReleasesReleaseActionEntity>;
+};
+
 export type I18NLocaleFiltersInput = {
   id?: InputMaybe<IdFilterInput>;
   name?: InputMaybe<StringFilterInput>;
@@ -573,6 +688,53 @@ export type UsersPermissionsUserEntityResponseCollection = {
 export type UsersPermissionsUserRelationResponseCollection = {
   __typename?: 'UsersPermissionsUserRelationResponseCollection';
   data: Array<UsersPermissionsUserEntity>;
+};
+
+export type PageFiltersInput = {
+  id?: InputMaybe<IdFilterInput>;
+  title?: InputMaybe<StringFilterInput>;
+  slug?: InputMaybe<StringFilterInput>;
+  body?: InputMaybe<StringFilterInput>;
+  createdAt?: InputMaybe<DateTimeFilterInput>;
+  updatedAt?: InputMaybe<DateTimeFilterInput>;
+  publishedAt?: InputMaybe<DateTimeFilterInput>;
+  and?: InputMaybe<Array<InputMaybe<PageFiltersInput>>>;
+  or?: InputMaybe<Array<InputMaybe<PageFiltersInput>>>;
+  not?: InputMaybe<PageFiltersInput>;
+};
+
+export type PageInput = {
+  title?: InputMaybe<Scalars['String']>;
+  slug?: InputMaybe<Scalars['String']>;
+  body?: InputMaybe<Scalars['String']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']>;
+};
+
+export type Page = {
+  __typename?: 'Page';
+  title: Scalars['String'];
+  slug: Scalars['String'];
+  body: Scalars['String'];
+  createdAt?: Maybe<Scalars['DateTime']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+  publishedAt?: Maybe<Scalars['DateTime']>;
+};
+
+export type PageEntity = {
+  __typename?: 'PageEntity';
+  id?: Maybe<Scalars['ID']>;
+  attributes?: Maybe<Page>;
+};
+
+export type PageEntityResponse = {
+  __typename?: 'PageEntityResponse';
+  data?: Maybe<PageEntity>;
+};
+
+export type PageEntityResponseCollection = {
+  __typename?: 'PageEntityResponseCollection';
+  data: Array<PageEntity>;
+  meta: ResponseCollectionMeta;
 };
 
 export enum Enum_Person_Role {
@@ -874,7 +1036,7 @@ export type TagRelationResponseCollection = {
   data: Array<TagEntity>;
 };
 
-export type GenericMorph = UploadFile | UploadFolder | I18NLocale | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | Person | Post | SiteSetting | Stream | Tag;
+export type GenericMorph = UploadFile | UploadFolder | ContentReleasesRelease | ContentReleasesReleaseAction | I18NLocale | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | Page | Person | Post | SiteSetting | Stream | Tag;
 
 export type FileInfoInput = {
   name?: InputMaybe<Scalars['String']>;
@@ -951,12 +1113,18 @@ export type Query = {
   uploadFiles?: Maybe<UploadFileEntityResponseCollection>;
   uploadFolder?: Maybe<UploadFolderEntityResponse>;
   uploadFolders?: Maybe<UploadFolderEntityResponseCollection>;
+  contentReleasesRelease?: Maybe<ContentReleasesReleaseEntityResponse>;
+  contentReleasesReleases?: Maybe<ContentReleasesReleaseEntityResponseCollection>;
+  contentReleasesReleaseAction?: Maybe<ContentReleasesReleaseActionEntityResponse>;
+  contentReleasesReleaseActions?: Maybe<ContentReleasesReleaseActionEntityResponseCollection>;
   i18NLocale?: Maybe<I18NLocaleEntityResponse>;
   i18NLocales?: Maybe<I18NLocaleEntityResponseCollection>;
   usersPermissionsRole?: Maybe<UsersPermissionsRoleEntityResponse>;
   usersPermissionsRoles?: Maybe<UsersPermissionsRoleEntityResponseCollection>;
   usersPermissionsUser?: Maybe<UsersPermissionsUserEntityResponse>;
   usersPermissionsUsers?: Maybe<UsersPermissionsUserEntityResponseCollection>;
+  page?: Maybe<PageEntityResponse>;
+  pages?: Maybe<PageEntityResponseCollection>;
   person?: Maybe<PersonEntityResponse>;
   people?: Maybe<PersonEntityResponseCollection>;
   post?: Maybe<PostEntityResponse>;
@@ -989,6 +1157,30 @@ export type QueryUploadFolderArgs = {
 
 export type QueryUploadFoldersArgs = {
   filters?: InputMaybe<UploadFolderFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+export type QueryContentReleasesReleaseArgs = {
+  id?: InputMaybe<Scalars['ID']>;
+};
+
+
+export type QueryContentReleasesReleasesArgs = {
+  filters?: InputMaybe<ContentReleasesReleaseFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+export type QueryContentReleasesReleaseActionArgs = {
+  id?: InputMaybe<Scalars['ID']>;
+};
+
+
+export type QueryContentReleasesReleaseActionsArgs = {
+  filters?: InputMaybe<ContentReleasesReleaseActionFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
@@ -1027,6 +1219,19 @@ export type QueryUsersPermissionsUsersArgs = {
   filters?: InputMaybe<UsersPermissionsUserFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+export type QueryPageArgs = {
+  id?: InputMaybe<Scalars['ID']>;
+};
+
+
+export type QueryPagesArgs = {
+  filters?: InputMaybe<PageFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  publicationState?: InputMaybe<PublicationState>;
 };
 
 
@@ -1089,6 +1294,15 @@ export type Mutation = {
   createUploadFolder?: Maybe<UploadFolderEntityResponse>;
   updateUploadFolder?: Maybe<UploadFolderEntityResponse>;
   deleteUploadFolder?: Maybe<UploadFolderEntityResponse>;
+  createContentReleasesRelease?: Maybe<ContentReleasesReleaseEntityResponse>;
+  updateContentReleasesRelease?: Maybe<ContentReleasesReleaseEntityResponse>;
+  deleteContentReleasesRelease?: Maybe<ContentReleasesReleaseEntityResponse>;
+  createContentReleasesReleaseAction?: Maybe<ContentReleasesReleaseActionEntityResponse>;
+  updateContentReleasesReleaseAction?: Maybe<ContentReleasesReleaseActionEntityResponse>;
+  deleteContentReleasesReleaseAction?: Maybe<ContentReleasesReleaseActionEntityResponse>;
+  createPage?: Maybe<PageEntityResponse>;
+  updatePage?: Maybe<PageEntityResponse>;
+  deletePage?: Maybe<PageEntityResponse>;
   createPerson?: Maybe<PersonEntityResponse>;
   updatePerson?: Maybe<PersonEntityResponse>;
   deletePerson?: Maybe<PersonEntityResponse>;
@@ -1161,6 +1375,54 @@ export type MutationUpdateUploadFolderArgs = {
 
 
 export type MutationDeleteUploadFolderArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type MutationCreateContentReleasesReleaseArgs = {
+  data: ContentReleasesReleaseInput;
+};
+
+
+export type MutationUpdateContentReleasesReleaseArgs = {
+  id: Scalars['ID'];
+  data: ContentReleasesReleaseInput;
+};
+
+
+export type MutationDeleteContentReleasesReleaseArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type MutationCreateContentReleasesReleaseActionArgs = {
+  data: ContentReleasesReleaseActionInput;
+};
+
+
+export type MutationUpdateContentReleasesReleaseActionArgs = {
+  id: Scalars['ID'];
+  data: ContentReleasesReleaseActionInput;
+};
+
+
+export type MutationDeleteContentReleasesReleaseActionArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type MutationCreatePageArgs = {
+  data: PageInput;
+};
+
+
+export type MutationUpdatePageArgs = {
+  id: Scalars['ID'];
+  data: PageInput;
+};
+
+
+export type MutationDeletePageArgs = {
   id: Scalars['ID'];
 };
 
