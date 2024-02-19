@@ -56,6 +56,7 @@ export default {
 			fontFamily: {
 				sans: ['Urbanist', 'sans-serif'],
 				title: ['Oxanium', 'sans-serif'],
+				quote: ['Playpen Sans', 'serif'],
 			},
 		},
 	},
