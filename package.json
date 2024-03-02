@@ -52,6 +52,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@auth/sveltekit": "^0.14.0",
 		"lucide-svelte": "^0.292.0",
 		"tailwind-variants": "^0.1.20"
 	}
