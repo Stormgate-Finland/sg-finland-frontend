@@ -27,6 +27,7 @@
 		"@types/qs": "^6.9.11",
 		"@typescript-eslint/eslint-plugin": "^6.20.0",
 		"@typescript-eslint/parser": "^6.20.0",
+		"@types/node": "^20.11.24",
 		"autoprefixer": "^10.4.17",
 		"clsx": "^2.1.0",
 		"cssnano": "^6.0.3",
@@ -52,7 +53,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@auth/sveltekit": "^0.14.0",
 		"lucide-svelte": "^0.292.0",
 		"tailwind-variants": "^0.1.20"
 	}

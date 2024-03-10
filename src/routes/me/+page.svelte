@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 
-	const { session } = $page.data;
+	const { user } = $page.data;
 </script>
 
 <h1>My profile</h1>
 
 <p>
-	{#if session}
+	{#if user}
 		<span class="signedInText">
 			<small>Signed in as</small><br />
-			<strong>{session.user?.name ?? 'User'}</strong>
+			<strong>{user.username ?? 'User'}</strong>
 		</span>
 	{/if}
 </p>

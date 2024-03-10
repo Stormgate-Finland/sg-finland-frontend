@@ -3,6 +3,7 @@
 	let path: string;
 
 	$: path = $page.url.pathname;
+	const { user } = $page.data;
 </script>
 
 <aside class="sticky top-4 hidden h-full w-64 border-r-2 border-primary py-2 pr-4 lg:flex">
@@ -24,6 +25,23 @@
 			<li class="text-sm">
 				<a target="_blank" href="https://playstormgate.com/">PlayStormgate.com</a>
 			</li>
+
+			<li class="mt-4 border-t-2 pt-2">
+				{#if user}
+					<a href="/me" data-active={path === '/me'} class="data-[active=true]:bg-primary"
+						>My profile</a
+					>
+				{:else}
+					<a href="/login" data-active={path === '/login'} class="data-[active=true]:bg-primary"
+						>Login</a
+					>
+				{/if}
+			</li>
+			{#if user}
+				<li>
+					<a href="/logout">Logout</a>
+				</li>
+			{/if}
 		</ul>
 	</nav>
 </aside>

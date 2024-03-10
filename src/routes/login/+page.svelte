@@ -1,17 +1,13 @@
 <script>
-	import { SignIn, SignOut } from '@auth/sveltekit/components';
 	import { page } from '$app/stores';
+
+	const loginUrl =
+		'https://discord.com/oauth2/authorize?client_id=1213378673458290738&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5173%2Fauth%2Fcallback%2Fdiscord&scope=identify+email+connections';
 </script>
 
 <h1>Login</h1>
 <div>
-	{#if $page.data.session}
-		<span class="signedInText">
-			<small>Signed in as</small><br />
-			<strong>{$page.data.session.user?.name ?? 'User'}</strong>
-		</span>
-		<SignOut signInPage="auth/signout" />
-	{:else}
-		<SignIn provider="discord" signInPage="auth/signin" class="m-4" />
-	{/if}
+	<p>
+		<a href={loginUrl}>Login with Discord</a>
+	</p>
 </div>

@@ -5,6 +5,6 @@ export const load: LayoutServerLoad = async (event) => {
 	const siteSettings = await getSiteSettings();
 	return {
 		siteSettings: siteSettings?.data ?? null,
-		session: await event.locals.auth(),
+		user: event.locals.user ?? null,
 	};
 };
