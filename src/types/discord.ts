@@ -12,15 +12,37 @@ export type DiscordUserResponse = {
 	avatar: string;
 	discriminator: string;
 	public_flags: number;
-	premium_type: number;
-	flags: number;
-	banner: string | null;
-	accent_color: string | null;
+	premium_type?: number;
+	flags?: number;
+	banner?: string | null;
+	accent_color?: string;
 	global_name: string;
 	avatar_decoration_data: string | null;
-	banner_color: string | null;
-	mfa_enabled: boolean;
-	locale: string;
+	banner_color?: string | null;
+	mfa_enabled?: boolean;
+	locale?: string;
 	email?: string;
 	verified: boolean;
+	bot?: boolean;
 };
+
+export type DiscordUserConnectionsResponse = [
+	{
+		id: string;
+		name: string;
+		type: string;
+		revoked?: boolean;
+		integrations?: unknown[];
+		verified: boolean;
+		friend_sync: boolean;
+		show_activity: boolean;
+		two_way_link: boolean;
+		visibility: DiscordVisibility;
+		metadata_visibility: DiscordVisibility;
+	},
+];
+
+export enum DiscordVisibility {
+	PRIVATE = 0,
+	PUBLIC = 1,
+}

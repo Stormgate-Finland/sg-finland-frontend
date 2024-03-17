@@ -1,13 +1,21 @@
 <script>
 	import { page } from '$app/stores';
 
-	const loginUrl =
-		'https://discord.com/oauth2/authorize?client_id=1213378673458290738&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5173%2Fauth%2Fcallback%2Fdiscord&scope=identify+email+connections';
+	const { user } = $page.data;
+
+	export let data;
 </script>
 
 <h1>Login</h1>
-<div>
+
+{#if user?.username}
 	<p>
-		<a href={loginUrl}>Login with Discord</a>
+		You are already logged in as:<br />
+		<strong>{user.username}</strong>
 	</p>
-</div>
+	<p><a href="/logout">Logout instead?</a></p>
+{:else}
+	<p>
+		<a href={data.connectWithDiscordUrl} data-sveltekit-preload-data="off">Login with Discord</a>
+	</p>
+{/if}

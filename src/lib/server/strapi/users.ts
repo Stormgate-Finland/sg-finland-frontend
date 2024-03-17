@@ -3,7 +3,7 @@ import type {
 	UsersPermissionsUserEntityResponse,
 	UsersPermissionsUserEntityResponseCollection,
 } from '$types/generated/strapi';
-import { strapiFetch } from './utils';
+import { strapiFetch, strapiMutation } from './utils';
 import type { StrapiQuery } from '$types/strapiQuery';
 
 const endpoint = '/api/users';
@@ -26,4 +26,13 @@ export async function getUser(id: string | number, query?: StrapiQuery) {
 
 export async function getMe(authToken: string) {
 	return strapiFetch<UsersPermissionsMe>(endpoint + '/me', undefined, authToken);
+}
+
+export async function updateUser(id: string, body: unknown, authToken: string) {
+	return strapiMutation<UsersPermissionsUserEntityResponse>(
+		`${endpoint}/${id}`,
+		'PUT',
+		body,
+		authToken,
+	);
 }
