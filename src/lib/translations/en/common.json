@@ -1,0 +1,30 @@
+{
+	"navigation": {
+		"home": "Home",
+		"news": "News",
+		"streams": "Streams",
+		"login": "Login"
+	},
+	"footer": {
+		"about": "About",
+		"contact": "Contanct"
+	},
+	"post": {
+		"writtenBy": "written by",
+		"readMore": "Read more"
+	},
+	"posts": {
+		"title": "News"
+	},
+	"streams": {
+		"title": "Streams",
+		"comingSoon": "Coming soon...",
+		"inTheMeanTime": "In the mean time, go check out stream over at <a href='https://www.twitch.tv/directory/category/stormgate'>Twitch</a>!"
+	},
+	"me": {
+		"title": "My profile",
+		"signedInAs": "Signed in as",
+		"connections": "Connected profiles",
+		"logout": "Logout"
+	}
+}

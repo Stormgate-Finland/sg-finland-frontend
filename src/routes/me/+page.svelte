@@ -1,11 +1,12 @@
 <script lang="ts">
+	import { t } from '$/lib/translations/index.js';
 	import { page } from '$app/stores';
 	const { user } = $page.data;
 	export let data;
 	const { connections } = data;
 </script>
 
-<h1>My profile</h1>
+<h1>{$t('me.title')}</h1>
 
 <p>
 	{#if user}
@@ -15,17 +16,17 @@
 			{/if}
 			<div class="flex flex-col gap-4">
 				<p>
-					<small>Signed in as</small><br />
+					<small>{$t('me.signedInAs')}</small><br />
 					<strong>{user.username ?? 'User'}</strong>
 				</p>
 				<h3>
-					<a href="/logout">Logout</a>
+					<a href="/logout">{$t('me.logout')}</a>
 				</h3>
 			</div>
 		</div>
 		{#if connections}
 			<div class="space-y-2 pt-4">
-				<h3>Connections</h3>
+				<h3>{$t('me.connections')}</h3>
 				<ul>
 					{#each connections as connection (connection.id)}
 						<li>

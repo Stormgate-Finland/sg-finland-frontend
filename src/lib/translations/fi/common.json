@@ -1,0 +1,30 @@
+{
+	"navigation": {
+		"home": "Etusivu",
+		"news": "Uutiset",
+		"streams": "Striimit",
+		"login": "Kirjaudu"
+	},
+	"footer": {
+		"about": "Tietoa",
+		"contact": "Yhteystiedot"
+	},
+	"post": {
+		"writtenBy": "kirjoittanut",
+		"readMore": "Lue lisää"
+	},
+	"posts": {
+		"title": "Uutiset"
+	},
+	"streams": {
+		"heading": "Striimit",
+		"comingSoon": "Tulossa pian...",
+		"inTheMeanTime": "Sillä aikaa käy katsomassa lähetykset <a href='https://www.twitch.tv/directory/category/stormgate'>Twitchin puolella</a>!"
+	},
+	"me": {
+		"title": "Oma profiili",
+		"signedInAs": "Kirjautuneena",
+		"connections": "Yhdistetyt profiilit",
+		"logout": "Kirjaudu ulos"
+	}
+}

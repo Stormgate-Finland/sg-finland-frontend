@@ -1,16 +1,15 @@
 <script lang="ts">
+	import { t } from '$/lib/translations';
 </script>
 
 <div class="space-y-6">
-	<h1>Streams</h1>
+	<h1>{$t('streams.heading')}</h1>
 
 	<div class="markdown">
-		<p><i>Coming soon.</i></p>
+		<p><i>{$t('streams.comingSoon')}</i></p>
 
 		<p>
-			In the meantime, check out <a href="https://www.twitch.tv/directory/category/stormgate"
-				>twitch.tv stormgate category</a
-			>.
+			{@html $t('streams.inTheMeanTime')}
 		</p>
 	</div>
 </div>

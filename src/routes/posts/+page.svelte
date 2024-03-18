@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { t } from '$/lib/translations';
 	import Pagination from '$components/Pagination.svelte';
 	import PostCard from '$components/PostCard.svelte';
 
@@ -7,7 +8,7 @@
 </script>
 
 <div class="space-y-6">
-	<h1>News</h1>
+	<h1>{$t('posts.title')}</h1>
 
 	{#each posts.data as post}
 		<PostCard {post} />

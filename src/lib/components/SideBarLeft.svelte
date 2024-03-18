@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { t } from '../translations';
 	let path: string;
 
 	$: path = $page.url.pathname;
@@ -14,7 +15,7 @@
 					href="/"
 					data-active={path === '/'}
 					class="border-l-4 border-l-transparent data-[active=true]:border-l-4 data-[active=true]:border-l-primary"
-					>Home</a
+					>{$t('navigation.home')}</a
 				>
 			</li>
 			<li>
@@ -22,7 +23,7 @@
 					href="/posts"
 					data-active={path === '/posts'}
 					class="border-l-4 border-l-transparent data-[active=true]:border-l-4 data-[active=true]:border-l-primary"
-					>News</a
+					>{$t('navigation.news')}</a
 				>
 			</li>
 			<li>
@@ -30,7 +31,7 @@
 					href="/streams"
 					data-active={path === '/streams'}
 					class="border-l-4 border-l-transparent data-[active=true]:border-l-4 data-[active=true]:border-l-primary"
-					>Streams</a
+					>{$t('navigation.streams')}</a
 				>
 			</li>
 			<li class="text-sm">
@@ -57,7 +58,7 @@
 						href="/login"
 						data-active={path === '/login'}
 						class=" border-l-4 border-l-transparent data-[active=true]:border-l-4 data-[active=true]:border-l-primary"
-						>Login</a
+						>{$t('navigation.login')}</a
 					>
 				{/if}
 			</li>
