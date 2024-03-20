@@ -26,5 +26,31 @@
 		"signedInAs": "Signed in as",
 		"connections": "Connected profiles",
 		"logout": "Logout"
+	},
+	"callback": {
+		"discord": {
+			"heading": "Loggin you in with Discord...",
+			"holdOn": "Please hold on."
+		}
+	},
+	"login": {
+		"heading": "Login",
+		"loggedIn": "You are already logged in as",
+		"logout": "Logout instead?",
+		"loginWithDiscord": "Login with Discord"
+	},
+	"logout": {
+		"heading": "Log out",
+		"loggingOut": "Logging you out...",
+		"loggedOut": "You are now logged out."
+	},
+	"errorPage": {
+		"heading404": "Page not found!",
+		"heading500": "Yikes!",
+		"somethingWentWrong": "Something went wrong when we tried to render this page.",
+		"errorMessage": "Encountered a {status} error.",
+		"tryAgain": "Please try reloading the page.",
+		"offline": "It looks like you're offline",
+		"reload": "Reload the page once you've found the internet."
 	}
 }

@@ -1,21 +1,24 @@
 <script>
 	import { page } from '$app/stores';
+	import { t } from '$/lib/translations';
 
 	const { user } = $page.data;
 
 	export let data;
 </script>
 
-<h1>Login</h1>
+<h1>{$t('login.heading')}</h1>
 
 {#if user?.username}
 	<p>
-		You are already logged in as:<br />
+		{$t('login.loggedIn')}:<br />
 		<strong>{user.username}</strong>
 	</p>
-	<p><a href="/logout">Logout instead?</a></p>
+	<p><a href="/logout">{$t('login.logout')}</a></p>
 {:else}
 	<p>
-		<a href={data.connectWithDiscordUrl} data-sveltekit-preload-data="off">Login with Discord</a>
+		<a href={data.connectWithDiscordUrl} data-sveltekit-preload-data="off"
+			>{$t('login.loginWithDiscord')}</a
+		>
 	</p>
 {/if}

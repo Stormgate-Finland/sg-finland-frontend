@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { t } from '$/lib/translations/index.js';
+	import { t } from '$/lib/translations';
 	import { page } from '$app/stores';
 	const { user } = $page.data;
 	export let data;

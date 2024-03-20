@@ -26,5 +26,22 @@
 		"signedInAs": "Kirjautuneena",
 		"connections": "Yhdistetyt profiilit",
 		"logout": "Kirjaudu ulos"
+	},
+	"callback": {
+		"discord": {
+			"heading": "Kirjaudutaan sisään Discordin kautta....",
+			"holdOn": "Ole hyvä ja odota hetki."
+		}
+	},
+	"login": {
+		"heading": "Kirjaudu sisään",
+		"loggedIn": "Olet jo kirjautuneena sisään käyttäjänä",
+		"logout": "Kirjaudu ulos?",
+		"loginWithDiscord": "Kirjaudu sisään Discordilla"
+	},
+	"logout": {
+		"heading": "Kirjaudu ulos",
+		"loggingOut": "Kirjaudutaan ulos....",
+		"loggedOut": "Olet nyt kirjautunut ulos."
 	}
 }

@@ -1,3 +1,5 @@
+export const prerender = 'auto';
+
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { getPost } from '$lib/server/strapi/posts';

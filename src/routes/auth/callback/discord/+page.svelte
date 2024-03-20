@@ -1,3 +1,7 @@
-<h1>Loggin you in with Discord...</h1>
+<script lang="ts">
+	import { t } from '$/lib/translations';
+</script>
 
-<p>Please hold on.</p>
+<h1>{$t('callback.discord.heading')}</h1>
+
+<p>{$t('callback.discord.holdOn')}</p>

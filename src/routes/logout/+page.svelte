@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { t } from '$/lib/translations';
 
 	const { user } = $page.data;
 	if (user) {
@@ -8,12 +9,12 @@
 	}
 </script>
 
-<h1>Log out</h1>
+<h1>{$t('logout.heading')}</h1>
 
 <p>
 	{#if user}
-		Logging you out...
+		{$t('logout.loggingOut')}
 	{:else}
-		You are now logged out.
+		{$t('logout.loggedOut')}
 	{/if}
 </p>

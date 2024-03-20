@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { t } from '../translations';
+	import { t } from '$lib/translations';
 	let path: string;
 
 	$: path = $page.url.pathname;

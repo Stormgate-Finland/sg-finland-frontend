@@ -3,6 +3,7 @@
 	import clsx from 'clsx';
 	import CloseIcon from '$assets/icons/cross.svg?component';
 	import MenuIcon from '$assets/icons/menu.svg?component';
+	import { t } from '$lib/translations';
 
 	let path: string;
 
@@ -38,7 +39,7 @@
 					href="/"
 					data-active={path === '/'}
 					class="data-[active=true]:bg-primary"
-					on:click={toggleMenu}>Home</a
+					on:click={toggleMenu}>{$t('navigation.home')}</a
 				>
 			</li>
 			<li>
@@ -46,7 +47,7 @@
 					href="/posts"
 					data-active={path === '/posts'}
 					class="data-[active=true]:bg-primary"
-					on:click={toggleMenu}>News</a
+					on:click={toggleMenu}>{$t('navigation.news')}</a
 				>
 			</li>
 			<li>
@@ -54,7 +55,7 @@
 					href="/streams"
 					data-active={path === '/streams'}
 					class="data-[active=true]:bg-primary"
-					on:click={toggleMenu}>Streams</a
+					on:click={toggleMenu}>{$t('navigation.streams')}</a
 				>
 			</li>
 			<li class="text-sm">
