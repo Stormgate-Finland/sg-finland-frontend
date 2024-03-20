@@ -16,9 +16,9 @@
 	/>
 	<div class="flex gap-4 pt-3">
 		<div class="flex basis-7/12 flex-col gap-4">
-			<div class="markdown line-clamp-5 text-ellipsis">
+			<div class="line-clamp-5 text-ellipsis">
 				{#if post.attributes?.ingress}
-					<div class="font-bold">
+					<div class="pb-4 font-bold">
 						{post.attributes.ingress}
 					</div>
 				{/if}

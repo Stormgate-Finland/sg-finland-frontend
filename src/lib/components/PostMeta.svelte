@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Time from 'svelte-time';
+	import { t } from '$lib/translations';
 
 	export let author: string | undefined;
 	export let createdAt: Date;
@@ -10,7 +11,7 @@
 	<Time timestamp={createdAt} format="D.M.YYYY" />
 	{#if author}
 		{#if long}
-			written by
+			<span class="text-sm">{$t('post.writtenBy')}</span>
 		{/if}
 		{`@${author}`}
 	{/if}

@@ -10,7 +10,7 @@
 		<a href="/contact">{$t('footer.contact')}</a>
 	</nav>
 
-	<div class="font-mono">
+	<div class="font-mono text-muted-foreground">
 		© stormgate.fi {new Date().getFullYear()}
 	</div>
 </footer>
