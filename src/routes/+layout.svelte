@@ -19,7 +19,7 @@
 	<div class="flex h-full w-full max-w-screen-xl grow flex-col justify-center px-2 md:px-4">
 		<div class="flex flex-1 justify-center gap-10">
 			<SideBarLeft />
-			<main class="max-w-full flex-1 lg:max-w-screen-md">
+			<main class="max-w-full flex-1 sm:max-w-screen-md">
 				<slot />
 			</main>
 			<SideBarRight />

@@ -8,9 +8,6 @@ export default {
 		container: {
 			center: true,
 			padding: '2rem',
-			screens: {
-				'2xl': '1400px',
-			},
 		},
 		extend: {
 			colors: {
@@ -58,6 +55,10 @@ export default {
 				sans: ['Urbanist', 'sans-serif'],
 				title: ['Oxanium', 'sans-serif'],
 				quote: ['Playpen Sans', 'serif'],
+			},
+			screens: {
+				xs: '375px',
+				'2xl': '1400px',
 			},
 		},
 	},

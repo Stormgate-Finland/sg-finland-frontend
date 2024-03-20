@@ -26,7 +26,7 @@
 			/>
 		</div>
 		{#if post.attributes?.ingress}
-			<div class="line-clamp-2 text-ellipsis text-sm">
+			<div class="line-clamp-1 text-ellipsis text-sm sm:line-clamp-2">
 				{post.attributes.ingress}
 			</div>
 		{/if}
