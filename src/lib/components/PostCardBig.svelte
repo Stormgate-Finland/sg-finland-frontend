@@ -17,9 +17,11 @@
 	<div class="flex gap-4">
 		<div class="flex basis-7/12 flex-col gap-4">
 			<div class="markdown line-clamp-5 text-ellipsis">
-				<div class="font-bold">
-					{post.attributes?.ingress}
-				</div>
+				{#if post.attributes?.ingress}
+					<div class="font-bold">
+						{post.attributes.ingress}
+					</div>
+				{/if}
 				<SvelteMarkdown source={post.attributes?.body.slice(0, 300)} />
 			</div>
 			<div>

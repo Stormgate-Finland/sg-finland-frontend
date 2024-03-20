@@ -25,9 +25,11 @@
 				createdAt={post.attributes?.createdAt}
 			/>
 		</div>
-		<div class="line-clamp-1 text-ellipsis text-sm">
-			{post.attributes?.ingress}
-		</div>
+		{#if post.attributes?.ingress}
+			<div class="line-clamp-1 text-ellipsis text-sm">
+				{post.attributes.ingress}
+			</div>
+		{/if}
 		<div class="text-sm">
 			<ReadMoreLink href={`/posts/${post.attributes?.slug}`} />
 		</div>

@@ -17,7 +17,7 @@
 
 {#if post.attributes?.ingress}
 	<div class="pt-2 font-bold">
-		{post.attributes?.ingress}
+		{post.attributes.ingress}
 	</div>
 {/if}
 
