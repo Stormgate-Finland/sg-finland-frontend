@@ -13,7 +13,7 @@
 			<Image
 				src={post.attributes?.image.data?.attributes?.url}
 				alt={post.attributes?.image?.data?.attributes?.alternativeText}
-				class="aspect-video w-full object-cover object-center"
+				class="aspect-video h-full max-w-full object-cover object-center"
 			/>
 		</a>
 	</div>
@@ -26,7 +26,7 @@
 			/>
 		</div>
 		{#if post.attributes?.ingress}
-			<div class="line-clamp-1 text-ellipsis text-sm">
+			<div class="line-clamp-2 text-ellipsis text-sm">
 				{post.attributes.ingress}
 			</div>
 		{/if}
