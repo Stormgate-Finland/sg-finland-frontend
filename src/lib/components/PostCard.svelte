@@ -17,9 +17,9 @@
 			/>
 		</a>
 	</div>
-	<div class="flex basis-8/12 flex-col gap-1">
+	<div class="flex basis-8/12 flex-col">
 		<h5>{post.attributes?.title}</h5>
-		<div class="text-sm">
+		<div class="pb-2 text-sm">
 			<PostMeta
 				author={post.attributes?.author?.data?.attributes?.username}
 				createdAt={post.attributes?.createdAt}

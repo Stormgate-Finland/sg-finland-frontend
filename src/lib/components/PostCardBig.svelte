@@ -8,13 +8,13 @@
 	export let post: PostEntity;
 </script>
 
-<div class="space-y-1">
+<div>
 	<h3>{post.attributes?.title}</h3>
 	<PostMeta
 		author={post.attributes?.author?.data?.attributes?.username}
 		createdAt={post.attributes?.createdAt}
 	/>
-	<div class="flex gap-4">
+	<div class="flex gap-4 pt-3">
 		<div class="flex basis-7/12 flex-col gap-4">
 			<div class="markdown line-clamp-5 text-ellipsis">
 				{#if post.attributes?.ingress}
