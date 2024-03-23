@@ -27,13 +27,24 @@
 		{#if connections}
 			<div class="space-y-2 pt-4">
 				<h3>{$t('me.connections')}</h3>
-				<ul>
-					{#each connections as connection (connection.id)}
-						<li>
-							{connection.attributes?.provider}: {connection.attributes?.externalName}
-						</li>
-					{/each}
-				</ul>
+				<table>
+					<thead>
+						<tr>
+							<th class="pr-4">{$t('me.provider')}</th>
+							<th class="pr-4">{$t('me.username')}</th>
+							<th>{$t('me.public')}</th>
+						</tr>
+					</thead>
+					<tbody>
+						{#each connections as connection (connection.id)}
+							<tr>
+								<td class="pr-4">{connection.attributes?.provider}</td>
+								<td class="pr-4">{connection.attributes?.externalName}</td>
+								<td>{connection.attributes?.private ? '❌' : '✅'}</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
 			</div>
 		{/if}
 	{/if}

@@ -25,7 +25,10 @@
 		"title": "My profile",
 		"signedInAs": "Signed in as",
 		"connections": "Connected profiles",
-		"logout": "Logout"
+		"logout": "Logout",
+		"provider": "Provider",
+		"username": "Username",
+		"public": "Public"
 	},
 	"callback": {
 		"discord": {

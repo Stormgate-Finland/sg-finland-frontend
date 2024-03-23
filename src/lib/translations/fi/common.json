@@ -25,7 +25,10 @@
 		"title": "Oma profiili",
 		"signedInAs": "Kirjautuneena",
 		"connections": "Yhdistetyt profiilit",
-		"logout": "Kirjaudu ulos"
+		"logout": "Kirjaudu ulos",
+		"provider": "Tarjoaja",
+		"username": "Käyttäjänimi",
+		"public": "Julkinen"
 	},
 	"callback": {
 		"discord": {
