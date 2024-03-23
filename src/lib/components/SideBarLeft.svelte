@@ -41,7 +41,7 @@
 			</li>
 
 			<li class="mt-4 border-t-2 pt-2">
-				{#if user}
+				{#if user?.username}
 					<a
 						class="flex items-center gap-2 border-l-4 border-l-transparent data-[active=true]:border-l-4 data-[active=true]:border-l-primary"
 						href="/me"
