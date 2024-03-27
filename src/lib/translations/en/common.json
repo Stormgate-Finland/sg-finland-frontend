@@ -28,12 +28,18 @@
 		"logout": "Logout",
 		"provider": "Provider",
 		"username": "Username",
-		"public": "Public"
+		"public": "Public",
+		"connectSteam": "Connect Steam"
 	},
 	"callback": {
 		"discord": {
 			"heading": "Loggin you in with Discord...",
 			"holdOn": "Please hold on."
+		},
+		"steam": {
+			"heading": "Connecting you with Steam...",
+			"holdOn": "Please hold on.",
+			"success": "Successfully connected with Steam!"
 		}
 	},
 	"login": {

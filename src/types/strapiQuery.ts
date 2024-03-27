@@ -48,3 +48,14 @@ export type StrapiQuery<T = StrapiQueryFilters, E = void> = {
 	publicationState?: PublicationState;
 	locale?: string[];
 };
+
+export type StrapiError = {
+	status: number;
+	name: string;
+	message: string;
+	details: unknown;
+};
+
+export type StrapiMutationResponse<T> = T & {
+	error?: StrapiError;
+};

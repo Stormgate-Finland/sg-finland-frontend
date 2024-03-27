@@ -1,7 +1,7 @@
 import { stringify } from 'qs';
 import { PUBLIC_CMS_URL } from '$env/static/public';
 import { CMS_API_KEY } from '$env/static/private';
-import { FilterOperator, type StrapiQuery } from '$types/strapiQuery';
+import { FilterOperator, type StrapiMutationResponse, type StrapiQuery } from '$types/strapiQuery';
 
 export function strapiQuery<T>(query?: StrapiQuery<T>) {
 	if (!query) return '';
@@ -55,14 +55,20 @@ export async function strapiMutation<T>(
 	body?: unknown,
 	authToken = CMS_API_KEY,
 ) {
-	const headers = authToken ? { authorization: `Bearer ${authToken}` } : undefined;
+	const headers = {
+		'Content-Type': 'application/json',
+		...(authToken && { authorization: `Bearer ${authToken}` }),
+	};
 
 	const res = await fetch(`${PUBLIC_CMS_URL}${endpoint}`, {
 		headers,
 		method,
-		body: JSON.stringify(body),
+		body: JSON.stringify({ data: body }),
 	});
+	if (!res.ok) {
+		return null;
+	}
 
 	const data = await res.json();
-	return data as T;
+	return data as StrapiMutationResponse<T>;
 }

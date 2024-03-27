@@ -28,12 +28,18 @@
 		"logout": "Kirjaudu ulos",
 		"provider": "Tarjoaja",
 		"username": "Käyttäjänimi",
-		"public": "Julkinen"
+		"public": "Julkinen",
+		"connectSteam": "Yhdistä Steam"
 	},
 	"callback": {
 		"discord": {
 			"heading": "Kirjaudutaan sisään Discordin kautta....",
 			"holdOn": "Ole hyvä ja odota hetki."
+		},
+		"steam": {
+			"heading": "Yhdistetään Steamiin...",
+			"holdOn": "Ole hyvä ja odota hetki.",
+			"success": "Steam-yhteys onnistui!"
 		}
 	},
 	"login": {
