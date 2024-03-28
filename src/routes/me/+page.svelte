@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { t } from '$/lib/translations';
 	import { page } from '$app/stores';
+	import { Button } from '$components/ui/button';
+
 	const { user } = $page.data;
 	export let data;
 	const { connections, connectSteamUrl } = data;
@@ -15,12 +17,16 @@
 		{/if}
 		<div class="flex flex-col gap-4">
 			<p>
-				<small>{$t('me.signedInAs')}</small><br />
+				<small>{$t('me.username')}</small><br />
 				<strong>{user.username ?? 'User'}</strong>
 			</p>
-			<h3>
+			<p>
+				<small>{$t('me.email')}</small><br />
+				<strong>{user.email}</strong>
+			</p>
+			<Button variant="secondary">
 				<a href="/logout">{$t('me.logout')}</a>
-			</h3>
+			</Button>
 		</div>
 	</div>
 	{#if connections}

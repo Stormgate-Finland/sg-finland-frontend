@@ -56,6 +56,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"bits-ui": "^0.21.1",
 		"lucide-svelte": "^0.292.0",
 		"tailwind-variants": "^0.1.20"
 	}

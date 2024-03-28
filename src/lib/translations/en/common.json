@@ -29,7 +29,8 @@
 		"provider": "Provider",
 		"username": "Username",
 		"public": "Public",
-		"connectSteam": "Connect Steam"
+		"connectSteam": "Connect Steam",
+		"email": "Email"
 	},
 	"callback": {
 		"discord": {

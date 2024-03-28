@@ -29,7 +29,8 @@
 		"provider": "Tarjoaja",
 		"username": "Käyttäjänimi",
 		"public": "Julkinen",
-		"connectSteam": "Yhdistä Steam"
+		"connectSteam": "Yhdistä Steam",
+		"email": "Sähköposti"
 	},
 	"callback": {
 		"discord": {
