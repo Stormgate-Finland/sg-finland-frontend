@@ -19,10 +19,14 @@
 	"streams": {
 		"title": "Streams",
 		"comingSoon": "Coming soon...",
-		"inTheMeanTime": "In the mean time, go check out stream over at <a href='https://www.twitch.tv/directory/category/stormgate'>Twitch</a>!"
+		"inTheMeanTime": "In the mean time, go check out stream over at <a href='https://www.twitch.tv/directory/category/stormgate'>Twitch</a>!",
+		"noLiveStreams": "No live streams at the moment.",
+		"watchOn": "Watch on",
+		"noStreamsFound": "No streams found.",
+		"offlineStreams": "Offline streams"
 	},
 	"me": {
-		"title": "My profile",
+		"heading": "My profile",
 		"signedInAs": "Signed in as",
 		"connections": "Connected profiles",
 		"logout": "Logout",
@@ -30,7 +34,17 @@
 		"username": "Username",
 		"public": "Public",
 		"connectSteam": "Connect Steam",
-		"email": "Email"
+		"email": "Email",
+		"deleteAccount": "Delete account",
+		"delete": "Delete"
+	},
+	"deleteAccount": {
+		"heading": "Delete account",
+		"deleting": "Deleting your account...",
+		"deleted": "Your account has been deleted.",
+		"confirm": "Are you sure you want to delete your account?",
+		"confirm2": "This action is irreversible.",
+		"confirmDelete": "Yes, delete my account"
 	},
 	"callback": {
 		"discord": {

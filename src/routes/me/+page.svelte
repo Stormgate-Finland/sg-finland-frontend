@@ -8,7 +8,7 @@
 	const { connections, connectSteamUrl } = data;
 </script>
 
-<h1>{$t('me.title')}</h1>
+<h1>{$t('me.heading')}</h1>
 
 {#if user}
 	<div class="flex gap-16 pt-4">
@@ -63,4 +63,11 @@
 			</p>
 		</div>
 	{/if}
+
+	<div class="pt-4">
+		<h3>{$t('me.deleteAccount')}</h3>
+		<Button variant="destructive">
+			<a href="/delete-account">{$t('me.delete')}</a>
+		</Button>
+	</div>
 {/if}

@@ -2,6 +2,7 @@
 	import { isDarkMode } from '$lib/utils';
 	import DarkModeIcon from '$assets/icons/dark-theme.svg?component';
 	import clsx, { type ClassValue } from 'clsx';
+	import { Button } from '$components/ui/button';
 
 	export let className: ClassValue = undefined;
 
@@ -22,7 +23,11 @@
 	</script>
 </svelte:head>
 
-<button on:click={toggle} class={clsx(className, 'flex items-center gap-2 rounded-md text-xs')}>
+<Button
+	variant="outline"
+	on:click={toggle}
+	class={clsx(className, 'flex items-center gap-2 rounded-md text-xs uppercase')}
+>
 	<DarkModeIcon width="18" height="18" class="text-foreground" />
 	<span class="max-sm:hidden">
 		{#if themeDark}
@@ -31,14 +36,4 @@
 			Dark Mode
 		{/if}
 	</span>
-</button>
-
-<style lang="postcss">
-	button {
-		background-color: theme(colors.background);
-		color: theme(colors.foreground);
-		border: 2px solid theme(colors.foreground);
-		padding: 0.5rem;
-		text-transform: uppercase;
-	}
-</style>
+</Button>

@@ -19,10 +19,14 @@
 	"streams": {
 		"heading": "Striimit",
 		"comingSoon": "Tulossa pian...",
-		"inTheMeanTime": "Sillä aikaa käy katsomassa lähetykset <a href='https://www.twitch.tv/directory/category/stormgate'>Twitchin puolella</a>!"
+		"inTheMeanTime": "Sillä aikaa käy katsomassa lähetykset <a href='https://www.twitch.tv/directory/category/stormgate'>Twitchin puolella</a>!",
+		"noLiveStreams": "Ei suoria lähetyksiä tällä hetkellä.",
+		"watchOn": "Katso palvelussa",
+		"noStreamsFound": "Striimejä ei löytynyt.",
+		"offlineStreams": "Offline-striimit"
 	},
 	"me": {
-		"title": "Oma profiili",
+		"heading": "Oma profiili",
 		"signedInAs": "Kirjautuneena",
 		"connections": "Yhdistetyt profiilit",
 		"logout": "Kirjaudu ulos",
@@ -30,7 +34,17 @@
 		"username": "Käyttäjänimi",
 		"public": "Julkinen",
 		"connectSteam": "Yhdistä Steam",
-		"email": "Sähköposti"
+		"email": "Sähköposti",
+		"deleteAccount": "Poista tili",
+		"delete": "Poista"
+	},
+	"delete-account": {
+		"heading": "Poista tili",
+		"deleting": "Poistetaan tiliä....",
+		"deleted": "Tilisi on nyt poistettu.",
+		"confirm": "Oletko varma, että haluat poistaa tilisi?",
+		"confirm2": "Toimintoa ei voi peruuttaa.",
+		"confirmDelete": "Kyllä, poista tili"
 	},
 	"callback": {
 		"discord": {

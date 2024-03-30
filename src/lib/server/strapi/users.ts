@@ -36,3 +36,12 @@ export async function updateUser(id: string, body: unknown, authToken: string) {
 		authToken,
 	);
 }
+
+export async function deleteUser(id: string, authToken: string) {
+	return strapiMutation<UsersPermissionsUserEntityResponse>(
+		`${endpoint}/${id}`,
+		'DELETE',
+		undefined,
+		authToken,
+	);
+}
