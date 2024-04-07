@@ -5,7 +5,7 @@ export const load: PageServerLoad = async ({ url }) => {
 	const page = Number(url.searchParams.get('page')) || 1;
 	const pageSize = Number(url.searchParams.get('limit')) || 20;
 
-	const [liveStreams, streams] = await Promise.all([
+	const [liveStreams = [], streams] = await Promise.all([
 		getLiveStreams(),
 		getStreams({
 			populate: { tag: { fields: ['name'] } },
@@ -15,10 +15,12 @@ export const load: PageServerLoad = async ({ url }) => {
 	]);
 
 	return {
-		liveStreams: liveStreams ?? [],
+		liveStreams,
 		streams: {
 			...streams,
-			data: streams.data.filter((stream) => !liveStreams?.some((s) => s.id === Number(stream.id))),
+			...(liveStreams && {
+				data: streams.data.filter((stream) => !liveStreams.some((s) => s.id === Number(stream.id))),
+			}),
 		},
 	};
 };
