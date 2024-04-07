@@ -18,7 +18,7 @@ export const load: PageServerLoad = async ({ url }) => {
 		liveStreams,
 		streams: {
 			...streams,
-			...(liveStreams && {
+			...(liveStreams?.length > 0 && {
 				data: streams.data.filter((stream) => !liveStreams.some((s) => s.id === Number(stream.id))),
 			}),
 		},
