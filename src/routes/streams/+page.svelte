@@ -5,7 +5,7 @@
 	import StreamRow from '$lib/components/StreamRow.svelte';
 
 	export let data;
-	const { liveStreams = [], streams } = data;
+	const { liveStreams, streams } = data;
 </script>
 
 <div class="space-y-6">

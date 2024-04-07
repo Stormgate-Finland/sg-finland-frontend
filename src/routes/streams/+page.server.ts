@@ -1,5 +1,4 @@
-import { sgfApi } from '$lib/server/sg-finland-api/client';
-import { getStreams } from '$lib/server/strapi/streams';
+import { getLiveStreams, getStreams } from '$lib/server/strapi/streams';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ url }) => {
@@ -7,7 +6,7 @@ export const load: PageServerLoad = async ({ url }) => {
 	const pageSize = Number(url.searchParams.get('limit')) || 20;
 
 	const [liveStreams, streams] = await Promise.all([
-		sgfApi.streamsLive.getStreamLive(),
+		getLiveStreams(),
 		getStreams({
 			populate: { tag: { fields: ['name'] } },
 			pagination: { page, pageSize },
@@ -16,12 +15,10 @@ export const load: PageServerLoad = async ({ url }) => {
 	]);
 
 	return {
-		liveStreams: liveStreams.result,
+		liveStreams: liveStreams ?? [],
 		streams: {
 			...streams,
-			data: streams.data.filter(
-				(stream) => !liveStreams.result.some((s) => s.id === Number(stream.id)),
-			),
+			data: streams.data.filter((stream) => !liveStreams?.some((s) => s.id === Number(stream.id))),
 		},
 	};
 };
