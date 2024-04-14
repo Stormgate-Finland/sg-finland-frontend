@@ -6,7 +6,12 @@ declare global {
 		interface Locals {
 			user: UsersPermissionsMe;
 		}
-		// interface PageData {}
+		interface PageData {
+			siteSettings: SiteSettings;
+			discordServer: DiscordServer;
+			i18n: { locale: string; route: string };
+			translations: Translations.SerializedTranslations;
+		}
 		// interface Platform {}
 	}
 }

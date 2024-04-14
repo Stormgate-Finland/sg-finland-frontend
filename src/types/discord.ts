@@ -46,3 +46,27 @@ export enum DiscordVisibility {
 	PRIVATE = 0,
 	PUBLIC = 1,
 }
+
+export type DiscordChannel = {
+	id: string;
+	name: string;
+	position: number;
+};
+
+export type DiscordChannelMember = {
+	id: string;
+	username: string;
+	discriminator: string;
+	avatar: string | null;
+	status: string;
+	avatar_url: string;
+};
+
+export type DiscordServer = {
+	id: string;
+	name: string;
+	instant_invite: string;
+	channels: DiscordChannel[];
+	members: DiscordChannelMember[];
+	presence_count: number;
+};

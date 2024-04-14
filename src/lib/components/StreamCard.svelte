@@ -20,7 +20,8 @@
 		<h4>{stream.title} 🔴</h4>
 		<p class="text-sm">{stream.live.title}</p>
 		<p class="text-sm">
-			<span class="font-mono font-bold">{stream.live.viewers}</span> viewers
+			<span class="font-mono font-bold">{stream.live.viewers}</span>
+			{$t('streams.viewers')}
 		</p>
 		<p class="text-sm text-primary underline underline-offset-2">
 			<a target="_blank" href={stream.url}>{$t('streams.watchOn')} {new URL(stream.url).hostname}</a

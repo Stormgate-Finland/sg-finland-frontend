@@ -23,7 +23,8 @@
 		"noLiveStreams": "Ei suoria lähetyksiä tällä hetkellä.",
 		"watchOn": "Katso palvelussa",
 		"noStreamsFound": "Striimejä ei löytynyt.",
-		"offlineStreams": "Offline-striimit"
+		"offlineStreams": "Offline-striimit",
+		"viewers": "katsojaa"
 	},
 	"me": {
 		"heading": "Oma profiili",
@@ -67,5 +68,18 @@
 		"heading": "Kirjaudu ulos",
 		"loggingOut": "Kirjaudutaan ulos....",
 		"loggedOut": "Olet nyt kirjautunut ulos."
+	},
+	"errorPage": {
+		"heading404": "Sivua ei löytynt!",
+		"heading500": "Hupsista!",
+		"somethingWentWrong": "Jotain meni pieleen.",
+		"errorMessage": "Kohdattiin {status} virhe.",
+		"tryAgain": "Ole hyvä ja yritä uudelleen.",
+		"offline": "Näyttää siltä, että olet offline-tilassa.",
+		"reload": "Lataa sivu uudelleen, kun olet löytänyt nettiä."
+	},
+	"discord": {
+		"join": "Liity Discordiin",
+		"membersOnline": "Jäseniä paikalla"
 	}
 }

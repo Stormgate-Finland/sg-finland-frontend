@@ -23,7 +23,8 @@
 		"noLiveStreams": "No live streams at the moment.",
 		"watchOn": "Watch on",
 		"noStreamsFound": "No streams found.",
-		"offlineStreams": "Offline streams"
+		"offlineStreams": "Offline streams",
+		"viewers": "viewers"
 	},
 	"me": {
 		"heading": "My profile",
@@ -76,5 +77,9 @@
 		"tryAgain": "Please try reloading the page.",
 		"offline": "It looks like you're offline",
 		"reload": "Reload the page once you've found the internet."
+	},
+	"discord": {
+		"join": "Join our Discord",
+		"membersOnline": "Members online"
 	}
 }

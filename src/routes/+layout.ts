@@ -2,7 +2,7 @@ import { addTranslations, setLocale, setRoute } from '$lib/translations';
 import type { LayoutLoad } from './$types';
 
 export const load: LayoutLoad = async ({ data }) => {
-	const { siteSettings, user, i18n, translations } = data;
+	const { siteSettings, user, discordServer, i18n, translations } = data;
 	const { locale, route } = i18n;
 
 	addTranslations(translations);
@@ -13,6 +13,7 @@ export const load: LayoutLoad = async ({ data }) => {
 	return {
 		siteSettings,
 		user,
+		discordServer,
 		i18n,
 	};
 };

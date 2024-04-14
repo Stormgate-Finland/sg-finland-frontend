@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { t } from '$lib/translations';
+	import DiscordServerWidget from '$lib/components/DiscordServerWidget.svelte';
 	let path: string;
 
 	$: path = $page.url.pathname;
 	const { user } = $page.data;
 </script>
 
-<aside class="sticky top-4 hidden h-full w-64 border-r-2 border-primary py-2 pr-4 lg:flex">
+<aside class="sticky top-4 hidden h-full w-64 flex-col border-r-2 border-primary py-2 pr-4 lg:flex">
 	<nav class="w-full">
 		<ul class="flex flex-col gap-4 text-xl [&>li>a]:px-2">
 			<li>
@@ -64,4 +65,7 @@
 			</li>
 		</ul>
 	</nav>
+	<div class="mt-8 text-center">
+		<DiscordServerWidget />
+	</div>
 </aside>
