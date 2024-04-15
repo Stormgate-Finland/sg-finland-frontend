@@ -37,9 +37,18 @@
 		"connectSteam": "Yhdistä Steam",
 		"email": "Sähköposti",
 		"deleteAccount": "Poista tili",
-		"delete": "Poista"
+		"delete": "Poista",
+		"changeUsername": "Muuta"
 	},
-	"delete-account": {
+	"changeUsername": {
+		"heading": "Vaihda käyttäjänimi",
+		"newUsername": "Uusi käyttäjänimi",
+		"changing": "Vaihdetaan käyttäjänimeä....",
+		"changed": "Käyttäjänimesi on nyt vaihdettu.",
+		"submit": "Lähetä",
+		"description": "Tämä on julkinen nimesi. Käyttäjänimet ovat yksilöllisiä."
+	},
+	"deleteAccount": {
 		"heading": "Poista tili",
 		"deleting": "Poistetaan tiliä....",
 		"deleted": "Tilisi on nyt poistettu.",
@@ -62,7 +71,10 @@
 		"heading": "Kirjaudu sisään",
 		"loggedIn": "Olet jo kirjautuneena sisään käyttäjänä",
 		"logout": "Kirjaudu ulos?",
-		"loginWithDiscord": "Kirjaudu sisään Discordilla"
+		"loginWithDiscord": "Kirjaudu sisään Discordilla",
+		"info": "Kirjaudu sisään tai rekisreröidy Discord-tunnuksellasi. Jos sinulla ei ole Discord-tunnusta, ole hyvä ja",
+		"createItFist": "luo se ensin",
+		"connectYourEmail": "Muista liittää sähköpostisi Discord-tiliisi."
 	},
 	"logout": {
 		"heading": "Kirjaudu ulos",
@@ -81,5 +93,12 @@
 	"discord": {
 		"join": "Liity Discordiin",
 		"membersOnline": "Jäseniä paikalla"
+	},
+	"validation": {
+		"username": {
+			"regex": "Käyttäjänimessa saa olla kirjaimia, numeroita, väliviivoja ja alaviivoja.",
+			"max": "Käyttäjänimi saa olla enintään 32 merkkiä pitkä.",
+			"min": "Käyttäjänimen pitää olla vähintään 3 merkkiä pitkä."
+		}
 	}
 }

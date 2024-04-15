@@ -37,7 +37,16 @@
 		"connectSteam": "Connect Steam",
 		"email": "Email",
 		"deleteAccount": "Delete account",
-		"delete": "Delete"
+		"delete": "Delete",
+		"changeUsername": "Change"
+	},
+	"changeUsername": {
+		"heading": "Change username",
+		"changing": "Changing your username...",
+		"changed": "Your username has been changed.",
+		"newUsername": "New username",
+		"submit": "Submit",
+		"description": "This is your public display name. Usernames are unique."
 	},
 	"deleteAccount": {
 		"heading": "Delete account",
@@ -62,7 +71,10 @@
 		"heading": "Login",
 		"loggedIn": "You are already logged in as",
 		"logout": "Logout instead?",
-		"loginWithDiscord": "Login with Discord"
+		"loginWithDiscord": "Login with Discord",
+		"info": "Login with your Discord account. If you do not have a Discord account, please ",
+		"createItFist": "create one first",
+		"connectYourEmail": "Remember to connect your email to your Discord account."
 	},
 	"logout": {
 		"heading": "Log out",
@@ -81,5 +93,12 @@
 	"discord": {
 		"join": "Join our Discord",
 		"membersOnline": "Members online"
+	},
+	"validation": {
+		"username": {
+			"regex": "Usernames can only contain letters, numbers, underscores and hyphens.",
+			"max": "Usernames can be at most 32 characters long.",
+			"min": "Usernames must be at least 3 characters long."
+		}
 	}
 }

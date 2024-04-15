@@ -1,10 +1,10 @@
 import { fail, redirect } from '@sveltejs/kit';
-import type { PageServerLoad } from '../$types';
+import type { PageServerLoad } from '../../$types';
 import { deleteUser } from '$lib/server/strapi/users';
 
 export const load: PageServerLoad = async ({ locals }) => {
 	if (!locals.user?.id) {
-		redirect(302, '/login?redirect=/delete-account');
+		redirect(302, '/login?redirect=/me/delete-account');
 	}
 };
 

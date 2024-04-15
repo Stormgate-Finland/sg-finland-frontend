@@ -7,6 +7,7 @@ node_modules
 .env.*
 !.env.example
 src/types/generated
+src/lib/server/sg-finland-api/generated
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml

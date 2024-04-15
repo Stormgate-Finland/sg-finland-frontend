@@ -54,7 +54,7 @@ export async function strapiMutation<T>(
 	method: Method = 'POST',
 	body?: unknown,
 	authToken = CMS_API_KEY,
-) {
+): Promise<StrapiMutationResponse<T> | null> {
 	const headers = {
 		'Content-Type': 'application/json',
 		...(authToken && { authorization: `Bearer ${authToken}` }),
@@ -63,12 +63,29 @@ export async function strapiMutation<T>(
 	const res = await fetch(`${PUBLIC_CMS_URL}${endpoint}`, {
 		headers,
 		method,
-		body: JSON.stringify({ data: body }),
+		body: JSON.stringify(body),
 	});
-	if (!res.ok) {
-		return null;
+
+	let data: StrapiMutationResponse<T> | null = null;
+	try {
+		data = await res.json();
+	} catch (e) {
+		return {
+			error: { status: res.status, message: res.statusText },
+		};
 	}
 
-	const data = await res.json();
-	return data as StrapiMutationResponse<T>;
+	if (!res.ok) {
+		const error = data?.error || {
+			status: res.status,
+			message: res.statusText,
+		};
+		// eslint-disable-next-line no-console
+		console.error(`Strapi mutation error, ${method} ${endpoint}:`, data?.error || res.statusText);
+		return {
+			error,
+		};
+	}
+
+	return data;
 }

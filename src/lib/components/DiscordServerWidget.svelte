@@ -9,12 +9,15 @@
 
 {#if discordServer}
 	<Button
-		class="rounded-xl bg-transparent py-6 text-foreground hover:no-underline focus:no-underline"
+		class="group rounded-sm bg-transparent py-6 text-foreground hover:bg-primary/50 hover:no-underline focus:no-underline"
 		href={discordServer?.instant_invite}
 		target="_blank"
 	>
 		<div class="flex items-center gap-4">
-			<DiscordIcon class="h-5 w-5" color="#5865f2" />
+			<DiscordIcon
+				class="h-5 w-5 transition-colors group-hover:brightness-50 dark:group-hover:brightness-150"
+				color="#5865f2"
+			/>
 			<div>
 				<h6>{$t('discord.join')}</h6>
 				<p class="text-xs">

@@ -51,11 +51,13 @@ export type StrapiQuery<T = StrapiQueryFilters, E = void> = {
 
 export type StrapiError = {
 	status: number;
-	name: string;
 	message: string;
-	details: unknown;
+	name?: string;
+	details?: unknown;
 };
 
-export type StrapiMutationResponse<T> = T & {
-	error?: StrapiError;
-};
+export type StrapiMutationResponse<T> =
+	| (T & {
+			error?: StrapiError;
+	  })
+	| { error?: StrapiError };

@@ -1,24 +1,35 @@
 <script>
 	import { page } from '$app/stores';
 	import { t } from '$/lib/translations';
+	import Button from '$lib/components/ui/button/button.svelte';
 
 	const { user } = $page.data;
 
 	export let data;
 </script>
 
-<h1>{$t('login.heading')}</h1>
+<div class="space-y-6">
+	<h1>{$t('login.heading')}</h1>
 
-{#if user?.username}
-	<p>
-		{$t('login.loggedIn')}:<br />
-		<strong>{user.username}</strong>
-	</p>
-	<p><a href="/logout">{$t('login.logout')}</a></p>
-{:else}
-	<p>
-		<a href={data.connectWithDiscordUrl} data-sveltekit-preload-data="off"
-			>{$t('login.loginWithDiscord')}</a
-		>
-	</p>
-{/if}
+	{#if user?.username}
+		<p>
+			{$t('login.loggedIn')}:<br />
+			<strong>{user.username}</strong>
+		</p>
+		<p><Button href="/logout">{$t('login.logout')}</Button></p>
+	{:else}
+		<p class="markdown">
+			{$t('login.info')}
+			<a data-sveltekit-preload-data="off" href="https://discord.com/register"
+				>{$t('login.createItFist')}</a
+			>. {$t('login.connectYourEmail')}
+		</p>
+		<p>
+			<Button
+				href={data.connectWithDiscordUrl}
+				data-sveltekit-preload-data="off"
+				class="font-semibold">🔑 {$t('login.loginWithDiscord')}</Button
+			>
+		</p>
+	{/if}
+</div>

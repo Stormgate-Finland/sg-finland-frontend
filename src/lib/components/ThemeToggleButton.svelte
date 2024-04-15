@@ -26,7 +26,7 @@
 <Button
 	variant="outline"
 	on:click={toggle}
-	class={clsx(className, 'flex items-center gap-2 rounded-md text-xs uppercase')}
+	class={clsx(className, 'items-center gap-2 rounded-md text-xs uppercase')}
 >
 	<DarkModeIcon width="18" height="18" class="text-foreground" />
 	<span class="max-sm:hidden">

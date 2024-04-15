@@ -8,20 +8,20 @@
 	const { user } = $page.data;
 </script>
 
-<h1>{$t('delete-account.heading')}</h1>
+<h1>{$t('deleteAccount.heading')}</h1>
 
 {#if user}
 	<div class="flex flex-col gap-4">
 		<p>
-			{$t('delete-account.confirm')}
+			{$t('deleteAccount.confirm')}
 		</p>
 		<p>
-			{$t('delete-account.confirm2')}
+			{$t('deleteAccount.confirm2')}
 		</p>
 
 		<form method="POST">
 			<Button variant="destructive" formaction="?/delete" type="submit">
-				{$t('delete-account.confirmDelete')}
+				{$t('deleteAccount.confirmDelete')}
 			</Button>
 		</form>
 
