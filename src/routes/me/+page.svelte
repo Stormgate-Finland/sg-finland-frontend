@@ -79,6 +79,13 @@
 		{/if}
 
 		<div>
+			<h3>{$t('me.downloadOwnData')}</h3>
+			<Button variant="secondary">
+				<a href="/api/users/me/download-data">{$t('me.download')}</a>
+			</Button>
+		</div>
+
+		<div>
 			<h3>{$t('me.deleteAccount')}</h3>
 			<Button variant="destructive">
 				<a href="/me/delete-account">{$t('me.delete')}</a>

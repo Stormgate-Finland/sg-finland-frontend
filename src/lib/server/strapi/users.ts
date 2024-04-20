@@ -1,6 +1,7 @@
 import type { UsersPermissionsMe, UsersPermissionsUserEntity } from '$types/generated/strapi';
 import { strapiFetch, strapiMutation } from './utils';
 import type { StrapiQuery } from '$types/strapiQuery';
+import type { StrapiUsersDownloadOwnDataResponse } from '$types/users';
 
 const endpoint = '/api/users';
 
@@ -60,6 +61,14 @@ export async function deleteUser(id: string, authToken: string) {
 	return strapiMutation<UsersPermissionsUserEntity>(
 		`${endpoint}/${id}`,
 		'DELETE',
+		undefined,
+		authToken,
+	);
+}
+
+export async function getOwnData(authToken: string) {
+	return strapiFetch<StrapiUsersDownloadOwnDataResponse>(
+		`${endpoint}/me/download-data`,
 		undefined,
 		authToken,
 	);

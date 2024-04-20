@@ -39,7 +39,9 @@
 		"deleteAccount": "Poista tili",
 		"delete": "Poista",
 		"changeUsername": "Muuta",
-		"changeEmail": "Muuta"
+		"changeEmail": "Muuta",
+		"downloadOwnData": "Lataa omat tiedot",
+		"download": "Lataa"
 	},
 	"changeUsername": {
 		"heading": "Vaihda käyttäjänimi",

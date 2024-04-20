@@ -39,7 +39,9 @@
 		"deleteAccount": "Delete account",
 		"delete": "Delete",
 		"changeUsername": "Change",
-		"changeEmail": "Change"
+		"changeEmail": "Change",
+		"downloadOwnData": "Download your data",
+		"download": "Download"
 	},
 	"changeUsername": {
 		"heading": "Change username",
