@@ -50,10 +50,10 @@ export type StrapiQuery<T = StrapiQueryFilters, E = void> = {
 };
 
 export type StrapiError = {
-	status: number;
-	message: string;
-	name?: string;
-	details?: unknown;
+	status: string | number; // HTTP status
+	name?: string; // Strapi error name ('ApplicationError' or 'ValidationError')
+	message: string; // A human readable error message
+	details?: unknown; // error info specific to the error type
 };
 
 export type StrapiMutationResponse<T> =

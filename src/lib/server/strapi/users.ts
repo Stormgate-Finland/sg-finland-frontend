@@ -30,6 +30,19 @@ export async function updateMe(body: unknown, authToken: string) {
 	return strapiMutation<UsersPermissionsUserEntity>(endpoint + '/me', 'PUT', body, authToken);
 }
 
+export async function updateEmail(body: unknown, authToken: string) {
+	return strapiMutation<{ success: boolean }>(
+		endpoint + '/me/update-email',
+		'POST',
+		body,
+		authToken,
+	);
+}
+
+export async function verifyEmail(body: unknown, authToken: string) {
+	return strapiMutation<{ success: boolean }>('/api/auth/verify-email', 'POST', body, authToken);
+}
+
 export async function deleteMe(authToken: string) {
 	return strapiMutation<UsersPermissionsUserEntity>(
 		endpoint + '/me',

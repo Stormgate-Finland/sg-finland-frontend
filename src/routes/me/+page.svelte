@@ -16,21 +16,26 @@
 			{#if user.avatarUrl}
 				<img src={user.avatarUrl} alt="Avatar" class="h-32 w-32 rounded-full" />
 			{/if}
-			<div class="flex flex-col gap-4">
-				<div class="flex gap-4">
+			<div class="flex gap-4">
+				<div class="flex flex-col gap-4">
 					<p>
 						<small>{$t('me.username')}</small><br />
 						<strong>{user.username ?? 'User'}</strong>
 					</p>
+					<p>
+						<small>{$t('me.email')}</small><br />
+						<strong>{user.email}</strong>
+					</p>
+				</div>
 
+				<div class="flex flex-col gap-4">
 					<Button variant="secondary" size="sm" class="self-end">
 						<a href="/me/change-username">{$t('me.changeUsername')}</a>
 					</Button>
+					<Button variant="secondary" size="sm" class="self-end">
+						<a href="/me/change-email">{$t('me.changeEmail')}</a>
+					</Button>
 				</div>
-				<p>
-					<small>{$t('me.email')}</small><br />
-					<strong>{user.email}</strong>
-				</p>
 			</div>
 		</div>
 

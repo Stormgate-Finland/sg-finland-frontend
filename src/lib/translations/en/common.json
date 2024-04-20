@@ -38,7 +38,8 @@
 		"email": "Email",
 		"deleteAccount": "Delete account",
 		"delete": "Delete",
-		"changeUsername": "Change"
+		"changeUsername": "Change",
+		"changeEmail": "Change"
 	},
 	"changeUsername": {
 		"heading": "Change username",
@@ -47,6 +48,17 @@
 		"newUsername": "New username",
 		"submit": "Submit",
 		"description": "This is your public display name. Usernames are unique."
+	},
+	"changeEmail": {
+		"heading": "Change email",
+		"newEmail": "New email",
+		"submit": "Submit"
+	},
+	"verifyEmail": {
+		"heading": "Verify email",
+		"info": "We've sent you an email with a verification code. Please enter it below.",
+		"code": "Verification code",
+		"submit": "Submit"
 	},
 	"deleteAccount": {
 		"heading": "Delete account",
@@ -99,6 +111,10 @@
 			"regex": "Usernames can only contain letters, numbers, underscores and hyphens.",
 			"max": "Usernames can be at most 32 characters long.",
 			"min": "Usernames must be at least 3 characters long."
+		},
+		"code": {
+			"length": "The code must be exactly 6 digits long.",
+			"regex": "The code can only contain numbers."
 		}
 	}
 }

@@ -38,7 +38,8 @@
 		"email": "Sähköposti",
 		"deleteAccount": "Poista tili",
 		"delete": "Poista",
-		"changeUsername": "Muuta"
+		"changeUsername": "Muuta",
+		"changeEmail": "Muuta"
 	},
 	"changeUsername": {
 		"heading": "Vaihda käyttäjänimi",
@@ -47,6 +48,17 @@
 		"changed": "Käyttäjänimesi on nyt vaihdettu.",
 		"submit": "Lähetä",
 		"description": "Tämä on julkinen nimesi. Käyttäjänimet ovat yksilöllisiä."
+	},
+	"changeEmail": {
+		"heading": "Päivitä sähköposti",
+		"newEmail": "Uusi sähköpostiosoite",
+		"submit": "Lähetä"
+	},
+	"verifyEmail": {
+		"heading": "Vahvista sähköposti",
+		"info": "Lähetimme sähköpostiisi vahvistuskoodin. Ole hyvä ja syötä koodi alle vahvistaaksesi sähköpostisi.",
+		"code": "Vahvistuskoodi",
+		"submit": "Lähetä"
 	},
 	"deleteAccount": {
 		"heading": "Poista tili",
@@ -99,6 +111,10 @@
 			"regex": "Käyttäjänimessa saa olla kirjaimia, numeroita, väliviivoja ja alaviivoja.",
 			"max": "Käyttäjänimi saa olla enintään 32 merkkiä pitkä.",
 			"min": "Käyttäjänimen pitää olla vähintään 3 merkkiä pitkä."
+		},
+		"code": {
+			"length": "Koodin pitää olla 6 merkkiä pitkä.",
+			"regex": "Koodissa saa olla vain numeroita."
 		}
 	}
 }
