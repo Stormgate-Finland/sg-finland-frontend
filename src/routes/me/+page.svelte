@@ -4,8 +4,11 @@
 	import { Button } from '$components/ui/button';
 
 	const { user } = $page.data;
+
 	export let data;
 	const { connections, connectSteamUrl } = data;
+	const discord = connections?.find((c) => c.attributes?.provider === 'discord');
+	const otherConnections = connections?.filter((c) => c.attributes?.provider !== 'discord');
 </script>
 
 <div class="space-y-6">
@@ -28,7 +31,7 @@
 					</p>
 				</div>
 
-				<div class="flex flex-col gap-4">
+				<div class="flex flex-col justify-center gap-4">
 					<Button variant="secondary" size="sm" class="self-end">
 						<a href="/me/change-username">{$t('me.changeUsername')}</a>
 					</Button>
@@ -43,9 +46,18 @@
 			<a href="/logout">{$t('me.logout')}</a>
 		</Button>
 
-		{#if connections}
+		{#if discord}
+			<div>
+				<h3>{$t('me.discord')}</h3>
+				<p>
+					<strong>{discord.attributes?.externalName}</strong>
+				</p>
+			</div>
+		{/if}
+
+		{#if otherConnections}
 			<div class="space-y-2">
-				<h3>{$t('me.connections')}</h3>
+				<h3>{$t('me.otherConnections')}</h3>
 				<table>
 					<thead>
 						<tr>
@@ -55,19 +67,22 @@
 						</tr>
 					</thead>
 					<tbody>
-						{#each connections as connection (connection.id)}
+						{#each otherConnections as connection (connection.id)}
 							<tr>
 								<td class="pr-4">{connection.attributes?.provider}</td>
 								<td class="pr-4">{connection.attributes?.externalName}</td>
-								<td>{connection.attributes?.private ? '❌' : '✅'}</td>
+								<td>{connection.attributes?.hidden ? '❌' : '✅'}</td>
 							</tr>
 						{/each}
 					</tbody>
 				</table>
+				<Button variant="secondary">
+					<a href="/me/edit-connections">{$t('me.editConnections')}</a>
+				</Button>
 			</div>
 		{/if}
 
-		{#if connectSteamUrl}
+		{#if connectSteamUrl && !otherConnections?.find((c) => c.attributes?.provider === 'steam')}
 			<div>
 				<h3>{$t('me.connectSteam')}</h3>
 				<p>

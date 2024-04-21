@@ -14,7 +14,7 @@ export async function GET({ cookies, setHeaders }) {
 	});
 
 	const data = await getOwnData(session);
-	return new Response(JSON.stringify(data), {
+	return new Response(JSON.stringify(data, undefined, 2), {
 		headers: {
 			'Content-Type': 'application/json',
 			'Content-Disposition': 'attachment; filename=stormgate-fi-my-data.json',

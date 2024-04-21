@@ -24,7 +24,7 @@ export const actions = {
 		const username = data.get('username');
 		const result = await updateMe({ username }, session);
 		if (result?.error) {
-			return fail(500, { error: 'Unexpedted error' });
+			return fail(500, { error: 'Unexpected error' });
 		}
 		redirect(302, '/me');
 	},

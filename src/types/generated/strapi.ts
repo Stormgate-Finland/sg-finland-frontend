@@ -978,7 +978,7 @@ export type UserConnectionFiltersInput = {
   externalName?: InputMaybe<StringFilterInput>;
   user?: InputMaybe<UsersPermissionsUserFiltersInput>;
   provider?: InputMaybe<StringFilterInput>;
-  private?: InputMaybe<BooleanFilterInput>;
+  hidden?: InputMaybe<BooleanFilterInput>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
   updatedAt?: InputMaybe<DateTimeFilterInput>;
   and?: InputMaybe<Array<InputMaybe<UserConnectionFiltersInput>>>;
@@ -993,7 +993,7 @@ export type UserConnectionInput = {
   externalName?: InputMaybe<Scalars['String']>;
   user?: InputMaybe<Scalars['ID']>;
   provider?: InputMaybe<Enum_Userconnection_Provider>;
-  private?: InputMaybe<Scalars['Boolean']>;
+  hidden?: InputMaybe<Scalars['Boolean']>;
 };
 
 export type UserConnection = {
@@ -1003,7 +1003,7 @@ export type UserConnection = {
   externalName?: Maybe<Scalars['String']>;
   user?: Maybe<UsersPermissionsUserEntityResponse>;
   provider: Enum_Userconnection_Provider;
-  private?: Maybe<Scalars['Boolean']>;
+  hidden?: Maybe<Scalars['Boolean']>;
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
 };

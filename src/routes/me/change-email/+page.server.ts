@@ -24,7 +24,7 @@ export const actions = {
 		const email = data.get('email');
 		const result = await updateEmail({ email }, session);
 		if (result?.error) {
-			return fail(500, { error: 'Unexpedted error' });
+			return fail(500, { error: 'Unexpected error' });
 		}
 		redirect(302, '/me/change-email/verify');
 	},

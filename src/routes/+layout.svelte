@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '../app.postcss';
 	import '$lib/twicpicsConfig';
 	import Header from '$components/Header.svelte';

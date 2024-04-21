@@ -16,7 +16,7 @@ export const actions = {
 		}
 		const result = await deleteUser(locals.user.id, session);
 		if (result?.error) {
-			return fail(500, { error: 'Unexpedted error' });
+			return fail(500, { error: 'Unexpected error' });
 		}
 		redirect(302, '/logout');
 	},

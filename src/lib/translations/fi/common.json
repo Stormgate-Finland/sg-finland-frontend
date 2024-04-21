@@ -29,7 +29,8 @@
 	"me": {
 		"heading": "Oma profiili",
 		"signedInAs": "Kirjautuneena",
-		"connections": "Yhdistetyt profiilit",
+		"discord": "Liitetty Discord-tunnus",
+		"otherConnections": "Muut ydistetyt profiilit",
 		"logout": "Kirjaudu ulos",
 		"provider": "Tarjoaja",
 		"username": "Käyttäjänimi",
@@ -41,7 +42,8 @@
 		"changeUsername": "Muuta",
 		"changeEmail": "Muuta",
 		"downloadOwnData": "Lataa omat tiedot",
-		"download": "Lataa"
+		"download": "Lataa",
+		"editConnections": "Muokkaa"
 	},
 	"changeUsername": {
 		"heading": "Vaihda käyttäjänimi",
@@ -55,6 +57,12 @@
 		"heading": "Päivitä sähköposti",
 		"newEmail": "Uusi sähköpostiosoite",
 		"submit": "Lähetä"
+	},
+	"editConnections": {
+		"heading": "Muokkaa yhdistettyjä profiileja",
+		"public": "Julkinen",
+		"save": "Tallenna",
+		"cancel": "Peruuta"
 	},
 	"verifyEmail": {
 		"heading": "Vahvista sähköposti",

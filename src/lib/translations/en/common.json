@@ -29,7 +29,8 @@
 	"me": {
 		"heading": "My profile",
 		"signedInAs": "Signed in as",
-		"connections": "Connected profiles",
+		"discord": "Linked Discord account",
+		"otherConnections": "Other connected profiles",
 		"logout": "Logout",
 		"provider": "Provider",
 		"username": "Username",
@@ -41,7 +42,8 @@
 		"changeUsername": "Change",
 		"changeEmail": "Change",
 		"downloadOwnData": "Download your data",
-		"download": "Download"
+		"download": "Download",
+		"editConnections": "Edit"
 	},
 	"changeUsername": {
 		"heading": "Change username",
@@ -55,6 +57,12 @@
 		"heading": "Change email",
 		"newEmail": "New email",
 		"submit": "Submit"
+	},
+	"editConnections": {
+		"heading": "Edit profile connections",
+		"public": "Private",
+		"save": "Save",
+		"cancel": "Cancel"
 	},
 	"verifyEmail": {
 		"heading": "Verify email",
