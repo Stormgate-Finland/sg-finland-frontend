@@ -2,8 +2,8 @@
 	import { t } from '$/lib/translations';
 	import * as Form from '$lib/components/ui/form';
 	import { Input } from '$lib/components/ui/input';
-	import { formSchema, type FormSchema } from './schema';
-	import { type SuperValidated, type Infer, superForm } from 'sveltekit-superforms';
+	import { formSchema } from './schema';
+	import { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 
 	export let data;

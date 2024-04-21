@@ -29,5 +29,9 @@ module.exports = {
 	],
 	rules: {
 		'no-console': 'error',
+		'@typescript-eslint/no-unused-vars': [
+			'warn',
+			{ varsIgnorePattern: '^\\$\\$(Props|Events|Slots)$' },
+		],
 	},
 };
