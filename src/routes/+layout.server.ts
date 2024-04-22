@@ -3,10 +3,7 @@ import { getSiteSettings } from '$lib/server/strapi/siteSettings';
 import type { LayoutServerLoad } from './$types';
 
 export const load: LayoutServerLoad = async (event) => {
-	const [siteSettings, i18n] = await Promise.all([
-		getSiteSettings(),
-		initTranslations(event),
-	]);
+	const [siteSettings, i18n] = await Promise.all([getSiteSettings(), initTranslations()]);
 
 	return {
 		siteSettings: siteSettings?.data ?? null,

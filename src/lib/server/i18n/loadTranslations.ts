@@ -1,25 +1,17 @@
-import { locales, loadTranslations, translations, defaultLocale } from '$lib/translations';
-import type { ServerLoadEvent } from '@sveltejs/kit';
+import { loadTranslations, translations, defaultLocale } from '$lib/translations';
 
-const USE_DEFAULT_LOCALE_ALWAYS = true;
-
-export const initTranslations = async (event: ServerLoadEvent) => {
-	const { pathname } = event.url;
-
-	const locale = getLocale(event);
-	await loadTranslations(locale, pathname); // keep this just before the `return` in layout
+export const initTranslations = async () => {
+	const locale = defaultLocale; // getLocale(event);
+	await loadTranslations(locale); // keep this just before the `return` in layout
 
 	return {
-		i18n: { locale, route: pathname },
+		i18n: { locale, route: '/' },
 		translations: translations.get(), // `translations` on server contain all translations loaded by different clients
 	};
 };
 
+/* Locale is always default for now
 const getLocale = (event: ServerLoadEvent) => {
-	if (USE_DEFAULT_LOCALE_ALWAYS) {
-		return defaultLocale;
-	}
-
 	// Try to get the locale from cookie
 	let locale = (event.cookies.get('lang') || '').toLowerCase();
 
@@ -39,3 +31,4 @@ const getLocale = (event: ServerLoadEvent) => {
 
 	return locale;
 };
+*/
