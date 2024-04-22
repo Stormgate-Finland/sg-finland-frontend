@@ -8,7 +8,7 @@ declare global {
 		}
 		interface PageData {
 			siteSettings: SiteSettings;
-			discordServer: DiscordServer;
+			discordServer?: DiscordServer;
 			i18n: { locale: string; route: string };
 			translations: Translations.SerializedTranslations;
 		}
