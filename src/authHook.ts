@@ -1,9 +1,9 @@
 import type { Handle, RequestEvent } from '@sveltejs/kit';
-import { getMe } from './lib/server/strapi/users';
+import { getSession } from './lib/server/strapi/users';
 
 // Attach authorization to each server request (role may have changed)
 async function attachUserToRequestEvent(session: string, event: RequestEvent) {
-	const user = await getMe(session);
+	const user = await getSession(session);
 	if (user?.username) {
 		event.locals.user = user;
 	}

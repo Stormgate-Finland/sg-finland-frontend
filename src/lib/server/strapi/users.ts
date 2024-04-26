@@ -1,7 +1,7 @@
 import type { UsersPermissionsMe, UsersPermissionsUserEntity } from '$types/generated/strapi';
 import { strapiFetch, strapiMutation } from './utils';
 import type { StrapiQuery } from '$types/strapiQuery';
-import type { StrapiUsersDownloadOwnDataResponse } from '$types/users';
+import type { StrapiUsersDownloadOwnDataResponse, UserSessionResponse } from '$types/users';
 
 const endpoint = '/api/users';
 
@@ -25,6 +25,10 @@ export async function getUser(id: string | number, query?: StrapiQuery, authToke
 
 export async function getMe(authToken: string) {
 	return strapiFetch<UsersPermissionsMe>(endpoint + '/me', undefined, authToken);
+}
+
+export async function getSession(token: string) {
+	return strapiFetch<UserSessionResponse>(endpoint + '/me/session/' + token);
 }
 
 export async function updateMe(body: unknown, authToken: string) {
