@@ -370,42 +370,6 @@ export type UploadFolderRelationResponseCollection = {
   data: Array<UploadFolderEntity>;
 };
 
-export type I18NLocaleFiltersInput = {
-  id?: InputMaybe<IdFilterInput>;
-  name?: InputMaybe<StringFilterInput>;
-  code?: InputMaybe<StringFilterInput>;
-  createdAt?: InputMaybe<DateTimeFilterInput>;
-  updatedAt?: InputMaybe<DateTimeFilterInput>;
-  and?: InputMaybe<Array<InputMaybe<I18NLocaleFiltersInput>>>;
-  or?: InputMaybe<Array<InputMaybe<I18NLocaleFiltersInput>>>;
-  not?: InputMaybe<I18NLocaleFiltersInput>;
-};
-
-export type I18NLocale = {
-  __typename?: 'I18NLocale';
-  name?: Maybe<Scalars['String']>;
-  code?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['DateTime']>;
-  updatedAt?: Maybe<Scalars['DateTime']>;
-};
-
-export type I18NLocaleEntity = {
-  __typename?: 'I18NLocaleEntity';
-  id?: Maybe<Scalars['ID']>;
-  attributes?: Maybe<I18NLocale>;
-};
-
-export type I18NLocaleEntityResponse = {
-  __typename?: 'I18NLocaleEntityResponse';
-  data?: Maybe<I18NLocaleEntity>;
-};
-
-export type I18NLocaleEntityResponseCollection = {
-  __typename?: 'I18NLocaleEntityResponseCollection';
-  data: Array<I18NLocaleEntity>;
-  meta: ResponseCollectionMeta;
-};
-
 export type UsersPermissionsPermissionFiltersInput = {
   id?: InputMaybe<IdFilterInput>;
   action?: InputMaybe<StringFilterInput>;
@@ -500,6 +464,12 @@ export type UsersPermissionsRoleEntityResponseCollection = {
   meta: ResponseCollectionMeta;
 };
 
+export enum Enum_Userspermissionsuser_Faction {
+  Vanguard = 'vanguard',
+  Infernal = 'infernal',
+  Random = 'random'
+}
+
 export type UsersPermissionsUserFiltersInput = {
   id?: InputMaybe<IdFilterInput>;
   username?: InputMaybe<StringFilterInput>;
@@ -514,6 +484,7 @@ export type UsersPermissionsUserFiltersInput = {
   posts?: InputMaybe<PostFiltersInput>;
   userConnections?: InputMaybe<UserConnectionFiltersInput>;
   avatarUrl?: InputMaybe<StringFilterInput>;
+  faction?: InputMaybe<StringFilterInput>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
   updatedAt?: InputMaybe<DateTimeFilterInput>;
   and?: InputMaybe<Array<InputMaybe<UsersPermissionsUserFiltersInput>>>;
@@ -534,6 +505,7 @@ export type UsersPermissionsUserInput = {
   posts?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   userConnections?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   avatarUrl?: InputMaybe<Scalars['String']>;
+  faction?: InputMaybe<Enum_Userspermissionsuser_Faction>;
 };
 
 export type UsersPermissionsUser = {
@@ -547,6 +519,7 @@ export type UsersPermissionsUser = {
   posts?: Maybe<PostRelationResponseCollection>;
   userConnections?: Maybe<UserConnectionRelationResponseCollection>;
   avatarUrl?: Maybe<Scalars['String']>;
+  faction?: Maybe<Enum_Userspermissionsuser_Faction>;
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
 };
@@ -586,6 +559,42 @@ export type UsersPermissionsUserEntityResponseCollection = {
 export type UsersPermissionsUserRelationResponseCollection = {
   __typename?: 'UsersPermissionsUserRelationResponseCollection';
   data: Array<UsersPermissionsUserEntity>;
+};
+
+export type I18NLocaleFiltersInput = {
+  id?: InputMaybe<IdFilterInput>;
+  name?: InputMaybe<StringFilterInput>;
+  code?: InputMaybe<StringFilterInput>;
+  createdAt?: InputMaybe<DateTimeFilterInput>;
+  updatedAt?: InputMaybe<DateTimeFilterInput>;
+  and?: InputMaybe<Array<InputMaybe<I18NLocaleFiltersInput>>>;
+  or?: InputMaybe<Array<InputMaybe<I18NLocaleFiltersInput>>>;
+  not?: InputMaybe<I18NLocaleFiltersInput>;
+};
+
+export type I18NLocale = {
+  __typename?: 'I18NLocale';
+  name?: Maybe<Scalars['String']>;
+  code?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['DateTime']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+export type I18NLocaleEntity = {
+  __typename?: 'I18NLocaleEntity';
+  id?: Maybe<Scalars['ID']>;
+  attributes?: Maybe<I18NLocale>;
+};
+
+export type I18NLocaleEntityResponse = {
+  __typename?: 'I18NLocaleEntityResponse';
+  data?: Maybe<I18NLocaleEntity>;
+};
+
+export type I18NLocaleEntityResponseCollection = {
+  __typename?: 'I18NLocaleEntityResponseCollection';
+  data: Array<I18NLocaleEntity>;
+  meta: ResponseCollectionMeta;
 };
 
 export type PageFiltersInput = {
@@ -1030,7 +1039,7 @@ export type UserConnectionRelationResponseCollection = {
   data: Array<UserConnectionEntity>;
 };
 
-export type GenericMorph = UploadFile | UploadFolder | I18NLocale | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | Page | Person | Post | SiteSetting | Stream | Tag | UserConnection;
+export type GenericMorph = UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | I18NLocale | Page | Person | Post | SiteSetting | Stream | Tag | UserConnection;
 
 export type FileInfoInput = {
   name?: InputMaybe<Scalars['String']>;
@@ -1107,12 +1116,12 @@ export type Query = {
   uploadFiles?: Maybe<UploadFileEntityResponseCollection>;
   uploadFolder?: Maybe<UploadFolderEntityResponse>;
   uploadFolders?: Maybe<UploadFolderEntityResponseCollection>;
-  i18NLocale?: Maybe<I18NLocaleEntityResponse>;
-  i18NLocales?: Maybe<I18NLocaleEntityResponseCollection>;
   usersPermissionsRole?: Maybe<UsersPermissionsRoleEntityResponse>;
   usersPermissionsRoles?: Maybe<UsersPermissionsRoleEntityResponseCollection>;
   usersPermissionsUser?: Maybe<UsersPermissionsUserEntityResponse>;
   usersPermissionsUsers?: Maybe<UsersPermissionsUserEntityResponseCollection>;
+  i18NLocale?: Maybe<I18NLocaleEntityResponse>;
+  i18NLocales?: Maybe<I18NLocaleEntityResponseCollection>;
   page?: Maybe<PageEntityResponse>;
   pages?: Maybe<PageEntityResponseCollection>;
   person?: Maybe<PersonEntityResponse>;
@@ -1154,18 +1163,6 @@ export type QueryUploadFoldersArgs = {
 };
 
 
-export type QueryI18NLocaleArgs = {
-  id?: InputMaybe<Scalars['ID']>;
-};
-
-
-export type QueryI18NLocalesArgs = {
-  filters?: InputMaybe<I18NLocaleFiltersInput>;
-  pagination?: InputMaybe<PaginationArg>;
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-
 export type QueryUsersPermissionsRoleArgs = {
   id?: InputMaybe<Scalars['ID']>;
 };
@@ -1185,6 +1182,18 @@ export type QueryUsersPermissionsUserArgs = {
 
 export type QueryUsersPermissionsUsersArgs = {
   filters?: InputMaybe<UsersPermissionsUserFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+export type QueryI18NLocaleArgs = {
+  id?: InputMaybe<Scalars['ID']>;
+};
+
+
+export type QueryI18NLocalesArgs = {
+  filters?: InputMaybe<I18NLocaleFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };

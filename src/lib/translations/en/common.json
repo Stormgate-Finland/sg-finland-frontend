@@ -43,7 +43,11 @@
 		"changeEmail": "Change",
 		"downloadOwnData": "Download your data",
 		"download": "Download",
-		"editConnections": "Edit"
+		"editConnections": "Edit",
+		"faction": "Faction",
+		"selectFaction": "Select your faction",
+		"none": "None",
+		"changeFaction": "Save"
 	},
 	"changeUsername": {
 		"heading": "Change username",

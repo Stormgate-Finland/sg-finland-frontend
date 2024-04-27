@@ -2,6 +2,14 @@
 	import { t } from '$/lib/translations';
 	import { page } from '$app/stores';
 	import { Button } from '$components/ui/button';
+	import * as Form from '$lib/components/ui/form';
+	import * as Select from '$lib/components/ui/select';
+	import { superForm } from 'sveltekit-superforms';
+	import { zodClient } from 'sveltekit-superforms/adapters';
+	import { FACTIONS } from '$types/users';
+	import FactionIcon from '$lib/components/FactionIcon.svelte';
+	import { formSchemaChangeFaction } from './schema';
+	import Avatar from '$lib/components/Avatar.svelte';
 
 	const { user } = $page.data;
 
@@ -9,6 +17,18 @@
 	const { connections, connectSteamUrl } = data;
 	const discord = connections?.find((c) => c.attributes?.provider === 'discord');
 	const otherConnections = connections?.filter((c) => c.attributes?.provider !== 'discord');
+
+	const form = superForm(data.form, {
+		validators: zodClient(formSchemaChangeFaction),
+	});
+	const { form: formData, enhance } = form;
+
+	$: selectedFaction = $formData.faction
+		? {
+				label: FACTIONS[$formData.faction] ?? '',
+				value: $formData.faction,
+			}
+		: undefined;
 </script>
 
 <div class="space-y-6">
@@ -17,27 +37,65 @@
 	{#if user}
 		<div class="flex gap-16">
 			{#if user.avatarUrl}
-				<img src={user.avatarUrl} alt="Avatar" class="h-32 w-32 rounded-full" />
+				<Avatar url={user.avatarUrl} faction={$formData.faction} />
 			{/if}
-			<div class="flex gap-4">
-				<div class="flex flex-col gap-4">
+
+			<div class="flex flex-col gap-4">
+				<div class="flex justify-between gap-4">
 					<p>
 						<small>{$t('me.username')}</small><br />
 						<strong>{user.username ?? 'User'}</strong>
 					</p>
+					<Button variant="secondary" size="sm" class="self-end">
+						<a href="/me/change-username">{$t('me.changeUsername')}</a>
+					</Button>
+				</div>
+
+				<div class="flex justify-between gap-4">
 					<p>
 						<small>{$t('me.email')}</small><br />
 						<strong>{user.email}</strong>
 					</p>
-				</div>
 
-				<div class="flex flex-col justify-center gap-4">
-					<Button variant="secondary" size="sm" class="self-end">
-						<a href="/me/change-username">{$t('me.changeUsername')}</a>
-					</Button>
 					<Button variant="secondary" size="sm" class="self-end">
 						<a href="/me/change-email">{$t('me.changeEmail')}</a>
 					</Button>
+				</div>
+
+				<div>
+					<small>{$t('me.faction')}</small><br />
+					<form
+						method="POST"
+						action="?/changeFaction"
+						class="flex justify-between gap-4"
+						use:enhance
+					>
+						<Form.Field {form} name="faction">
+							<Form.Control let:attrs>
+								<Select.Root
+									selected={selectedFaction}
+									onSelectedChange={(v) => ($formData.faction = v?.value ?? '')}
+								>
+									<Select.Trigger {...attrs} class="w-[190px]">
+										<Select.Value placeholder={$t('me.selectFaction')} />
+									</Select.Trigger>
+									<Select.Content>
+										<Select.Item value={''}>{$t('me.none')}</Select.Item>
+										{#each Object.entries(FACTIONS) as [id, value]}
+											<Select.Item value={id}>
+												<FactionIcon faction={id} class="mr-2" />
+												{value}
+											</Select.Item>
+										{/each}
+									</Select.Content>
+								</Select.Root>
+								<input hidden bind:value={$formData.faction} name={attrs.name} />
+							</Form.Control>
+						</Form.Field>
+						<Form.Button variant="secondary" disabled={$formData.faction === user.faction}
+							>{$t('me.changeFaction')}</Form.Button
+						>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -82,14 +140,14 @@
 			</div>
 		{/if}
 
-		{#if connectSteamUrl && !otherConnections?.find((c) => c.attributes?.provider === 'steam')}
+		{#if connectSteamUrl}
 			<div>
 				<h3>{$t('me.connectSteam')}</h3>
-				<p>
+				<Button variant="secondary">
 					<a href={connectSteamUrl} target="_blank" rel="noopener noreferrer">
 						{$t('me.connectSteam')}
 					</a>
-				</p>
+				</Button>
 			</div>
 		{/if}
 

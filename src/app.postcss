@@ -27,6 +27,8 @@
 		--ring: 221.2 83.2% 53.3%;
 		--radius: 0.2rem;
 		--highlight: 294 72.4% 39.8%; /* Fuschia-700 */
+		--infernal: 10 75% 45%; /* Infernal-500 */
+		--vanguard: 207 89% 42%; /* Vanguard-500 */
 	}
 	.dark {
 		--background: 222.2 84% 4.9%;
@@ -49,6 +51,8 @@
 		--input: 290.13 18% 27.5%;
 		--ring: 224.3 76.3% 48%;
 		--highlight: 293.4 69.5% 48.8%; /* Fuschia-600 */
+		--infernal: 10 75% 45%; /* Infernal-500 */
+		--vanguard: 207 89% 42%; /* Vanguard-500 */
 	}
 }
 
@@ -67,6 +71,7 @@
 
 	body {
 		@apply bg-background font-sans font-medium text-foreground;
+		padding-right: 0 !important; /* Prevents layout shift on shadcn components */
 	}
 
 	h1,

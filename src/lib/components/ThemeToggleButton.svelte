@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { isDarkMode } from '$lib/utils';
 	import DarkModeIcon from '$assets/icons/dark-theme.svg?component';
-	import clsx, { type ClassValue } from 'clsx';
+	import clsx from 'clsx';
 	import { Button } from '$components/ui/button';
-
-	export let className: ClassValue = undefined;
 
 	let themeDark = isDarkMode();
 
@@ -26,7 +24,7 @@
 <Button
 	variant="outline"
 	on:click={toggle}
-	class={clsx(className, 'items-center gap-2 rounded-md text-xs uppercase')}
+	class={clsx($$restProps.class, 'items-center gap-2 rounded-md text-xs uppercase')}
 >
 	<DarkModeIcon width="18" height="18" class="text-foreground" />
 	<span class="max-sm:hidden">

@@ -43,7 +43,11 @@
 		"changeEmail": "Muuta",
 		"downloadOwnData": "Lataa omat tiedot",
 		"download": "Lataa",
-		"editConnections": "Muokkaa"
+		"editConnections": "Muokkaa",
+		"faction": "Rotu",
+		"selectFaction": "Valitse rotusi",
+		"none": "Ei valintaa",
+		"changeFaction": "Tallenna"
 	},
 	"changeUsername": {
 		"heading": "Vaihda käyttäjänimi",

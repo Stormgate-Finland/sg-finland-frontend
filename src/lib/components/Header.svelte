@@ -19,7 +19,7 @@
 		{/if}
 	</div>
 
-	<ThemeToggleButton className="absolute right-4 top-4 h-8 hidden lg:flex" />
+	<ThemeToggleButton class="absolute right-4 top-4 hidden h-8 lg:flex" />
 </header>
 
 <style>

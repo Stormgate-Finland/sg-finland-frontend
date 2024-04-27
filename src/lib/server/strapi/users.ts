@@ -28,7 +28,7 @@ export async function getMe(authToken: string) {
 }
 
 export async function getSession(token: string) {
-	return strapiMutation<UserSessionResponse>(endpoint + '/session', 'POST', {token});
+	return strapiMutation<UserSessionResponse>(endpoint + '/session', 'POST', { token });
 }
 
 export async function updateMe(body: unknown, authToken: string) {

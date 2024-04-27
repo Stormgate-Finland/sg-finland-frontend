@@ -12,7 +12,8 @@
 			<Image
 				src={stream.live.thumbnailUrl}
 				alt="Thumbnail"
-				class="aspect-video h-full max-w-full object-cover object-center"
+				class="bg-background-contrast aspect-video h-full max-w-full rounded-lg object-cover object-center shadow-lg"
+				loading="lazy"
 			/>
 		</a>
 	</div>

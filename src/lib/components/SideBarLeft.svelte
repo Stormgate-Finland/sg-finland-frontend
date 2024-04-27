@@ -2,6 +2,8 @@
 	import { page } from '$app/stores';
 	import { t } from '$lib/translations';
 	import DiscordServerWidget from '$lib/components/DiscordServerWidget.svelte';
+	import Avatar from './Avatar.svelte';
+
 	let path: string;
 
 	$: path = $page.url.pathname;
@@ -49,7 +51,7 @@
 						data-active={path === '/me'}
 					>
 						{#if user.avatarUrl}
-							<img src={user.avatarUrl} alt="Avatar" class="h-7 w-7 rounded-full" />
+							<Avatar url={user.avatarUrl} faction={user.faction} class="h-7 w-7 rounded-full" />
 						{/if}
 
 						<div class="text-sm">{user.username}</div>

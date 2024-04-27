@@ -12,6 +12,8 @@ export default {
 		extend: {
 			colors: {
 				highlight: 'hsl(var(--highlight) / <alpha-value>)',
+				infernal: 'hsl(var(--infernal) / <alpha-value>)',
+				vanguard: 'hsl(var(--vanguard) / <alpha-value>)',
 				border: 'hsl(var(--border) / <alpha-value>)',
 				input: 'hsl(var(--input) / <alpha-value>)',
 				ring: 'hsl(var(--ring) / <alpha-value>)',
