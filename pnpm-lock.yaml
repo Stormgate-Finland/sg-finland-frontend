@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  openid@2.0.12:
+    hash: 3p7homhvj2kc4apoh5kb4jz6je
+    path: patches/openid@2.0.12.patch
+
 importers:
 
   .:
@@ -92,7 +97,7 @@ importers:
         version: 0.28.0
       openid:
         specifier: ^2.0.12
-        version: 2.0.12
+        version: 2.0.12(patch_hash=3p7homhvj2kc4apoh5kb4jz6je)
       postcss:
         specifier: ^8.4.33
         version: 8.4.33
@@ -108,9 +113,6 @@ importers:
       qs:
         specifier: ^6.11.2
         version: 6.11.2
-      querystring:
-        specifier: ^0.2.1
-        version: 0.2.1
       svelte:
         specifier: ^4.2.9
         version: 4.2.9
@@ -138,9 +140,6 @@ importers:
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
-      url:
-        specifier: ^0.11.3
-        version: 0.11.3
       vite:
         specifier: ^5.2.9
         version: 5.2.9(@types/node@20.11.24)
@@ -2247,9 +2246,6 @@ packages:
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
-  punycode@1.4.1:
-    resolution: {integrity: sha512-jmYNElW7yvO7TV33CjSmvSiE2yco3bV2czu/OzDKdMNVZQWfxCblURLhf+47syQRBntjfLdd/H0egrzIG+oaFQ==}
-
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
@@ -2257,11 +2253,6 @@ packages:
   qs@6.11.2:
     resolution: {integrity: sha512-tDNIz22aBzCDxLtVH++VnTfzxlfeK5CbqohpSqpJgj1Wg/cQbStNAz3NuqCs5vV+pjBsK4x4pN9HlVh7rcYRiA==}
     engines: {node: '>=0.6'}
-
-  querystring@0.2.1:
-    resolution: {integrity: sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==}
-    engines: {node: '>=0.4.x'}
-    deprecated: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -2674,9 +2665,6 @@ packages:
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
-
-  url@0.11.3:
-    resolution: {integrity: sha512-6hxOLGfZASQK/cijlZnZJTq8OXAkt/3YGfQX45vvMYXpZoo8NdWZcY73K108Jf759lS1Bv/8wXnHDTSz17dSRw==}
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -4491,7 +4479,7 @@ snapshots:
       fs-extra: 11.2.0
       handlebars: 4.7.8
 
-  openid@2.0.12:
+  openid@2.0.12(patch_hash=3p7homhvj2kc4apoh5kb4jz6je):
     dependencies:
       axios: 1.6.8
       qs: 6.11.2
@@ -4807,15 +4795,11 @@ snapshots:
 
   proxy-from-env@1.1.0: {}
 
-  punycode@1.4.1: {}
-
   punycode@2.3.1: {}
 
   qs@6.11.2:
     dependencies:
       side-channel: 1.0.4
-
-  querystring@0.2.1: {}
 
   queue-microtask@1.2.3: {}
 
@@ -5272,11 +5256,6 @@ snapshots:
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
-
-  url@0.11.3:
-    dependencies:
-      punycode: 1.4.1
-      qs: 6.11.2
 
   util-deprecate@1.0.2: {}
 
