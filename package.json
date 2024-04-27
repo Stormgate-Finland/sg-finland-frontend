@@ -15,7 +15,9 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
 		"generate:strapi": "npx strapi-generate-types quickgen http://localhost:1337 --path ./src/types/generated --file-name strapi.ts",
-		"generate:sgf-api": "npx tsx ./scripts/generate-sgf-api.ts"
+		"generate:sgf-api": "npx tsx ./scripts/generate-sgf-api.ts",
+		"cf-typegen": "wrangler types && move worker-configuration.d.ts src/",
+		"deploy": "pnpm run build && wrangler pages deploy"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.41.2",
@@ -25,6 +27,7 @@
 		"@sveltejs/kit": "^2.5.6",
 		"@sveltejs/vite-plugin-svelte": "^3.1.0",
 		"@twicpics/components": "^0.27.1",
+		"@types/eslint": "^8.56.0",
 		"@types/node": "^20.11.24",
 		"@types/openid": "^2.0.5",
 		"@types/qs": "^6.9.11",
@@ -55,7 +58,8 @@
 		"tslib": "^2.6.2",
 		"typescript": "^5.3.3",
 		"vite": "^5.2.9",
-		"vitest": "^1.2.2"
+		"vitest": "^1.2.2",
+		"wrangler": "^3.52.0"
 	},
 	"type": "module",
 	"dependencies": {
