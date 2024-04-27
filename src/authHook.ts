@@ -4,7 +4,7 @@ import { getSession } from './lib/server/strapi/users';
 // Attach authorization to each server request (role may have changed)
 async function attachUserToRequestEvent(session: string, event: RequestEvent) {
 	const user = await getSession(session);
-	if (user?.username) {
+	if (user && !user?.error) {
 		event.locals.user = user;
 	}
 }
