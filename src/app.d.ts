@@ -12,7 +12,16 @@ declare global {
 			i18n: { locale: string; route: string };
 			translations: Translations.SerializedTranslations;
 		}
-		// interface Platform {}
+		interface Platform {
+			env: {
+				// YOUR_KV_NAMESPACE: KVNamespace;
+				// YOUR_DURABLE_OBJECT_NAMESPACE: DurableObjectNamespace;
+			};
+			context: {
+				waitUntil(promise: Promise<any>): void;
+			};
+			caches: CacheStorage & { default: Cache };
+		}
 	}
 }
 
