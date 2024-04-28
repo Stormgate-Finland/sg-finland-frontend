@@ -58,9 +58,9 @@
 		</table>
 		<div class="mt-4 flex gap-4">
 			<Button variant="secondary">
-				<a href="/me">{$t('editConnections.cancel')}</a>
+				<a href="/me">{$t('ui.cancel')}</a>
 			</Button>
-			<Form.Button formaction="?/updateConnections">{$t('editConnections.save')}</Form.Button>
+			<Form.Button formaction="?/updateConnections">{$t('ui.save')}</Form.Button>
 		</div>
 	</form>
 </div>

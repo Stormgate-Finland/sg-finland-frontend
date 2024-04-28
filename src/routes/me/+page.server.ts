@@ -1,8 +1,6 @@
 import { getMyConnections } from '$/lib/server/strapi/userConnections';
 import { fail, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from '../$types';
-import SteamAuth from '$/lib/server/steam/steamAuth';
-import { PUBLIC_APP_URL } from '$env/static/public';
 import {
 	Enum_Userconnection_Provider,
 	Enum_Userspermissionsuser_Faction,
@@ -18,18 +16,13 @@ export const load: PageServerLoad = async ({ cookies, locals }) => {
 		throw redirect(302, '/login?redirect=/me');
 	}
 	const connections = await getMyConnections(session);
-	const connectSteamUrl = !connections.data.some(
+	const steamConnected = connections.data.some(
 		(c) => c.attributes?.provider === Enum_Userconnection_Provider.Steam,
-	)
-		? await new SteamAuth({
-				realm: PUBLIC_APP_URL,
-				returnUrl: `${PUBLIC_APP_URL}/auth/callback/steam`,
-			}).getRedirectUrl()
-		: undefined;
+	);
 
 	return {
 		connections: connections?.data ?? [],
-		connectSteamUrl,
+		steamConnected,
 		form: await superValidate(zod(formSchemaChangeFaction), {
 			defaults: {
 				faction: locals.user?.faction as Enum_Userspermissionsuser_Faction,

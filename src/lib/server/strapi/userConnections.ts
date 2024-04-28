@@ -60,8 +60,17 @@ export async function getUserConnection(id: string) {
 	);
 }
 
-export async function createUserConnection(data: UserConnection, authToken: string) {
-	return await strapiMutation<UserConnectionEntityResponse>(endpoint, 'POST', data, authToken);
+export async function createUserConnection(data: UserConnection) {
+	return await strapiMutation<UserConnectionEntityResponse>(endpoint, 'POST', data);
+}
+
+export async function createMyUserConnection(data: UserConnection, authToken: string) {
+	return await strapiMutation<UserConnectionEntityResponse>(
+		`${endpoint}/my/create`,
+		'POST',
+		data,
+		authToken,
+	);
 }
 
 export async function updateUserConnection(
@@ -95,7 +104,7 @@ export async function updateMyUserConnections(
 	authToken: string,
 ) {
 	return await strapiMutation<UserConnectionEntityResponseCollection>(
-		`${endpoint}/my`,
+		`${endpoint}/my/update`,
 		'POST',
 		data,
 		authToken,

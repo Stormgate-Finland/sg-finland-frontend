@@ -18,7 +18,6 @@
 	},
 	"streams": {
 		"heading": "Striimit",
-		"comingSoon": "Tulossa pian...",
 		"inTheMeanTime": "Sillä aikaa käy katsomassa lähetykset <a href='https://www.twitch.tv/directory/category/stormgate'>Twitchin puolella</a>!",
 		"noLiveStreams": "Ei suoria lähetyksiä tällä hetkellä.",
 		"watchOn": "Katso palvelussa",
@@ -38,41 +37,30 @@
 		"connectSteam": "Yhdistä Steam",
 		"email": "Sähköposti",
 		"deleteAccount": "Poista tili",
-		"delete": "Poista",
-		"changeUsername": "Muuta",
-		"changeEmail": "Muuta",
 		"downloadOwnData": "Lataa omat tiedot",
-		"download": "Lataa",
-		"editConnections": "Muokkaa",
 		"faction": "Rotu",
 		"selectFaction": "Valitse rotusi",
-		"none": "Ei valintaa",
-		"changeFaction": "Tallenna"
+		"none": "Ei valintaa"
 	},
 	"changeUsername": {
 		"heading": "Vaihda käyttäjänimi",
-		"newUsername": "Uusi käyttäjänimi",
 		"changing": "Vaihdetaan käyttäjänimeä....",
 		"changed": "Käyttäjänimesi on nyt vaihdettu.",
-		"submit": "Lähetä",
+		"newUsername": "Uusi käyttäjänimi",
 		"description": "Tämä on julkinen nimesi. Käyttäjänimet ovat yksilöllisiä."
 	},
 	"changeEmail": {
 		"heading": "Päivitä sähköposti",
-		"newEmail": "Uusi sähköpostiosoite",
-		"submit": "Lähetä"
+		"newEmail": "Uusi sähköpostiosoite"
 	},
 	"editConnections": {
 		"heading": "Muokkaa yhdistettyjä profiileja",
-		"public": "Julkinen",
-		"save": "Tallenna",
-		"cancel": "Peruuta"
+		"public": "Julkinen"
 	},
 	"verifyEmail": {
 		"heading": "Vahvista sähköposti",
 		"info": "Lähetimme sähköpostiisi vahvistuskoodin. Ole hyvä ja syötä koodi alle vahvistaaksesi sähköpostisi.",
-		"code": "Vahvistuskoodi",
-		"submit": "Lähetä"
+		"code": "Vahvistuskoodi"
 	},
 	"deleteAccount": {
 		"heading": "Poista tili",
@@ -130,5 +118,15 @@
 			"length": "Koodin pitää olla 6 merkkiä pitkä.",
 			"regex": "Koodissa saa olla vain numeroita."
 		}
+	},
+	"ui": {
+		"cancel": "Peruuta",
+		"save": "Tallenna",
+		"delete": "Poista",
+		"submit": "Lähetä",
+		"close": "Sulje",
+		"change": "Muuta",
+		"edit": "Muokkaa",
+		"download": "Lataa"
 	}
 }

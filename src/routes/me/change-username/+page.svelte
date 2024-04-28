@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { t } from '$/lib/translations';
+	import { Button } from '$lib/components/ui/button';
 	import * as Form from '$lib/components/ui/form';
 	import { Input } from '$lib/components/ui/input';
 	import { formSchema } from './schema';
@@ -27,6 +28,11 @@
 			<Form.Description>{$t('changeUsername.description')}</Form.Description>
 			<Form.FieldErrors />
 		</Form.Field>
-		<Form.Button formaction="?/changeUsername">{$t('changeUsername.submit')}</Form.Button>
+		<div class="mt-4 flex gap-4">
+			<Button variant="secondary">
+				<a href="/me">{$t('ui.cancel')}</a>
+			</Button>
+			<Form.Button formaction="?/changeUsername">{$t('ui.submit')}</Form.Button>
+		</div>
 	</form>
 </div>

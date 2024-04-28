@@ -28,6 +28,6 @@
 			</Form.Control>
 			<Form.FieldErrors />
 		</Form.Field>
-		<Form.Button formaction="?/verifyEmail">{$t('verifyEmail.submit')}</Form.Button>
+		<Form.Button formaction="?/verifyEmail">{$t('ui.submit')}</Form.Button>
 	</form>
 </div>

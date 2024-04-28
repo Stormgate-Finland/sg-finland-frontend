@@ -14,7 +14,7 @@
 	const { user } = $page.data;
 
 	export let data;
-	const { connections, connectSteamUrl } = data;
+	const { connections, steamConnected } = data;
 	const discord = connections?.find((c) => c.attributes?.provider === 'discord');
 	const otherConnections = connections?.filter((c) => c.attributes?.provider !== 'discord');
 
@@ -47,7 +47,7 @@
 						<strong>{user.username ?? 'User'}</strong>
 					</p>
 					<Button variant="secondary" size="sm" class="self-end">
-						<a href="/me/change-username">{$t('me.changeUsername')}</a>
+						<a href="/me/change-username">{$t('ui.change')}</a>
 					</Button>
 				</div>
 
@@ -58,7 +58,7 @@
 					</p>
 
 					<Button variant="secondary" size="sm" class="self-end">
-						<a href="/me/change-email">{$t('me.changeEmail')}</a>
+						<a href="/me/change-email">{$t('ui.change')}</a>
 					</Button>
 				</div>
 
@@ -93,7 +93,7 @@
 							</Form.Control>
 						</Form.Field>
 						<Form.Button variant="secondary" disabled={$formData.faction === user.faction}
-							>{$t('me.changeFaction')}</Form.Button
+							>{$t('ui.save')}</Form.Button
 						>
 					</form>
 				</div>
@@ -135,16 +135,16 @@
 					</tbody>
 				</table>
 				<Button variant="secondary">
-					<a href="/me/edit-connections">{$t('me.editConnections')}</a>
+					<a href="/me/edit-connections">{$t('ui.edit')}</a>
 				</Button>
 			</div>
 		{/if}
 
-		{#if connectSteamUrl}
+		{#if !steamConnected}
 			<div>
 				<h3>{$t('me.connectSteam')}</h3>
 				<Button variant="secondary">
-					<a href={connectSteamUrl} target="_blank" rel="noopener noreferrer">
+					<a href="/auth/connect/steam" data-sveltekit-preload-data="off">
 						{$t('me.connectSteam')}
 					</a>
 				</Button>
@@ -154,14 +154,14 @@
 		<div>
 			<h3>{$t('me.downloadOwnData')}</h3>
 			<Button variant="secondary">
-				<a href="/api/users/me/download-data">{$t('me.download')}</a>
+				<a href="/api/users/me/download-data">{$t('ui.download')}</a>
 			</Button>
 		</div>
 
 		<div>
 			<h3>{$t('me.deleteAccount')}</h3>
 			<Button variant="destructive">
-				<a href="/me/delete-account">{$t('me.delete')}</a>
+				<a href="/me/delete-account">{$t('ui.delete')}</a>
 			</Button>
 		</div>
 	{/if}

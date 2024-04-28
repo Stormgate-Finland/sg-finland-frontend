@@ -18,7 +18,6 @@
 	},
 	"streams": {
 		"title": "Streams",
-		"comingSoon": "Coming soon...",
 		"inTheMeanTime": "In the mean time, go check out stream over at <a href='https://www.twitch.tv/directory/category/stormgate'>Twitch</a>!",
 		"noLiveStreams": "No live streams at the moment.",
 		"watchOn": "Watch on",
@@ -38,41 +37,30 @@
 		"connectSteam": "Connect Steam",
 		"email": "Email",
 		"deleteAccount": "Delete account",
-		"delete": "Delete",
-		"changeUsername": "Change",
-		"changeEmail": "Change",
 		"downloadOwnData": "Download your data",
-		"download": "Download",
-		"editConnections": "Edit",
 		"faction": "Faction",
 		"selectFaction": "Select your faction",
-		"none": "None",
-		"changeFaction": "Save"
+		"none": "None"
 	},
 	"changeUsername": {
 		"heading": "Change username",
 		"changing": "Changing your username...",
 		"changed": "Your username has been changed.",
 		"newUsername": "New username",
-		"submit": "Submit",
 		"description": "This is your public display name. Usernames are unique."
 	},
 	"changeEmail": {
 		"heading": "Change email",
-		"newEmail": "New email",
-		"submit": "Submit"
+		"newEmail": "New email"
 	},
 	"editConnections": {
 		"heading": "Edit profile connections",
-		"public": "Private",
-		"save": "Save",
-		"cancel": "Cancel"
+		"public": "Private"
 	},
 	"verifyEmail": {
 		"heading": "Verify email",
 		"info": "We've sent you an email with a verification code. Please enter it below.",
-		"code": "Verification code",
-		"submit": "Submit"
+		"code": "Verification code"
 	},
 	"deleteAccount": {
 		"heading": "Delete account",
@@ -130,5 +118,15 @@
 			"length": "The code must be exactly 6 digits long.",
 			"regex": "The code can only contain numbers."
 		}
+	},
+	"ui": {
+		"cancel": "Cancel",
+		"save": "Save",
+		"delete": "Delete",
+		"submit": "Submit",
+		"close": "Close",
+		"change": "Change",
+		"edit": "Edit",
+		"download": "Download"
 	}
 }

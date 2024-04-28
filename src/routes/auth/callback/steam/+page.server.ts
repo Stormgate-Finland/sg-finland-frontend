@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
 import SteamAuth from '$/lib/server/steam/steamAuth';
 import { error, redirect } from '@sveltejs/kit';
-import { createUserConnection } from '$/lib/server/strapi/userConnections';
+import { createMyUserConnection } from '$/lib/server/strapi/userConnections';
 import { Enum_Userconnection_Provider } from '$types/generated/strapi';
 import { PUBLIC_APP_URL } from '$env/static/public';
 
@@ -14,11 +14,10 @@ export const load: PageServerLoad = async ({ url, cookies, locals }) => {
 			returnUrl: `${PUBLIC_APP_URL}/auth/callback/steam`,
 		}).authenticate(url.href);
 
-		await createUserConnection(
+		await createMyUserConnection(
 			{
 				provider: Enum_Userconnection_Provider.Steam,
 				externalId: steamid,
-				user: locals.user.id,
 			},
 			session,
 		);

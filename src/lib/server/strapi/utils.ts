@@ -60,10 +60,18 @@ export async function strapiMutation<T>(
 		...(authToken && { authorization: `Bearer ${authToken}` }),
 	};
 
+	// Users endpoints do not use data key as the rest of the CMS
+	const bodyData =
+		body === undefined
+			? undefined
+			: endpoint.match(/^\/api\/users(\/|$|\?)/)
+				? body
+				: { data: body };
+
 	const res = await fetch(`${PUBLIC_CMS_URL}${endpoint}`, {
 		headers,
 		method,
-		body: JSON.stringify(body),
+		body: JSON.stringify(bodyData),
 	});
 
 	let data: StrapiMutationResponse<T> | null = null;

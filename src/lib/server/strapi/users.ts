@@ -24,20 +24,20 @@ export async function getUser(id: string | number, query?: StrapiQuery, authToke
 }
 
 export async function getMe(authToken: string) {
-	return strapiFetch<UsersPermissionsMe>(endpoint + '/me', undefined, authToken);
+	return strapiFetch<UsersPermissionsMe>(`${endpoint}/me`, undefined, authToken);
 }
 
 export async function getSession(token: string) {
-	return strapiMutation<UserSessionResponse>(endpoint + '/session', 'POST', { token });
+	return strapiMutation<UserSessionResponse>(`${endpoint}/session`, 'POST', { token });
 }
 
 export async function updateMe(body: unknown, authToken: string) {
-	return strapiMutation<UsersPermissionsUserEntity>(endpoint + '/me', 'PUT', body, authToken);
+	return strapiMutation<UsersPermissionsUserEntity>(`${endpoint}/me`, 'PUT', body, authToken);
 }
 
 export async function updateEmail(body: unknown, authToken: string) {
 	return strapiMutation<{ success: boolean }>(
-		endpoint + '/me/update-email',
+		`${endpoint}/me/update-email`,
 		'POST',
 		body,
 		authToken,
@@ -45,12 +45,17 @@ export async function updateEmail(body: unknown, authToken: string) {
 }
 
 export async function verifyEmail(body: unknown, authToken: string) {
-	return strapiMutation<{ success: boolean }>('/api/auth/verify-email', 'POST', body, authToken);
+	return strapiMutation<{ success: boolean }>(
+		`${endpoint}/me/verify-email`,
+		'POST',
+		body,
+		authToken,
+	);
 }
 
 export async function deleteMe(authToken: string) {
 	return strapiMutation<UsersPermissionsUserEntity>(
-		endpoint + '/me',
+		`${endpoint}/me`,
 		'DELETE',
 		undefined,
 		authToken,
