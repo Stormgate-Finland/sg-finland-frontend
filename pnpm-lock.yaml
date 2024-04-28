@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   openid@2.0.12:
-    hash: 3emvkmsljvnhix5npiig7xhxuy
+    hash: fyfcrvd536uipdhqsxxpmt7sie
     path: patches/openid@2.0.12.patch
 
 importers:
@@ -100,7 +100,7 @@ importers:
         version: 0.28.0
       openid:
         specifier: ^2.0.12
-        version: 2.0.12(patch_hash=3emvkmsljvnhix5npiig7xhxuy)
+        version: 2.0.12(patch_hash=fyfcrvd536uipdhqsxxpmt7sie)
       postcss:
         specifier: ^8.4.33
         version: 8.4.33
@@ -4493,7 +4493,7 @@ snapshots:
       fs-extra: 11.2.0
       handlebars: 4.7.8
 
-  openid@2.0.12(patch_hash=3emvkmsljvnhix5npiig7xhxuy):
+  openid@2.0.12(patch_hash=fyfcrvd536uipdhqsxxpmt7sie):
     dependencies:
       axios: 1.6.8
       qs: 6.11.2

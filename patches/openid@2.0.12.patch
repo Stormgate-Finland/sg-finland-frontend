@@ -1,5 +1,5 @@
 diff --git a/openid.js b/openid.js
-index 3a20a6e074c98e368b53b16ffdb40c4b4c1de187..20ec9e2b6c991a0154d37a8669df6335a5dc3d75 100644
+index 3a20a6e074c98e368b53b16ffdb40c4b4c1de187..7f3975b53d9f56cc8ef2f59a4496c5f12eb5d1c0 100644
 --- a/openid.js
 +++ b/openid.js
 @@ -26,11 +26,9 @@
@@ -8,7 +8,7 @@ index 3a20a6e074c98e368b53b16ffdb40c4b4c1de187..20ec9e2b6c991a0154d37a8669df6335
  
 -var Buffer = require('buffer').Buffer,
 -    crypto = require('crypto'),
-+var crypto = require('crypto'),
++var crypto = require('node:crypto'),
      http = require('./http'),
 -    querystring = require('querystring'),
 -    url = require('url'),
