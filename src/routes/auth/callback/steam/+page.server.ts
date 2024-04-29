@@ -1,28 +1,18 @@
 import type { PageServerLoad } from './$types';
-import SteamAuth from '$/lib/server/steam/steamAuth';
 import { error, redirect } from '@sveltejs/kit';
-import { createMyUserConnection } from '$/lib/server/strapi/userConnections';
-import { Enum_Userconnection_Provider } from '$types/generated/strapi';
 import { PUBLIC_APP_URL } from '$env/static/public';
+import { connectSteam } from '$lib/server/strapi/auth-connect';
 
 export const load: PageServerLoad = async ({ url, cookies, locals }) => {
 	const session = cookies.get('session');
 
 	if (session && locals.user.id) {
-		const steamid = await new SteamAuth({
-			realm: PUBLIC_APP_URL,
-			returnUrl: `${PUBLIC_APP_URL}/auth/callback/steam`,
-		}).authenticate(url.href);
-
-		await createMyUserConnection(
-			{
-				provider: Enum_Userconnection_Provider.Steam,
-				externalId: steamid,
-			},
-			session,
-		);
-
-		throw redirect(302, `${PUBLIC_APP_URL}/me`);
+		const success = await connectSteam(url.toString(), session);
+		if (success) {
+			throw redirect(302, `${PUBLIC_APP_URL}/me`);
+		} else {
+			error(500, 'Unexpected error');
+		}
 	}
 
 	error(401, 'Unauthorized');
