@@ -3,7 +3,8 @@
 		"home": "Home",
 		"news": "News",
 		"streams": "Streams",
-		"login": "Login"
+		"login": "Login",
+		"members": "Members"
 	},
 	"footer": {
 		"about": "About",
@@ -24,6 +25,15 @@
 		"noStreamsFound": "No streams found.",
 		"offlineStreams": "Offline streams",
 		"viewers": "viewers"
+	},
+	"members": {
+		"heading": "Members",
+		"name": "Name",
+		"faction": "Faction",
+		"unkownFaction": "",
+		"memberSince": "Member since",
+		"links": "Links",
+		"pageDescription": "The members of the Finnish community site for Stormgate."
 	},
 	"me": {
 		"heading": "My profile",

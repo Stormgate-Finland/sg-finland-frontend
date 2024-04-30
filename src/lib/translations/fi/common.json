@@ -3,7 +3,8 @@
 		"home": "Etusivu",
 		"news": "Uutiset",
 		"streams": "Striimit",
-		"login": "Kirjaudu"
+		"login": "Kirjaudu",
+		"members": "Jäsenet"
 	},
 	"footer": {
 		"about": "Tietoa",
@@ -24,6 +25,15 @@
 		"noStreamsFound": "Striimejä ei löytynyt.",
 		"offlineStreams": "Offline-striimit",
 		"viewers": "katsojaa"
+	},
+	"members": {
+		"heading": "Jäsenet",
+		"name": "Nimi",
+		"faction": "Rotu",
+		"unkownFaction": "",
+		"memberSince": "Liittynyt",
+		"links": "Linkit",
+		"pageDescription": "Suomalaisen Stormgate-yhteisön jäsenet."
 	},
 	"me": {
 		"heading": "Oma profiili",

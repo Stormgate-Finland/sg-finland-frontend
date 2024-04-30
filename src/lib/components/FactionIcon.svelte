@@ -5,10 +5,12 @@
 	import { Enum_Userspermissionsuser_Faction } from '$types/generated/strapi';
 	import clsx from 'clsx';
 
-	export let faction = '';
+	export let faction: string | null | undefined = null;
 </script>
 
-{#if faction === Enum_Userspermissionsuser_Faction.Infernal}
+{#if !faction}
+	<!-- 	-->
+{:else if faction === Enum_Userspermissionsuser_Faction.Infernal}
 	<InfernalIcon class={clsx(['h-6 w-6 text-infernal'], $$restProps.class)} />
 {:else if faction === Enum_Userspermissionsuser_Faction.Vanguard}
 	<VanguardIcon class={clsx(['h-6 w-6 text-vanguard'], $$restProps.class)} />

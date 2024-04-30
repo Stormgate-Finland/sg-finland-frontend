@@ -37,6 +37,14 @@
 					>{$t('navigation.streams')}</a
 				>
 			</li>
+			<li>
+				<a
+					href="/members"
+					data-active={path === '/members'}
+					class="border-l-4 border-l-transparent data-[active=true]:border-l-4 data-[active=true]:border-l-primary"
+					>{$t('navigation.members')}</a
+				>
+			</li>
 			<li class="text-sm">
 				<a target="_blank" class="border-l-4 border-l-transparent" href="https://playstormgate.com/"
 					>PlayStormgate.com</a
