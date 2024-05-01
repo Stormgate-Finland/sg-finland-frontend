@@ -12,7 +12,7 @@ export type CommunityUser = { id: number } & Pick<
 		userConnections: CommunityUserConnection[];
 	};
 
-export type CommunityUsersResponse = {
+export type CommunityMembersResponse = {
 	data: CommunityUser[];
 	meta: {
 		pagination: Pagination;

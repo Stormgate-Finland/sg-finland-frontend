@@ -1,6 +1,6 @@
 import { strapiFetch } from './utils';
 import type { StrapiQuery } from '$types/strapiQuery';
-import type { CommunityUsersResponse } from '$types/community';
+import type { CommunityUser, CommunityMembersResponse } from '$types/community';
 
 const endpoint = '/api/community';
 
@@ -9,5 +9,9 @@ export async function getCommunityMembers(query?: Pick<StrapiQuery, 'sort' | 'pa
 		sort: ['username:asc'],
 		pagination: { page: 1, pageSize: 20 },
 	};
-	return strapiFetch<CommunityUsersResponse>(endpoint + '/members', query ?? defaultQuery);
+	return strapiFetch<CommunityMembersResponse>(endpoint + '/members', query ?? defaultQuery);
+}
+
+export async function getNewestCommunityMember() {
+	return strapiFetch<CommunityUser>(endpoint + '/members/newest');
 }

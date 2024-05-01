@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
 import { error, redirect } from '@sveltejs/kit';
 import { PUBLIC_APP_URL } from '$env/static/public';
-import { connectSteam } from '$lib/server/strapi/auth-connect';
+import { connectSteam } from '$lib/server/strapi/authConnect';
 
 export const load: PageServerLoad = async ({ url, cookies, locals }) => {
 	const session = cookies.get('session');

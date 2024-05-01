@@ -1,7 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { PUBLIC_APP_URL } from '$env/static/public';
-import { loginCallback } from '$/lib/server/strapi/auth-connect';
+import { loginCallback } from '$lib/server/strapi/authConnect';
 
 const DEFAULT_REDIRECT = '/me';
 

@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
 import { error, redirect } from '@sveltejs/kit';
-import { getRedirectUrl } from '$lib/server/strapi/auth-connect';
+import { getRedirectUrl } from '$lib/server/strapi/authConnect';
 
 export const load: PageServerLoad = async ({ cookies, locals }) => {
 	const session = cookies.get('session');
