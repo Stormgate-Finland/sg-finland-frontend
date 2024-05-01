@@ -3,7 +3,7 @@
 	import { t } from '$/lib/translations';
 	import * as Table from '$lib/components/ui/table/index.js';
 	import Pagination from '$lib/components/Pagination.svelte';
-	import Time from 'svelte-time/src/Time.svelte';
+	import Time from 'svelte-time';
 	import MemberLinks from '$lib/components/MemberLinks.svelte';
 	import FactionIcon from '$lib/components/FactionIcon.svelte';
 
