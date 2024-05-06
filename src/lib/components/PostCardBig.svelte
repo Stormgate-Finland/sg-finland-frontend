@@ -9,7 +9,9 @@
 </script>
 
 <div>
-	<h3>{post.attributes?.title}</h3>
+	<a href={`/posts/${post.attributes?.slug}`}>
+		<h3>{post.attributes?.title}</h3>
+	</a>
 	<PostMeta
 		author={post.attributes?.author?.data?.attributes?.username}
 		createdAt={post.attributes?.createdAt}

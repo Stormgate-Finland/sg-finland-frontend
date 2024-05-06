@@ -6,10 +6,10 @@
 	export let logo: Maybe<UploadFileEntityResponse> | undefined;
 </script>
 
-<header class="flex h-16 justify-center p-2 sm:mb-2 sm:p-1 md:mb-8 md:p-2 lg:h-24">
-	<div class="my-filter flex w-full justify-start sm:justify-center">
+<header class="mb-2 flex h-16 justify-center p-2 sm:mb-4 sm:p-1 md:mb-8 md:p-2 lg:h-24">
+	<div class="flex w-full justify-start sm:justify-center">
 		{#if logo}
-			<a href="/" class="h-full w-[min(_80%,420px)]">
+			<a href="/" class="my-filter h-full w-[min(_80%,420px)]">
 				<Image
 					src={logo.data?.attributes?.url}
 					alt={logo.data?.attributes?.alternativeText}

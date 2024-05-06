@@ -18,7 +18,9 @@
 		</a>
 	</div>
 	<div class="flex basis-8/12 flex-col">
-		<h5>{post.attributes?.title}</h5>
+		<a href={`/posts/${post.attributes?.slug}`}>
+			<h5>{post.attributes?.title}</h5>
+		</a>
 		<div class="pb-2 text-sm">
 			<PostMeta
 				author={post.attributes?.author?.data?.attributes?.username}

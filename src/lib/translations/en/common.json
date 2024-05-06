@@ -4,7 +4,8 @@
 		"news": "News",
 		"streams": "Streams",
 		"login": "Login",
-		"members": "Members"
+		"members": "Members",
+		"ladder": "Ladder"
 	},
 	"footer": {
 		"about": "About",
@@ -35,11 +36,24 @@
 		"links": "Links",
 		"pageDescription": "The members of the Finnish community site for Stormgate."
 	},
+	"ladder": {
+		"heading": "Ladder",
+		"comingSoon": "Coming soon!",
+		"noMembers": "No members found.",
+		"rank": "Rank",
+		"mmr": "MMR",
+		"games": "Games",
+		"wins": "Wins",
+		"losses": "Losses",
+		"winrate": "Winrate",
+		"pageDescription": "Suomiladder - the ladder for the Finnish community site for Stormgate."
+	},
 	"me": {
 		"heading": "My profile",
 		"signedInAs": "Signed in as",
 		"discord": "Linked Discord account",
 		"otherConnections": "Other connected profiles",
+		"otherConnectionsInfo": "These profiles were found linked to your Discord account.",
 		"logout": "Logout",
 		"provider": "Provider",
 		"username": "Username",

@@ -35,7 +35,7 @@
 	<h1>{$t('me.heading')}</h1>
 
 	{#if user}
-		<div class="flex gap-16">
+		<div class="flex flex-wrap gap-x-16 gap-y-4">
 			{#if user.avatarUrl}
 				<Avatar url={user.avatarUrl} faction={$formData.faction} />
 			{/if}
@@ -116,6 +116,7 @@
 		{#if otherConnections}
 			<div class="space-y-2">
 				<h3>{$t('me.otherConnections')}</h3>
+				<p>{$t('me.otherConnectionsInfo')}</p>
 				<table>
 					<thead>
 						<tr>

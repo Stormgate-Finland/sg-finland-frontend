@@ -18,5 +18,6 @@ export const load: LayoutLoad = async ({ data, fetch }) => {
 		user,
 		discordServer,
 		i18n,
+		translations,
 	};
 };

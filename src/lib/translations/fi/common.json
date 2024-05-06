@@ -4,7 +4,8 @@
 		"news": "Uutiset",
 		"streams": "Striimit",
 		"login": "Kirjaudu",
-		"members": "Jäsenet"
+		"members": "Jäsenet",
+		"ladder": "Sijoitukset"
 	},
 	"footer": {
 		"about": "Tietoa",
@@ -35,11 +36,24 @@
 		"links": "Linkit",
 		"pageDescription": "Suomalaisen Stormgate-yhteisön jäsenet."
 	},
+	"ladder": {
+		"heading": "Sijoitukset",
+		"comingSoon": "Stormgaten Suomiladder tulossa pian!",
+		"noMembers": "Pelaajia ei löytynyt.",
+		"rank": "Sija",
+		"mmr": "MMR",
+		"games": "Ottelut",
+		"wins": "Voitot",
+		"losses": "Tappiot",
+		"winrate": "Voitto-%",
+		"pageDescription": "Suomiladder - Suomalaisten Stormgate sijoitukset."
+	},
 	"me": {
 		"heading": "Oma profiili",
 		"signedInAs": "Kirjautuneena",
 		"discord": "Liitetty Discord-tunnus",
 		"otherConnections": "Muut ydistetyt profiilit",
+		"otherConnectionsInfo": "Nämä profiilit haettiin Discord-tililtäsi.",
 		"logout": "Kirjaudu ulos",
 		"provider": "Tarjoaja",
 		"username": "Käyttäjänimi",
