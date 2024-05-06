@@ -23,12 +23,4 @@ export default defineConfig({
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}'],
 	},
-	server: {
-		proxy: {
-			'/uploads': {
-				// Temp workaround to make local strapi assets work
-				target: 'http://localhost:1337',
-			},
-		},
-	},
 });

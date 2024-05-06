@@ -1,5 +1,4 @@
-import { CMS_URL } from '$env/static/private';
-import { PUBLIC_APP_URL } from '$env/static/public';
+import { PUBLIC_APP_URL, PUBLIC_CMS_URL } from '$env/static/public';
 import type { UsersPermissionsLoginPayload } from '$types/generated/strapi';
 import { strapiFetch, strapiMutation } from './utils';
 
@@ -9,7 +8,7 @@ export const loginCallback = async (provider: string, code: string) => {
 	if (!provider || !code) {
 		throw new Error('Missing provider or access code');
 	}
-	const res = await fetch(`${CMS_URL}${endpoint}/${provider}?code=${code}`);
+	const res = await fetch(`${PUBLIC_CMS_URL}${endpoint}/${provider}?code=${code}`);
 	return (await res.json()) as UsersPermissionsLoginPayload;
 };
 

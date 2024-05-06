@@ -1,5 +1,6 @@
 import { stringify } from 'qs';
-import { CMS_API_KEY, CMS_URL } from '$env/static/private';
+import { CMS_API_KEY } from '$env/static/private';
+import { PUBLIC_CMS_URL } from '$env/static/public';
 import { FilterOperator, type StrapiMutationResponse, type StrapiQuery } from '$types/strapiQuery';
 
 export function strapiQuery<T>(query?: StrapiQuery<T>) {
@@ -41,7 +42,7 @@ export async function strapiFetch<T, S = unknown>(
 ) {
 	const qs = strapiQuery<S>(query);
 	const headers = authToken ? { authorization: `Bearer ${authToken}` } : undefined;
-	const res = await fetch(`${CMS_URL}${endpoint}${qs}`, { headers });
+	const res = await fetch(`${PUBLIC_CMS_URL}${endpoint}${qs}`, { headers });
 	const data = await res.json();
 	return data as T;
 }
@@ -67,7 +68,7 @@ export async function strapiMutation<T>(
 				? body
 				: { data: body };
 
-	const res = await fetch(`${CMS_URL}${endpoint}`, {
+	const res = await fetch(`${PUBLIC_CMS_URL}${endpoint}`, {
 		headers,
 		method,
 		body: JSON.stringify(bodyData),
