@@ -1,8 +1,8 @@
-export const prerender = 'auto';
-
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { getPost } from '$lib/server/strapi/posts';
+
+export const prerender = 'auto';
 
 export const load: PageServerLoad = async (event) => {
 	const item = await getPost(event.params.slug);
