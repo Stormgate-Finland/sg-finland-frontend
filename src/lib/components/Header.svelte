@@ -17,6 +17,9 @@
 				/>
 			</a>
 		{/if}
+		<span class="translate-x-[-90%] rotate-90 font-mono text-xs text-primary sm:text-sm lg:text-lg"
+			>beta</span
+		>
 	</div>
 
 	<ThemeToggleButton class="absolute right-4 top-4 hidden h-8 lg:flex" />
