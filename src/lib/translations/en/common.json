@@ -20,7 +20,7 @@
 	"streams": {
 		"title": "Streams",
 		"inTheMeanTime": "In the mean time, go check out stream over at <a href='https://www.twitch.tv/directory/category/stormgate'>Twitch</a>!",
-		"noLiveStreams": "No live streams at the moment.",
+		"noLiveStreams": "No public live streams at the moment.",
 		"watchOn": "Watch on",
 		"noStreamsFound": "No streams found.",
 		"offlineStreams": "Offline streams",

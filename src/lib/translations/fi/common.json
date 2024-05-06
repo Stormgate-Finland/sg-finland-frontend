@@ -20,7 +20,7 @@
 	"streams": {
 		"heading": "Striimit",
 		"inTheMeanTime": "Sillä aikaa käy katsomassa lähetykset <a href='https://www.twitch.tv/directory/category/stormgate'>Twitchin puolella</a>!",
-		"noLiveStreams": "Ei suoria lähetyksiä tällä hetkellä.",
+		"noLiveStreams": "Ei julkisia suoria lähetyksiä tällä hetkellä.",
 		"watchOn": "Katso palvelussa",
 		"noStreamsFound": "Striimejä ei löytynyt.",
 		"offlineStreams": "Offline-striimit",
