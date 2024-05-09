@@ -38,15 +38,20 @@
 	},
 	"ladder": {
 		"heading": "Sijoitukset",
-		"comingSoon": "Stormgaten Suomiladder tulossa pian!",
-		"noMembers": "Pelaajia ei löytynyt.",
+		"comingSoon": "Stormgaten Suomiladder tulossa pian! Alla esimakua tulevasta.",
+		"noPlayers": "Pelaajia ei löytynyt.",
+		"player": "Pelaaja",
 		"rank": "Sija",
+		"league": "Liiga",
+		"points": "Pisteet",
 		"mmr": "MMR",
 		"games": "Ottelut",
 		"wins": "Voitot",
+		"stats": "V-T",
 		"losses": "Tappiot",
 		"winrate": "Voitto-%",
-		"pageDescription": "Suomiladder - Suomalaisten Stormgate sijoitukset."
+		"pageDescription": "Suomiladder - Suomalaisten Stormgate sijoitukset.",
+		"inTheMeanTime": "Sillä aikaa käy katsomassa virallinen ladder sivustolla <a href='https://stormgate.untapped.gg/en/leaderboard'>untapped.gg</a>!"
 	},
 	"me": {
 		"heading": "Oma profiili",
@@ -151,6 +156,7 @@
 		"close": "Sulje",
 		"change": "Muuta",
 		"edit": "Muokkaa",
-		"download": "Lataa"
+		"download": "Lataa",
+		"loading": "Ladataan..."
 	}
 }

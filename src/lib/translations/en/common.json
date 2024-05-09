@@ -38,15 +38,20 @@
 	},
 	"ladder": {
 		"heading": "Ladder",
-		"comingSoon": "Coming soon!",
-		"noMembers": "No members found.",
+		"comingSoon": "Coming soon! Some taste of what to come below.",
+		"noPlayers": "No players found.",
+		"player": "Player",
 		"rank": "Rank",
+		"league": "League",
+		"points": "points",
 		"mmr": "MMR",
 		"games": "Games",
 		"wins": "Wins",
+		"stats": "W-L",
 		"losses": "Losses",
 		"winrate": "Winrate",
-		"pageDescription": "Suomiladder - the ladder for the Finnish community site for Stormgate."
+		"pageDescription": "Suomiladder - the ladder for the Finnish community site for Stormgate.",
+		"inTheMeanTime": "In the meanwhile, go check out the official ladder over at <a href='https://stormgate.untapped.gg/en/leaderboard'>untapped.gg</a>!"
 	},
 	"me": {
 		"heading": "My profile",
@@ -151,6 +156,7 @@
 		"close": "Close",
 		"change": "Change",
 		"edit": "Edit",
-		"download": "Download"
+		"download": "Download",
+		"loading": "Loading..."
 	}
 }
