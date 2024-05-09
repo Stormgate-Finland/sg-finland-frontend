@@ -18,4 +18,6 @@
 			{/each}
 		</div>
 	{/if}
+
+	<p>{$t('streams.ndaNotice')}</p>
 </div>
