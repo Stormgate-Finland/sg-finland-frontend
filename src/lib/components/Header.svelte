@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Maybe, UploadFileEntityResponse } from '$types/generated/strapi';
-	import Image from './Image.svelte';
+	import StrapiImage from './StrapiImage.svelte';
 	import ThemeToggleButton from './ThemeToggleButton.svelte';
 
 	export let logo: Maybe<UploadFileEntityResponse> | undefined;
@@ -10,11 +10,7 @@
 	<div class="flex w-full justify-start sm:justify-center">
 		{#if logo}
 			<a href="/" class="my-filter h-full w-[min(_80%,420px)]">
-				<Image
-					src={logo.data?.attributes?.url}
-					alt={logo.data?.attributes?.alternativeText}
-					class="h-full w-full"
-				/>
+				<StrapiImage img={logo} class="h-full w-full" />
 			</a>
 		{/if}
 		<span class="translate-x-[-90%] rotate-90 font-mono text-xs text-primary sm:text-sm lg:text-lg"
