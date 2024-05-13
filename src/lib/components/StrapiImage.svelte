@@ -6,11 +6,21 @@
 
 	export let img: Maybe<UploadFileEntityResponse> | undefined;
 
-	const src = img?.data?.attributes?.url.replace(/^https?:\/\/[^\/]*/, '') ?? '';
+	function stripHost(url?: string) {
+		return url?.replace(/^https?:\/\/[^\/]*/, '') ?? '';
+	}
 </script>
 
 {#if PUBLIC_TWICPICS_DOMAIN && img?.data?.attributes?.provider !== 'local'}
-	<TwicImg {...$$restProps} alt={img?.data?.attributes?.alternativeText ?? ''} {src}></TwicImg>
+	<TwicImg
+		{...$$restProps}
+		alt={img?.data?.attributes?.alternativeText ?? ''}
+		src={stripHost(img?.data?.attributes?.url)}
+	></TwicImg>
 {:else}
-	<Image {...$$restProps} {src} alt={img?.data?.attributes?.alternativeText} />
+	<Image
+		{...$$restProps}
+		src={img?.data?.attributes?.url}
+		alt={img?.data?.attributes?.alternativeText}
+	/>
 {/if}
