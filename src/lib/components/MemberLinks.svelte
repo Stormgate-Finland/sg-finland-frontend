@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { t } from '$lib/translations';
 	import type { CommunityUserConnection } from '$types/community';
 	import TwitchIcon from '$assets/icons/twitch.svg?component';
 	import YoutubeIcon from '$assets/icons/youtube.svg?component';
