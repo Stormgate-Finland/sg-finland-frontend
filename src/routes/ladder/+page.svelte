@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { t } from '$/lib/translations';
+	import PageHead from '$components/PageHead.svelte';
 	import FactionIcon from '$lib/components/FactionIcon.svelte';
 	import LeagueImage from '$lib/components/LeagueImage.svelte';
 	import LoadingSpinner from '$lib/components/LoadingSpinner.svelte';
@@ -7,6 +8,8 @@
 
 	export let data;
 </script>
+
+<PageHead title={$t('ladder.heading')} description={$t('ladder.pageDescription')} />
 
 <div class="space-y-6">
 	<h1>{$t('ladder.heading')}</h1>

@@ -16,17 +16,19 @@
 		"readMore": "Read more"
 	},
 	"posts": {
-		"title": "News"
+		"heading": "News",
+		"pageDescription": "The latest news from the Finnish community site for Stormgate."
 	},
 	"streams": {
-		"title": "Streams",
+		"heading": "Streams",
 		"inTheMeanTime": "In the mean time, go check out stream over at <a href='https://www.twitch.tv/directory/category/stormgate'>Twitch</a>!",
 		"noLiveStreams": "No public live streams at the moment.",
 		"ndaNotice": "Please note that the game is currently under NDA, so streams can only be found from the official Discord channel for the official playtesters.",
 		"watchOn": "Watch on",
 		"noStreamsFound": "No streams found.",
 		"offlineStreams": "Offline streams",
-		"viewers": "viewers"
+		"viewers": "viewers",
+		"pageDescription": "The streams of the Finnish community site for Stormgate."
 	},
 	"members": {
 		"heading": "Members",
@@ -118,7 +120,8 @@
 		"loginWithDiscord": "Login with Discord",
 		"info": "Login with your Discord account. If you do not have a Discord account, please ",
 		"createItFist": "create one first",
-		"connectYourEmail": "Remember to connect your email to your Discord account."
+		"connectYourEmail": "Remember to connect your email to your Discord account.",
+		"pageDescription": "Login or register to the Finnish community site for Stormgate."
 	},
 	"logout": {
 		"heading": "Log out",

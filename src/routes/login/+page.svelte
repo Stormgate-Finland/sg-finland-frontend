@@ -2,11 +2,14 @@
 	import { page } from '$app/stores';
 	import { t } from '$/lib/translations';
 	import Button from '$lib/components/ui/button/button.svelte';
+	import PageHead from '$components/PageHead.svelte';
 
 	const { user } = $page.data;
 
 	export let data;
 </script>
+
+<PageHead title={$t('login.heading')} description={$t('login.pageDescription')} />
 
 <div class="space-y-6">
 	<h1>{$t('login.heading')}</h1>

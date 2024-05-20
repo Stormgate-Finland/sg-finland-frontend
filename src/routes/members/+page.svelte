@@ -11,7 +11,7 @@
 	const { members } = data;
 </script>
 
-<PageHead description={$t('members.pageDescription')} />
+<PageHead title={$t('members.heading')} description={$t('members.pageDescription')} />
 
 <div class="space-y-6">
 	<h1>{$t('members.heading')}</h1>

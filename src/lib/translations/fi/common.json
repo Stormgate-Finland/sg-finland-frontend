@@ -16,7 +16,8 @@
 		"readMore": "Lue lisää"
 	},
 	"posts": {
-		"title": "Uutiset"
+		"heading": "Uutiset",
+		"pageDescription": "Uusimmat suomenkieliset uutiset Stormgatesta."
 	},
 	"streams": {
 		"heading": "Striimit",
@@ -26,7 +27,8 @@
 		"watchOn": "Katso palvelussa",
 		"noStreamsFound": "Striimejä ei löytynyt.",
 		"offlineStreams": "Offline-striimit",
-		"viewers": "katsojaa"
+		"viewers": "katsojaa",
+		"pageDescription": "Suomalaiset Stormgate-striimit."
 	},
 	"members": {
 		"heading": "Jäsenet",
@@ -118,7 +120,8 @@
 		"loginWithDiscord": "Kirjaudu sisään Discordilla",
 		"info": "Kirjaudu sisään tai rekisreröidy Discord-tunnuksellasi. Jos sinulla ei ole Discord-tunnusta, ole hyvä ja",
 		"createItFist": "luo se ensin",
-		"connectYourEmail": "Muista liittää sähköpostisi Discord-tiliisi."
+		"connectYourEmail": "Muista liittää sähköpostisi Discord-tiliisi.",
+		"pageDescription": "Kirjaudu sisään tai rekisteröidy Discord-tunnuksellasi."
 	},
 	"logout": {
 		"heading": "Kirjaudu ulos",

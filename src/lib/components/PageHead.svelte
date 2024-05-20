@@ -1,11 +1,19 @@
-<script>
-	export let title = '';
+<script lang="ts">
+	export let title: string = '';
+	export let extraTitles: string[] = [];
 	export let description = '';
 	export let ogImage = '';
 	export let siteUrl = '';
 
 	const siteTitle = 'Stormgate Finland';
-	const formattedTitle = title ? `${title} · ${siteTitle}` : siteTitle;
+	const formattedTitle = makeTitle(title, extraTitles);
+
+	function makeTitle(title: string, extraTitles: string[], suffix = siteTitle) {
+		if (title && extraTitles.length > 0) {
+			return [title, ...extraTitles, suffix].join(' · ');
+		}
+		return title ? [title, suffix].join(' · ') : suffix;
+	}
 </script>
 
 <svelte:head>
