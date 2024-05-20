@@ -31,7 +31,7 @@
 					<Table.Cell class="font-bold">{member.username}</Table.Cell>
 					<Table.Cell class="flex items-center gap-2 capitalize">
 						<FactionIcon faction={member.faction} />
-						{member.faction ?? $t('members.unkownFaction')}
+						<span class="hidden sm:inline">{member.faction ?? $t('members.unkownFaction')}</span>
 					</Table.Cell>
 					<Table.Cell class="font-mono"
 						><Time timestamp={member.createdAt} format="D.M.YYYY" /></Table.Cell
