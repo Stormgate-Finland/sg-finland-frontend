@@ -5,7 +5,7 @@
 	import { Enum_Userspermissionsuser_Faction } from '$types/generated/strapi';
 
 	export let url = '';
-	export let faction = '';
+	export let faction: Enum_Userspermissionsuser_Faction | string = '';
 
 	const factionColorCss = (faction: string) => {
 		switch (faction) {

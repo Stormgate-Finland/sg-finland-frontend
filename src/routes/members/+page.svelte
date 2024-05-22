@@ -6,6 +6,7 @@
 	import Time from 'svelte-time';
 	import MemberLinks from '$lib/components/MemberLinks.svelte';
 	import FactionIcon from '$lib/components/FactionIcon.svelte';
+	import Avatar from '$lib/components/Avatar.svelte';
 
 	export let data;
 	const { members } = data;
@@ -19,7 +20,7 @@
 	<Table.Root>
 		<Table.Header>
 			<Table.Row>
-				<Table.Head>{$t('members.name')}</Table.Head>
+				<Table.Head class="pl-10">{$t('members.name')}</Table.Head>
 				<Table.Head>{$t('members.faction')}</Table.Head>
 				<Table.Head>{$t('members.memberSince')}</Table.Head>
 				<Table.Head>{$t('members.links')}</Table.Head>
@@ -28,14 +29,22 @@
 		<Table.Body>
 			{#each members.data as member, i (i)}
 				<Table.Row>
-					<Table.Cell class="font-bold">{member.username}</Table.Cell>
-					<Table.Cell class="flex items-center gap-2 capitalize">
-						<FactionIcon faction={member.faction} />
-						<span class="hidden sm:inline">{member.faction ?? $t('members.unkownFaction')}</span>
+					<Table.Cell>
+						<div class="flex items-center gap-2">
+							<Avatar url={member.avatarUrl || ''} faction={member.faction || ''} class="h-5 w-5" />
+
+							<span class="text-base font-bold">{member.username}</span>
+						</div>
 					</Table.Cell>
-					<Table.Cell class="font-mono"
-						><Time timestamp={member.createdAt} format="D.M.YYYY" /></Table.Cell
-					>
+					<Table.Cell>
+						<div class="flex items-center gap-2 capitalize">
+							<FactionIcon faction={member.faction} />
+							<span class="hidden sm:inline">{member.faction ?? $t('members.unkownFaction')}</span>
+						</div>
+					</Table.Cell>
+					<Table.Cell class="font-mono">
+						<Time timestamp={member.createdAt} format="D.M.YYYY" />
+					</Table.Cell>
 					<Table.Cell><MemberLinks userConnections={member.userConnections} /></Table.Cell>
 				</Table.Row>
 			{/each}
