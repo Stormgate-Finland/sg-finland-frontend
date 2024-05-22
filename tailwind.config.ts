@@ -62,6 +62,15 @@ export default {
 				xs: '375px',
 				'2xl': '1400px',
 			},
+			animation: {
+				fade: 'fadeIn .5s ease-in-out',
+			},
+			keyframes: {
+				fadeIn: {
+					from: { opacity: '0' },
+					to: { opacity: '1' },
+				},
+			},
 		},
 	},
 } satisfies Config;
