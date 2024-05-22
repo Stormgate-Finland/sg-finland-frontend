@@ -93,7 +93,7 @@
 						href="/login"
 						data-active={path === '/login'}
 						class=" border-l-4 border-l-transparent data-[active=true]:border-l-4 data-[active=true]:border-l-primary"
-						>{$t('navigation.login')}</a
+						on:click={toggleMenu}>{$t('navigation.login')}</a
 					>
 				{/if}
 			</li>
