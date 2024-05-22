@@ -9,7 +9,8 @@
 	},
 	"footer": {
 		"about": "Tietoa",
-		"contact": "Yhteystiedot"
+		"contact": "Yhteystiedot",
+		"links": "Linkit"
 	},
 	"post": {
 		"writtenBy": "kirjoittanut",

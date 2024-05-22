@@ -9,7 +9,8 @@
 	},
 	"footer": {
 		"about": "About",
-		"contact": "Contanct"
+		"contact": "Contanct",
+		"links": "Links"
 	},
 	"post": {
 		"writtenBy": "written by",

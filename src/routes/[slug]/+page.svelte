@@ -6,7 +6,9 @@
 	$: ({ page } = data);
 </script>
 
-<PageHead title={page.attributes?.title} />
+{#key page.id}
+	<PageHead title={page.attributes?.title} />
+{/key}
 
 <h1 class="mb-8">{page.attributes?.title}</h1>
 

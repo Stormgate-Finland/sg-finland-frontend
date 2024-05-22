@@ -9,12 +9,14 @@
 	$: ({ post } = data);
 </script>
 
-<PageHead
-	title={post.attributes?.title}
-	extraTitles={[$t('posts.heading')]}
-	description={post.attributes?.ingress}
-	ogImage={post.attributes?.image.data?.attributes?.url}
-/>
+{#key post.id}
+	<PageHead
+		title={post.attributes?.title}
+		extraTitles={[$t('posts.heading')]}
+		description={post.attributes?.ingress}
+		ogImage={post.attributes?.image.data?.attributes?.url}
+	/>
+{/key}
 
 <h1>{post.attributes?.title}</h1>
 
