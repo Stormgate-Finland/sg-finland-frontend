@@ -21,6 +21,7 @@ export const load: PageServerLoad = async ({ cookies, locals }) => {
 	);
 
 	return {
+		user: locals.user,
 		connections: connections?.data ?? [],
 		steamConnected,
 		form: await superValidate(zod(formSchemaChangeFaction), {
