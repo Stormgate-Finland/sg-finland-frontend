@@ -11,7 +11,7 @@
 	import { formSchemaChangeFaction } from './schema';
 	import Avatar from '$lib/components/Avatar.svelte';
 
-	const { user } = $page.data;
+	$: ({ user } = data);
 
 	export let data;
 	const { connections, steamConnected } = data;
@@ -165,5 +165,9 @@
 				<a href="/me/delete-account">{$t('ui.delete')}</a>
 			</Button>
 		</div>
+	{/if}
+
+	{#if !user}
+		<p>{$t('me.userNotLoaded')}</p>
 	{/if}
 </div>
