@@ -12,6 +12,6 @@
 
 <h1 class="mb-8">{page.attributes?.title}</h1>
 
-<div class="markdown">
+<div class="markdown embeds">
 	<SvelteMarkdown source={page.attributes?.body} />
 </div>
