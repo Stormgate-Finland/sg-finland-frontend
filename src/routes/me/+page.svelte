@@ -10,6 +10,7 @@
 	import FactionIcon from '$lib/components/FactionIcon.svelte';
 	import { formSchemaChangeFaction } from './schema';
 	import Avatar from '$lib/components/Avatar.svelte';
+	import PageHead from '$lib/components/PageHead.svelte';
 
 	$: ({ user } = data);
 
@@ -30,6 +31,8 @@
 			}
 		: undefined;
 </script>
+
+<PageHead title={$t('me.heading')} />
 
 <div class="space-y-6">
 	<h1>{$t('me.heading')}</h1>

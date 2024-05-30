@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { t } from '$/lib/translations';
+	import PageHead from '$lib/components/PageHead.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Form from '$lib/components/ui/form';
 	import { Input } from '$lib/components/ui/input';
@@ -15,6 +16,8 @@
 
 	const { form: formData, enhance } = form;
 </script>
+
+<PageHead title={$t('changeUsername.heading')} />
 
 <div class="space-y-6">
 	<h1>{$t('changeUsername.heading')}</h1>
