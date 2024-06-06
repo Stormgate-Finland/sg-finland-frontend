@@ -250,6 +250,17 @@
 		}
 	}
 
+	.embeds {
+		iframe[src*='youtube.com'],
+		iframe[src*='youtube-nocookie.com'],
+		iframe[src*='youtu.be'],
+		iframe[src*='twitch.tv'] {
+			aspect-ratio: 16 / 9;
+			width: 100%;
+			height: auto;
+		}
+	}
+
 	.fade-to-background {
 		-webkit-mask-image: linear-gradient(
 			linear,

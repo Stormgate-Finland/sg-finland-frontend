@@ -73,7 +73,8 @@
 		"downloadOwnData": "Lataa omat tiedot",
 		"faction": "Rotu",
 		"selectFaction": "Valitse rotusi",
-		"none": "Ei valintaa"
+		"none": "Ei valintaa",
+		"userNotLoaded": "Tapahtui virhe: Käyttäjää ei voitu ladata."
 	},
 	"changeUsername": {
 		"heading": "Vaihda käyttäjänimi",

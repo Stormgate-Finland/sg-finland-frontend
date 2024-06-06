@@ -40,6 +40,6 @@
 	/>
 {/if}
 
-<div class="markdown">
+<div class="markdown embeds">
 	<SvelteMarkdown source={post.attributes?.body} />
 </div>

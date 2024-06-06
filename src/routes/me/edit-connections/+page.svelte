@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { t } from '$/lib/translations';
+	import PageHead from '$lib/components/PageHead.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Checkbox from '$lib/components/ui/checkbox/checkbox.svelte';
 	import * as Form from '$lib/components/ui/form';
@@ -17,6 +18,8 @@
 
 	const { form: formData, enhance } = form;
 </script>
+
+<PageHead title={$t('editConnections.heading')} />
 
 <div class="space-y-6">
 	<h1>{$t('editConnections.heading')}</h1>

@@ -10,8 +10,9 @@
 	import FactionIcon from '$lib/components/FactionIcon.svelte';
 	import { formSchemaChangeFaction } from './schema';
 	import Avatar from '$lib/components/Avatar.svelte';
+	import PageHead from '$lib/components/PageHead.svelte';
 
-	const { user } = $page.data;
+	$: ({ user } = data);
 
 	export let data;
 	const { connections, steamConnected } = data;
@@ -30,6 +31,8 @@
 			}
 		: undefined;
 </script>
+
+<PageHead title={$t('me.heading')} />
 
 <div class="space-y-6">
 	<h1>{$t('me.heading')}</h1>
@@ -165,5 +168,9 @@
 				<a href="/me/delete-account">{$t('ui.delete')}</a>
 			</Button>
 		</div>
+	{/if}
+
+	{#if !user}
+		<p>{$t('me.userNotLoaded')}</p>
 	{/if}
 </div>

@@ -73,7 +73,8 @@
 		"downloadOwnData": "Download your data",
 		"faction": "Faction",
 		"selectFaction": "Select your faction",
-		"none": "None"
+		"none": "None",
+		"userNotLoaded": "An error occurred: User could not be loaded."
 	},
 	"changeUsername": {
 		"heading": "Change username",

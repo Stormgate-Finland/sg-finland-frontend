@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { t } from '$/lib/translations';
+	import PageHead from '$lib/components/PageHead.svelte';
 	import * as Form from '$lib/components/ui/form';
 	import { Input } from '$lib/components/ui/input';
 	import { formSchema } from './schema';
@@ -14,6 +15,8 @@
 
 	const { form: formData, enhance } = form;
 </script>
+
+<PageHead title={$t('verifyEmail.heading')} />
 
 <div class="space-y-6">
 	<h1>{$t('verifyEmail.heading')}</h1>

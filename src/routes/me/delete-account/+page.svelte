@@ -2,11 +2,14 @@
 	import { t } from '$/lib/translations';
 	import { page } from '$app/stores';
 	import { Button } from '$components/ui/button';
+	import PageHead from '$lib/components/PageHead.svelte';
 
 	export let form;
 
 	const { user } = $page.data;
 </script>
+
+<PageHead title={$t('deleteAccount.heading')} />
 
 <h1>{$t('deleteAccount.heading')}</h1>
 
