@@ -6,6 +6,12 @@
 	import ReadMoreLink from './ReadMoreLink.svelte';
 
 	export let post: PostEntity;
+
+	function getTextSlice(text?: string, length = 300) {
+		// find the index of the first html tag
+		const firstTagIndex = text?.search(/<[^>]+>/);
+		return text?.slice(0, firstTagIndex || length) ?? '';
+	}
 </script>
 
 <div>
@@ -24,7 +30,7 @@
 						{post.attributes.ingress}
 					</div>
 				{/if}
-				<SvelteMarkdown source={post.attributes?.body.slice(0, 300)} />
+				<SvelteMarkdown source={getTextSlice(post.attributes?.body)} />
 			</div>
 			<div>
 				<ReadMoreLink href={`/posts/${post.attributes?.slug}`} />
