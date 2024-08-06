@@ -24,7 +24,8 @@ export type UserSessionResponse = {
 };
 
 export const FACTIONS = {
-	[Enum_Userspermissionsuser_Faction.Vanguard]: 'Vanguard',
+	[Enum_Userspermissionsuser_Faction.Vanguard]: 'Human Vanguard',
 	[Enum_Userspermissionsuser_Faction.Infernal]: 'Infernal Host',
+	[Enum_Userspermissionsuser_Faction.Celestial]: 'Celestial Armada',
 	[Enum_Userspermissionsuser_Faction.Random]: 'Random',
 };

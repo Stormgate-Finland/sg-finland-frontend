@@ -18,7 +18,7 @@ export class LeaderboardsRanked1V1Service {
         order,
         query,
     }: {
-        race?: 'infernals' | 'vanguard',
+        race?: 'infernals' | 'vanguard' | 'celestials' | 'random',
         page?: number,
         count?: number,
         order?: 'points' | 'mmr',
@@ -46,6 +46,7 @@ export class LeaderboardsRanked1V1Service {
                 race: {
                     Infernals: string;
                     Vanguard: string;
+                    Celestials: string;
                 };
                 league: {
                     Aspirant: string;

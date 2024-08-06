@@ -467,6 +467,7 @@ export type UsersPermissionsRoleEntityResponseCollection = {
 export enum Enum_Userspermissionsuser_Faction {
   Vanguard = 'vanguard',
   Infernal = 'infernal',
+  Celestial = 'celestial',
   Random = 'random'
 }
 

@@ -1,7 +1,7 @@
 export enum LadderFaction {
 	Infernal = 'infernals',
 	Vanguard = 'vanguard',
-	Faction3 = 'faction_3',
+	Celestial = 'celestials',
 	Random = 'random',
 }
 
