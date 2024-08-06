@@ -22,9 +22,8 @@
 	},
 	"streams": {
 		"heading": "Striimit",
-		"inTheMeanTime": "Sillä aikaa käy katsomassa lähetykset <a href='https://www.twitch.tv/directory/category/stormgate'>Twitchin puolella</a>!",
-		"noLiveStreams": "Ei julkisia suoria lähetyksiä tällä hetkellä.",
-		"ndaNotice": "Huomioithan, että peli on tällä hetkellä NDA:n alainen, joten striimejä voi löytää ainoastaan viralliselta Discord-kanavalta virallisille testaajille.",
+		"moreStreamsInTwitch": "Lisää Stormgate-lähetyksiä löytyy <a href='https://www.twitch.tv/directory/category/stormgate'>Twitchistä ↗️</a>!",
+		"noLiveStreams": "Ei suoria lähetyksiä tällä hetkellä.",
 		"watchOn": "Katso palvelussa",
 		"noStreamsFound": "Striimejä ei löytynyt.",
 		"offlineStreams": "Offline-striimit",

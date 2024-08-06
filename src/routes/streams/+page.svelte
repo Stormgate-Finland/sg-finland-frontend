@@ -22,5 +22,5 @@
 		</div>
 	{/if}
 
-	<p>{$t('streams.ndaNotice')}</p>
+	<p class="markdown">{@html $t('streams.moreStreamsInTwitch')}</p>
 </div>

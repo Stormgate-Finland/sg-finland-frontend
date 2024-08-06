@@ -598,6 +598,34 @@ export type I18NLocaleEntityResponseCollection = {
   meta: ResponseCollectionMeta;
 };
 
+export type DiscordBotSettingInput = {
+  isBotEnabled?: InputMaybe<Scalars['Boolean']>;
+  publishPostToChannelId?: InputMaybe<Scalars['String']>;
+  announceLiveStreamToChannelId?: InputMaybe<Scalars['String']>;
+  announceNewUserToChannelId?: InputMaybe<Scalars['String']>;
+};
+
+export type DiscordBotSetting = {
+  __typename?: 'DiscordBotSetting';
+  isBotEnabled?: Maybe<Scalars['Boolean']>;
+  publishPostToChannelId?: Maybe<Scalars['String']>;
+  announceLiveStreamToChannelId?: Maybe<Scalars['String']>;
+  announceNewUserToChannelId?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['DateTime']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+export type DiscordBotSettingEntity = {
+  __typename?: 'DiscordBotSettingEntity';
+  id?: Maybe<Scalars['ID']>;
+  attributes?: Maybe<DiscordBotSetting>;
+};
+
+export type DiscordBotSettingEntityResponse = {
+  __typename?: 'DiscordBotSettingEntityResponse';
+  data?: Maybe<DiscordBotSettingEntity>;
+};
+
 export type PageFiltersInput = {
   id?: InputMaybe<IdFilterInput>;
   title?: InputMaybe<StringFilterInput>;
@@ -1040,7 +1068,7 @@ export type UserConnectionRelationResponseCollection = {
   data: Array<UserConnectionEntity>;
 };
 
-export type GenericMorph = UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | I18NLocale | Page | Person | Post | SiteSetting | Stream | Tag | UserConnection;
+export type GenericMorph = UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | I18NLocale | DiscordBotSetting | Page | Person | Post | SiteSetting | Stream | Tag | UserConnection;
 
 export type FileInfoInput = {
   name?: InputMaybe<Scalars['String']>;
@@ -1123,6 +1151,7 @@ export type Query = {
   usersPermissionsUsers?: Maybe<UsersPermissionsUserEntityResponseCollection>;
   i18NLocale?: Maybe<I18NLocaleEntityResponse>;
   i18NLocales?: Maybe<I18NLocaleEntityResponseCollection>;
+  discordBotSetting?: Maybe<DiscordBotSettingEntityResponse>;
   page?: Maybe<PageEntityResponse>;
   pages?: Maybe<PageEntityResponseCollection>;
   person?: Maybe<PersonEntityResponse>;
@@ -1284,6 +1313,8 @@ export type Mutation = {
   createUploadFolder?: Maybe<UploadFolderEntityResponse>;
   updateUploadFolder?: Maybe<UploadFolderEntityResponse>;
   deleteUploadFolder?: Maybe<UploadFolderEntityResponse>;
+  updateDiscordBotSetting?: Maybe<DiscordBotSettingEntityResponse>;
+  deleteDiscordBotSetting?: Maybe<DiscordBotSettingEntityResponse>;
   createPage?: Maybe<PageEntityResponse>;
   updatePage?: Maybe<PageEntityResponse>;
   deletePage?: Maybe<PageEntityResponse>;
@@ -1363,6 +1394,11 @@ export type MutationUpdateUploadFolderArgs = {
 
 export type MutationDeleteUploadFolderArgs = {
   id: Scalars['ID'];
+};
+
+
+export type MutationUpdateDiscordBotSettingArgs = {
+  data: DiscordBotSettingInput;
 };
 
 
