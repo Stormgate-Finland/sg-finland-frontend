@@ -10,7 +10,15 @@ export async function GET({ setHeaders }) {
 	);
 	const data: LadderPlayer[] = (await req.json()) ?? [];
 
-	const finnishPlayers = ['Mixu', 'SacredCoconut', 'Luolis', 'Blodir'];
+	const finnishPlayers = [
+		'Mixu',
+		'SacredCoconut',
+		'Luolis',
+		'Blodir',
+		'Päärynälimonadi',
+		'Codebar',
+		'Larkkonen',
+	];
 	const finnishData: LadderPlayer[] = [];
 	data.forEach((player, index) => {
 		if (finnishPlayers.includes(player.playerName)) {
