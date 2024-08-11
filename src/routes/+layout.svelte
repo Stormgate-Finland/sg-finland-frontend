@@ -13,7 +13,7 @@
 </script>
 
 <div class="page-gradient flex min-h-screen flex-col items-center">
-	<BackgroundImage />
+	<BackgroundImage image={siteSettings?.attributes?.backgroundImage} />
 	<MobileNavigation />
 	<Header logo={siteSettings?.attributes?.logo} />
 	<div class="mt-4 flex h-full w-full max-w-screen-xl grow flex-col justify-center px-4">
