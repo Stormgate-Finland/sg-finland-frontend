@@ -11,19 +11,21 @@
 
 <header class="mb-2 flex h-16 justify-center p-2 sm:mb-4 sm:p-1 md:mb-8 md:p-2 lg:h-24">
 	<div class="flex w-full justify-start sm:justify-center">
-		{#if logo}
-			<div class="h-full w-[min(_80%,420px)] flex-col">
-				<a href="/" class="my-filter">
+		<div class="h-full w-[min(_80%,420px)] flex-col">
+			<a href="/" class="my-filter">
+				{#if logo}
 					<StrapiImage img={logo} class="h-full w-full" />
-				</a>
-
-				{#if $navigating}
-					<div in:fade={{ delay: 500, duration: 300 }} out:fade>
-						<LoadingLine class="mx-[3%] h-[2px] md:mt-2 md:h-[3px]" />
-					</div>
+				{:else}
+					<img src="/logo.png" alt="Stormgate Finland" class="h-full w-full object-contain" />
 				{/if}
-			</div>
-		{/if}
+			</a>
+
+			{#if $navigating}
+				<div in:fade={{ delay: 500, duration: 300 }} out:fade>
+					<LoadingLine class="mx-[3%] h-[2px] md:mt-2 md:h-[3px]" />
+				</div>
+			{/if}
+		</div>
 		<span class="translate-x-[-90%] rotate-90 font-mono text-xs text-primary sm:text-sm lg:text-lg"
 			>beta</span
 		>
