@@ -1,5 +1,9 @@
 # Stormgate Finland Frontend
 
+> **Site is closed.** The live site shows a shutdown notice. User accounts and data have been permanently deleted.
+>
+> To resume development from the last working state: `git checkout pre-shutdown` (tag points to commit `813b244`, the state before shutdown).
+
 This is a Sveltekit project bootstrapped by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte), that hosts the [stormgate.fi](https://stormgate.fi) website frontend codebase.
 
 The news content and users are hosted in a Strapi project [sg-finland-cms](https://gitlab.com/stormgate-finland/sg-finland-cms).
