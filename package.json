@@ -65,7 +65,7 @@
 		"bits-ui": "^0.21.1",
 		"formsnap": "^1.0.0",
 		"lucide-svelte": "^0.292.0",
-		"sveltekit-superforms": "^2.12.4",
+		"sveltekit-superforms": "2.13.1",
 		"tailwind-variants": "^0.1.20",
 		"zod": "^3.22.4"
 	},
